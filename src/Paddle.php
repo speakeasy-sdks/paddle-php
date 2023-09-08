@@ -9,21 +9,100 @@ declare(strict_types=1);
 namespace paddle\Paddle;
 
 /**
- * Paddle - Hashicups: Example Hashicups through Speakeasy
+ * Paddle - v1: Paddle API: REST API for interfacing with Paddle.
  * 
- * https://docs.speakeasyapi.dev - The Speakeasy Platform Documentation
+ * The Paddle API lets you create, read, update, and delete information in your Paddle system. Use the Paddle API to integrate Paddle with your app or third-party solutions. See https://developer.paddle.com/ to learn more.
+ * https://developer.paddle.com/ - Paddle Developer Center
  * 
  * @package paddle\Paddle
  * @access public
- * @see https://docs.speakeasyapi.dev
+ * @see https://developer.paddle.com/
  */
 class Paddle
 {
 	public const SERVERS = [
-		'https://example.com',
+        /** Production */
+		'https://api.paddle.com',
+        /** Sandbox */
+		'https://sandbox-api.paddle.com',
 	];
   	
-	public Order $order;
+    /**
+     * Work with addresses for a customer.
+     * 
+     * @var Addresses $$addresses
+     */
+	public Addresses $addresses;
+	
+    /**
+     * Work with adjustments.
+     * 
+     * @var Adjustments $$adjustments
+     */
+	public Adjustments $adjustments;
+	
+    /**
+     * Work with businesses for a customer.
+     * 
+     * @var Businesses $$businesses
+     */
+	public Businesses $businesses;
+	
+    /**
+     * Work with customers.
+     * 
+     * @var Customers $$customers
+     */
+	public Customers $customers;
+	
+    /**
+     * Work with discounts.
+     * 
+     * @var Discounts $$discounts
+     */
+	public Discounts $discounts;
+	
+    /**
+     * Work with events and the event stream.
+     * 
+     * @var Events $$events
+     */
+	public Events $events;
+	
+    /**
+     * Get Paddle IP addresses.
+     * 
+     * @var IPAddresses $$ipAddresses
+     */
+	public IPAddresses $ipAddresses;
+	
+    /**
+     * Work with invoices.
+     * 
+     * @var Invoices $$invoices
+     */
+	public Invoices $invoices;
+	
+    /**
+     * Work with notifications and notification settings.
+     * 
+     * @var Notifications $$notifications
+     */
+	public Notifications $notifications;
+	
+    /**
+     * Work with subscriptions.
+     * 
+     * @var Subscriptions $$subscriptions
+     */
+	public Subscriptions $subscriptions;
+	
+    /**
+     * Work with transactions.
+     * 
+     * @var Transactions $$transactions
+     */
+	public Transactions $transactions;
 		
 	private SDKConfiguration $sdkConfiguration;
 
@@ -44,6 +123,26 @@ class Paddle
 	{
 		$this->sdkConfiguration = $sdkConfiguration;
 		
-		$this->order = new Order($this->sdkConfiguration);
+		$this->addresses = new Addresses($this->sdkConfiguration);
+		
+		$this->adjustments = new Adjustments($this->sdkConfiguration);
+		
+		$this->businesses = new Businesses($this->sdkConfiguration);
+		
+		$this->customers = new Customers($this->sdkConfiguration);
+		
+		$this->discounts = new Discounts($this->sdkConfiguration);
+		
+		$this->events = new Events($this->sdkConfiguration);
+		
+		$this->ipAddresses = new IPAddresses($this->sdkConfiguration);
+		
+		$this->invoices = new Invoices($this->sdkConfiguration);
+		
+		$this->notifications = new Notifications($this->sdkConfiguration);
+		
+		$this->subscriptions = new Subscriptions($this->sdkConfiguration);
+		
+		$this->transactions = new Transactions($this->sdkConfiguration);
 	}
 }

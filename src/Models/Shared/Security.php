@@ -11,11 +11,11 @@ namespace paddle\Paddle\Models\Shared;
 use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class Security
 {
-	#[SpeakeasyMetadata('security:scheme=true,type=apiKey,subtype=header,name=x-api-key')]
-    public string $apiKey;
+	#[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
+    public string $bearerAuth;
     
 	public function __construct()
 	{
-		$this->apiKey = "";
+		$this->bearerAuth = "";
 	}
 }

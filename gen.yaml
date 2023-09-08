@@ -1,7 +1,7 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 7b193330bf41e2c47ba62aa354c4a561
-  docVersion: 0.0.1
+  docChecksum: 1fade75ac5b0bdfcf91084f35f8639c8
+  docVersion: "1.0"
   speakeasyVersion: 1.82.1
   generationVersion: 2.107.1
 generation:
@@ -15,11 +15,13 @@ generation:
 features:
   php:
     core: 2.85.3
+    examples: 2.81.2
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
-    includes: 2.81.1
+    inputOutputModels: 2.81.1
+    nameOverrides: 2.81.1
 php:
-  version: 0.1.0
+  version: 0.2.0
   maxMethodParams: 0
   namespace: paddle\Paddle
   packageName: paddle/paddle
