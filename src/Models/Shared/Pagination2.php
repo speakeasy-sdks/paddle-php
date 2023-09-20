@@ -47,17 +47,18 @@ class Pagination2
     /**
      * Number of entities per page for this response. May differ from the number requested if the requested number is too high.
      * 
-     * @var int $perPage
+     * @var ?int $perPage
      */
 	#[\JMS\Serializer\Annotation\SerializedName('per_page')]
     #[\JMS\Serializer\Annotation\Type('int')]
-    public int $perPage;
+    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
+    public ?int $perPage = null;
     
 	public function __construct()
 	{
 		$this->estimatedTotal = 0;
 		$this->hasMore = false;
 		$this->next = "";
-		$this->perPage = 0;
+		$this->perPage = null;
 	}
 }
