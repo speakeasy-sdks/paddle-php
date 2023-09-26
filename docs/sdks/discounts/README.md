@@ -38,20 +38,20 @@ $sdk = Paddle::builder()
 
 try {
     $request = new DiscountCreateInput();
-    $request->amount = 'enim';
-    $request->code = 'consequatur';
-    $request->currencyCode = CurrencyCode2::Pln;
-    $request->description = 'quibusdam';
+    $request->amount = 'est';
+    $request->code = 'quibusdam';
+    $request->currencyCode = CurrencyCode2::Cad;
+    $request->description = 'deserunt';
     $request->enabledForCheckout = false;
     $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2024-10-12T07:20:50.52Z');
     $request->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->maximumRecurringIntervals = 131797;
+    $request->maximumRecurringIntervals = 716327;
     $request->recur = false;
     $request->restrictTo = [
-        'deserunt',
+        'quibusdam',
     ];
-    $request->type = DiscountCreateType::Percentage;
-    $request->usageLimit = 841386;
+    $request->type = DiscountCreateType::Flat;
+    $request->usageLimit = 264730;
 
     $response = $sdk->discounts->create($request);
 
@@ -144,12 +144,12 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListDiscountsRequest();
-    $request->after = 'labore';
+    $request->after = 'qui';
     $request->code = 'BLACKFRIDAY';
-    $request->id = '4269802d-502a-494b-b4f6-3c969e9a3efa';
-    $request->orderBy = 'in';
-    $request->perPage = 449198;
-    $request->status = StatusDiscount::Used;
+    $request->id = '69802d50-2a94-4bb4-b63c-969e9a3efa77';
+    $request->orderBy = 'illum';
+    $request->perPage = 978571;
+    $request->status = StatusDiscount::Expired;
 
     $response = $sdk->discounts->list($request);
 
@@ -201,21 +201,21 @@ $sdk = Paddle::builder()
 try {
     $request = new UpdateDiscountRequest();
     $request->discountInput = new DiscountInput();
-    $request->discountInput->amount = 'maiores';
-    $request->discountInput->code = 'rerum';
-    $request->discountInput->currencyCode = CurrencyCode2::Cad;
-    $request->discountInput->description = 'magnam';
+    $request->discountInput->amount = 'dicta';
+    $request->discountInput->code = 'magnam';
+    $request->discountInput->currencyCode = CurrencyCode2::Sgd;
+    $request->discountInput->description = 'facere';
     $request->discountInput->enabledForCheckout = false;
     $request->discountInput->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2024-10-12T07:20:50.52Z');
     $request->discountInput->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->discountInput->maximumRecurringIntervals = 767024;
+    $request->discountInput->maximumRecurringIntervals = 411820;
     $request->discountInput->recur = false;
     $request->discountInput->restrictTo = [
-        'facere',
+        'aliquid',
     ];
-    $request->discountInput->status = SchemasstatusDiscount::Archived;
-    $request->discountInput->type = DiscountType::FlatPerSeat;
-    $request->discountInput->usageLimit = 675439;
+    $request->discountInput->status = SchemasstatusDiscount::Expired;
+    $request->discountInput->type = DiscountType::Percentage;
+    $request->discountInput->usageLimit = 249796;
     $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';
 
     $response = $sdk->discounts->update($request);

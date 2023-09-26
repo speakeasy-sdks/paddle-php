@@ -54,8 +54,8 @@ $sdk = Paddle::builder()
 
 try {
     $request = new AdjustmentCreateInput();
-    $request->action = Schemasaction::ChargebackWarning;
-    $request->currencyCode = CurrencyCode2::Thb;
+    $request->action = Schemasaction::Refund;
+    $request->currencyCode = CurrencyCode2::Krw;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->id = 'adj_01gya6twkp8y0tv1e19rsgst9m';
     $request->items = [
@@ -66,17 +66,17 @@ try {
     $request->payoutTotals->chargebackFee->amount = '1680';
     $request->payoutTotals->chargebackFee->original = new AdjustmentPayoutTotalsChargebackFeeOriginal();
     $request->payoutTotals->chargebackFee->original->amount = '1500';
-    $request->payoutTotals->chargebackFee->original->currencyCode = CurrencyCodeChargeback::Gbp;
-    $request->payoutTotals->currencyCode = CurrencyCodePayouts::Eur;
+    $request->payoutTotals->chargebackFee->original->currencyCode = CurrencyCodeChargeback::Usd;
+    $request->payoutTotals->currencyCode = CurrencyCodePayouts::Huf;
     $request->payoutTotals->earnings = '15120';
     $request->payoutTotals->fee = '300';
     $request->payoutTotals->subtotal = '15000';
     $request->payoutTotals->tax = '1500';
     $request->payoutTotals->total = '16500';
-    $request->reason = 'porro';
+    $request->reason = 'dicta';
     $request->status = SchemasstatusAdjustment::Rejected;
     $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
-    $request->transactionId = 'dicta';
+    $request->transactionId = 'officia';
 
     $response = $sdk->adjustments->create($request);
 
@@ -123,13 +123,13 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListAdjustmentsRequest();
-    $request->action = Action::CreditReverse;
-    $request->after = 'officia';
+    $request->action = Action::Credit;
+    $request->after = 'fugit';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
-    $request->id = '928fc816-742c-4b73-9205-929396fea759';
-    $request->orderBy = 'iure';
-    $request->perPage = 902349;
-    $request->status = StatusAdjustment::Rejected;
+    $request->id = '8fc81674-2cb7-4392-8592-9396fea7596e';
+    $request->orderBy = 'quidem';
+    $request->perPage = 99280;
+    $request->status = StatusAdjustment::Approved;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 

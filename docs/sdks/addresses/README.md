@@ -42,13 +42,13 @@ try {
     $request = new CreateAddressRequest();
     $request->addressCreateInput = new AddressCreateInput();
     $request->addressCreateInput->city = 'Astoria';
-    $request->addressCreateInput->countryCode = CountryCode2::Ph;
+    $request->addressCreateInput->countryCode = CountryCode2::Mq;
     $request->addressCreateInput->description = 'Paddle.com';
     $request->addressCreateInput->firstLine = '3811 Ditmars Blvd';
     $request->addressCreateInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressCreateInput->postalCode = '11105-1803';
     $request->addressCreateInput->region = 'NY';
-    $request->addressCreateInput->secondLine = 'quibusdam';
+    $request->addressCreateInput->secondLine = 'nulla';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->addresses->create($request);
@@ -143,11 +143,11 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListAddressesRequest();
-    $request->after = 'unde';
+    $request->after = 'corrupti';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
-    $request->id = 'd8d69a67-4e0f-4467-8c87-96ed151a05df';
-    $request->orderBy = 'quo';
-    $request->perPage = 140350;
+    $request->id = 'd69a674e-0f46-47cc-8796-ed151a05dfc2';
+    $request->orderBy = 'at';
+    $request->perPage = 870088;
     $request->search = 'upgrade';
     $request->status = Status::Archived;
 
@@ -201,14 +201,14 @@ try {
     $request = new UpdateAddressRequest();
     $request->addressInput = new AddressInput();
     $request->addressInput->city = 'Astoria';
-    $request->addressInput->countryCode = CountryCode2::Th;
+    $request->addressInput->countryCode = CountryCode2::Kh;
     $request->addressInput->description = 'Paddle.com';
     $request->addressInput->firstLine = '3811 Ditmars Blvd';
     $request->addressInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressInput->postalCode = '11105-1803';
     $request->addressInput->region = 'NY';
-    $request->addressInput->secondLine = 'maiores';
-    $request->addressInput->status = Schemasstatus::Active;
+    $request->addressInput->secondLine = 'quod';
+    $request->addressInput->status = Schemasstatus::Archived;
     $request->addressId = 'add_01gvcz6r0t0g5cphhwd8n952gb';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 

@@ -32,9 +32,9 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListEventsRequest();
-    $request->after = 'accusamus';
-    $request->orderBy = 'non';
-    $request->perPage = 581273;
+    $request->after = 'occaecati';
+    $request->orderBy = 'enim';
+    $request->perPage = 881736;
 
     $response = $sdk->events->list($request);
 

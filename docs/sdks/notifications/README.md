@@ -44,12 +44,12 @@ $sdk = Paddle::builder()
 try {
     $request = new NotificationSettingCreateInput();
     $request->active = false;
-    $request->apiVersion = 313218;
-    $request->description = 'accusamus';
-    $request->destination = 'delectus';
+    $request->apiVersion = 965417;
+    $request->description = 'quidem';
+    $request->destination = 'provident';
     $request->includeSensitiveFields = false;
     $request->subscribedEvents = [
-        'quidem',
+        'nam',
     ];
     $request->type = NotificationSettingCreateType::Url;
 
@@ -236,14 +236,14 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListNotificationsRequest();
-    $request->after = 'nam';
+    $request->after = 'blanditiis';
     $request->filter = 'ctm_01gw4qna8a0w5ywmy8kb9syy84';
     $request->from = '2023-04-18T17:03:26';
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
-    $request->orderBy = 'blanditiis';
-    $request->perPage = 533206;
+    $request->orderBy = 'sapiente';
+    $request->perPage = 230533;
     $request->search = 'upgrade';
-    $request->status = StatusNotification::NotAttempted;
+    $request->status = StatusNotification::NeedsRetry;
     $request->to = '2023-04-18T17:03:26';
 
     $response = $sdk->notifications->list($request);
@@ -289,9 +289,9 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListNotificationLogsRequest();
-    $request->after = 'amet';
+    $request->after = 'nisi';
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
-    $request->perPage = 643990;
+    $request->perPage = 423855;
 
     $response = $sdk->notifications->listLogs($request);
 
@@ -481,12 +481,12 @@ try {
     $request = new UpdateNotificationSettingRequest();
     $request->notificationSettingUpdate = new NotificationSettingUpdate();
     $request->notificationSettingUpdate->active = false;
-    $request->notificationSettingUpdate->apiVersion = 423855;
-    $request->notificationSettingUpdate->description = 'natus';
-    $request->notificationSettingUpdate->destination = 'omnis';
+    $request->notificationSettingUpdate->apiVersion = 606393;
+    $request->notificationSettingUpdate->description = 'molestiae';
+    $request->notificationSettingUpdate->destination = 'perferendis';
     $request->notificationSettingUpdate->includeSensitiveFields = false;
     $request->notificationSettingUpdate->subscribedEvents = [
-        'molestiae',
+        'nihil',
     ];
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
 
