@@ -1,4 +1,5 @@
 # Discounts
+(*discounts*)
 
 ## Overview
 
@@ -38,20 +39,20 @@ $sdk = Paddle::builder()
 
 try {
     $request = new DiscountCreateInput();
-    $request->amount = 'est';
-    $request->code = 'quibusdam';
-    $request->currencyCode = CurrencyCode2::Cad;
-    $request->description = 'deserunt';
+    $request->amount = '486.59';
+    $request->code = 'Configuration Money';
+    $request->currencyCode = CurrencyCode2::Sgd;
+    $request->description = 'Business-focused zero tolerance project';
     $request->enabledForCheckout = false;
-    $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2024-10-12T07:20:50.52Z');
+    $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->maximumRecurringIntervals = 716327;
+    $request->maximumRecurringIntervals = 376844;
     $request->recur = false;
     $request->restrictTo = [
-        'quibusdam',
+        'technology',
     ];
     $request->type = DiscountCreateType::Flat;
-    $request->usageLimit = 264730;
+    $request->usageLimit = 455222;
 
     $response = $sdk->discounts->create($request);
 
@@ -144,12 +145,12 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListDiscountsRequest();
-    $request->after = 'qui';
+    $request->after = 'Northeast Metal Canada';
     $request->code = 'BLACKFRIDAY';
-    $request->id = '69802d50-2a94-4bb4-b63c-969e9a3efa77';
-    $request->orderBy = 'illum';
-    $request->perPage = 978571;
-    $request->status = StatusDiscount::Expired;
+    $request->id = '<ID>';
+    $request->orderBy = 'Data Response West';
+    $request->perPage = 718303;
+    $request->status = StatusDiscount::Used;
 
     $response = $sdk->discounts->list($request);
 
@@ -201,21 +202,21 @@ $sdk = Paddle::builder()
 try {
     $request = new UpdateDiscountRequest();
     $request->discountInput = new DiscountInput();
-    $request->discountInput->amount = 'dicta';
-    $request->discountInput->code = 'magnam';
-    $request->discountInput->currencyCode = CurrencyCode2::Sgd;
-    $request->discountInput->description = 'facere';
+    $request->discountInput->amount = '857.48';
+    $request->discountInput->code = 'Rock';
+    $request->discountInput->currencyCode = CurrencyCode2::Gbp;
+    $request->discountInput->description = 'Reactive zero tolerance definition';
     $request->discountInput->enabledForCheckout = false;
-    $request->discountInput->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2024-10-12T07:20:50.52Z');
+    $request->discountInput->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->discountInput->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->discountInput->maximumRecurringIntervals = 411820;
+    $request->discountInput->maximumRecurringIntervals = 627690;
     $request->discountInput->recur = false;
     $request->discountInput->restrictTo = [
-        'aliquid',
+        'Analyst',
     ];
-    $request->discountInput->status = SchemasstatusDiscount::Expired;
+    $request->discountInput->status = SchemasstatusDiscount::Archived;
     $request->discountInput->type = DiscountType::Percentage;
-    $request->discountInput->usageLimit = 249796;
+    $request->discountInput->usageLimit = 134151;
     $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';
 
     $response = $sdk->discounts->update($request);

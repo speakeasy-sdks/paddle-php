@@ -1,4 +1,5 @@
 # Businesses
+(*businesses*)
 
 ## Overview
 
@@ -44,7 +45,7 @@ try {
         new BusinessCreateContacts(),
     ];
     $request->businessCreateInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessCreateInput->name = 'Carlton O'Hara';
+    $request->businessCreateInput->name = 'bluetooth Extended';
     $request->businessCreateInput->taxIdentifier = 'AB0123456789';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
@@ -140,13 +141,13 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListBusinessesRequest();
-    $request->after = 'dolorem';
+    $request->after = 'Northeast Metal Canada';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
-    $request->id = '52c59559-07af-4f1a-ba2f-a9467739251a';
-    $request->orderBy = 'animi';
-    $request->perPage = 317202;
+    $request->id = '<ID>';
+    $request->orderBy = 'Data Response West';
+    $request->perPage = 718303;
     $request->search = 'upgrade';
-    $request->status = Status::Active;
+    $request->status = Status::Archived;
 
     $response = $sdk->businesses->list($request);
 
@@ -202,7 +203,7 @@ try {
         new BusinessContacts(),
     ];
     $request->businessInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessInput->name = 'Jimmy Wiegand';
+    $request->businessInput->name = 'New Reactive dock';
     $request->businessInput->status = Schemasstatus::Archived;
     $request->businessInput->taxIdentifier = 'AB0123456789';
     $request->businessId = 'biz_01gvcz4m28csa5kem2gqq5ymxn';

@@ -1,4 +1,5 @@
 # Customers
+(*customers*)
 
 ## Overview
 
@@ -39,8 +40,8 @@ try {
     $request = new CustomerCreateInput();
     $request->email = 'weloveyourproduct@paddle.com';
     $request->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->locale = 'aut';
-    $request->name = 'Sabrina Smitham DVM';
+    $request->locale = 'fr_CH';
+    $request->name = 'Configuration Money';
 
     $response = $sdk->customers->create($request);
 
@@ -133,12 +134,12 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListCustomersRequest();
-    $request->after = 'voluptatibus';
-    $request->id = 'e78f097b-0074-4f15-871b-5e6e13b99d48';
-    $request->orderBy = 'rem';
-    $request->perPage = 916723;
+    $request->after = 'Northeast Metal Canada';
+    $request->id = '<ID>';
+    $request->orderBy = 'Data Response West';
+    $request->perPage = 718303;
     $request->search = 'upgrade';
-    $request->status = Status::Active;
+    $request->status = Status::Archived;
 
     $response = $sdk->customers->list($request);
 
@@ -246,8 +247,8 @@ try {
     $request->customerInput = new CustomerInput();
     $request->customerInput->email = 'weloveyourproduct@paddle.com';
     $request->customerInput->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->customerInput->locale = 'repudiandae';
-    $request->customerInput->name = 'Patrick Ward';
+    $request->customerInput->locale = 'sk';
+    $request->customerInput->name = 'Rock';
     $request->customerInput->status = Schemasstatus::Active;
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 

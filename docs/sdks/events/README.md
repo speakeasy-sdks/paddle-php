@@ -1,4 +1,5 @@
 # Events
+(*events*)
 
 ## Overview
 
@@ -32,9 +33,9 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListEventsRequest();
-    $request->after = 'occaecati';
-    $request->orderBy = 'enim';
-    $request->perPage = 881736;
+    $request->after = 'Northeast Metal Canada';
+    $request->orderBy = 'Data Response West';
+    $request->perPage = 718303;
 
     $response = $sdk->events->list($request);
 

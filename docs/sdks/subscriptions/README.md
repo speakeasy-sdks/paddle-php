@@ -1,4 +1,5 @@
 # Subscriptions
+(*subscriptions*)
 
 ## Overview
 
@@ -100,7 +101,7 @@ $sdk = Paddle::builder()
 try {
     $request = new CreateSubscriptionChargeRequest();
     $request->subscriptionCharge = new SubscriptionCharge();
-    $request->subscriptionCharge->effectiveFrom = EffectiveFrom::Immediately;
+    $request->subscriptionCharge->effectiveFrom = EffectiveFrom::NextBillingPeriod;
     $request->subscriptionCharge->items = [
         new SubscriptionChargeItems(),
     ];
@@ -150,12 +151,12 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListSubscriptionsRequest();
-    $request->after = 'id';
+    $request->after = 'Northeast Metal Canada';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
-    $request->orderBy = 'labore';
-    $request->perPage = 290077;
+    $request->orderBy = 'Data Response West';
+    $request->perPage = 718303;
     $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
-    $request->status = StatusSubscription::Canceled;
+    $request->status = StatusSubscription::Trialing;
 
     $response = $sdk->subscriptions->list($request);
 
@@ -209,8 +210,8 @@ $sdk = Paddle::builder()
 try {
     $request = new PauseSubscriptionRequest();
     $request->requestBody = new PauseSubscriptionRequestBody();
-    $request->requestBody->effectiveFrom = EffectiveFromNullable::Immediately;
-    $request->requestBody->resumeAt = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2019-10-12T07:20:50.52Z');
+    $request->requestBody->effectiveFrom = EffectiveFromNullable::NextBillingPeriod;
+    $request->requestBody->resumeAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->pause($request);

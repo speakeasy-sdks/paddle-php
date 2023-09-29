@@ -1,4 +1,5 @@
 # Notifications
+(*notifications*)
 
 ## Overview
 
@@ -44,12 +45,12 @@ $sdk = Paddle::builder()
 try {
     $request = new NotificationSettingCreateInput();
     $request->active = false;
-    $request->apiVersion = 965417;
-    $request->description = 'quidem';
-    $request->destination = 'provident';
+    $request->apiVersion = 659672;
+    $request->description = 'Persistent next generation circuit';
+    $request->destination = 'between cyan';
     $request->includeSensitiveFields = false;
     $request->subscribedEvents = [
-        'nam',
+        'input',
     ];
     $request->type = NotificationSettingCreateType::Url;
 
@@ -236,14 +237,14 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListNotificationsRequest();
-    $request->after = 'blanditiis';
-    $request->filter = 'ctm_01gw4qna8a0w5ywmy8kb9syy84';
+    $request->after = 'Northeast Metal Canada';
+    $request->filter = 'sub_01gw4rrmfrqcwkhjm04hr3ah4n';
     $request->from = '2023-04-18T17:03:26';
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
-    $request->orderBy = 'sapiente';
-    $request->perPage = 230533;
+    $request->orderBy = 'orchid Van';
+    $request->perPage = 86140;
     $request->search = 'upgrade';
-    $request->status = StatusNotification::NeedsRetry;
+    $request->status = StatusNotification::Failed;
     $request->to = '2023-04-18T17:03:26';
 
     $response = $sdk->notifications->list($request);
@@ -289,9 +290,9 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListNotificationLogsRequest();
-    $request->after = 'nisi';
+    $request->after = 'Wiley joule Rapids';
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
-    $request->perPage = 423855;
+    $request->perPage = 9396;
 
     $response = $sdk->notifications->listLogs($request);
 
@@ -424,9 +425,9 @@ $sdk = Paddle::builder()
 try {
     $request = new PostNotificationSettingsNotificationSettingIdReplayRequest();
     $request->requestBody = new PostNotificationSettingsNotificationSettingIdReplayRequestBody();
-    $request->requestBody->filter = 'ctm_01gw4qna8a0w5ywmy8kb9syy84';
-    $request->requestBody->from = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2019-10-12T07:20:50.52Z');
-    $request->requestBody->to = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2019-10-12T07:20:50.52Z');
+    $request->requestBody->filter = 'txn_01h3cgmh9qn7yezn4rgze4nrg2';
+    $request->requestBody->from = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
+    $request->requestBody->to = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
 
     $response = $sdk->notifications->replayBySetting($request);
@@ -481,12 +482,12 @@ try {
     $request = new UpdateNotificationSettingRequest();
     $request->notificationSettingUpdate = new NotificationSettingUpdate();
     $request->notificationSettingUpdate->active = false;
-    $request->notificationSettingUpdate->apiVersion = 606393;
-    $request->notificationSettingUpdate->description = 'molestiae';
-    $request->notificationSettingUpdate->destination = 'perferendis';
+    $request->notificationSettingUpdate->apiVersion = 303975;
+    $request->notificationSettingUpdate->description = 'Implemented clear-thinking firmware';
+    $request->notificationSettingUpdate->destination = 'shame dimly esse';
     $request->notificationSettingUpdate->includeSensitiveFields = false;
     $request->notificationSettingUpdate->subscribedEvents = [
-        'nihil',
+        'quibusdam',
     ];
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
 

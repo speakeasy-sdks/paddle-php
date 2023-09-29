@@ -1,4 +1,5 @@
 # Adjustments
+(*adjustments*)
 
 ## Overview
 
@@ -55,7 +56,7 @@ $sdk = Paddle::builder()
 try {
     $request = new AdjustmentCreateInput();
     $request->action = Schemasaction::Refund;
-    $request->currencyCode = CurrencyCode2::Krw;
+    $request->currencyCode = CurrencyCode2::Jpy;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->id = 'adj_01gya6twkp8y0tv1e19rsgst9m';
     $request->items = [
@@ -66,17 +67,17 @@ try {
     $request->payoutTotals->chargebackFee->amount = '1680';
     $request->payoutTotals->chargebackFee->original = new AdjustmentPayoutTotalsChargebackFeeOriginal();
     $request->payoutTotals->chargebackFee->original->amount = '1500';
-    $request->payoutTotals->chargebackFee->original->currencyCode = CurrencyCodeChargeback::Usd;
-    $request->payoutTotals->currencyCode = CurrencyCodePayouts::Huf;
+    $request->payoutTotals->chargebackFee->original->currencyCode = CurrencyCodeChargeback::Gbp;
+    $request->payoutTotals->currencyCode = CurrencyCodePayouts::Usd;
     $request->payoutTotals->earnings = '15120';
     $request->payoutTotals->fee = '300';
     $request->payoutTotals->subtotal = '15000';
     $request->payoutTotals->tax = '1500';
     $request->payoutTotals->total = '16500';
-    $request->reason = 'dicta';
+    $request->reason = 'innovative blue';
     $request->status = SchemasstatusAdjustment::Rejected;
     $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
-    $request->transactionId = 'officia';
+    $request->transactionId = 'grey';
 
     $response = $sdk->adjustments->create($request);
 
@@ -123,12 +124,12 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListAdjustmentsRequest();
-    $request->action = Action::Credit;
-    $request->after = 'fugit';
+    $request->action = Action::CreditReverse;
+    $request->after = 'compress';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
-    $request->id = '8fc81674-2cb7-4392-8592-9396fea7596e';
-    $request->orderBy = 'quidem';
-    $request->perPage = 99280;
+    $request->id = '<ID>';
+    $request->orderBy = 'Canada that orchid';
+    $request->perPage = 282238;
     $request->status = StatusAdjustment::Approved;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
