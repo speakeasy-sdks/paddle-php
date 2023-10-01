@@ -11,8 +11,14 @@ Subscriptions - Paddle Developer Center
 
 * [cancel](#cancel) - Cancel a subscription
 * [create](#create) - Create a one-time charge for a subscription
+* [createPreview](#createpreview) - Preview one-off charge for a subscription
+* [get](#get) - Get a subscription
+* [getUpdatedPaymentMethodTransaction](#getupdatedpaymentmethodtransaction) - Get a transaction to update payment method
 * [list](#list) - List subscriptions
 * [pause](#pause) - Pause a subscription
+* [previewSubscription](#previewsubscription) - Preview an update to a subscription
+* [resumeSubscription](#resumesubscription) - Resume a paused subscription
+* [update](#update) - Update a subscription
 
 ## cancel
 
@@ -129,6 +135,160 @@ try {
 **[?\paddle\Paddle\Models\Operations\CreateSubscriptionChargeResponse](../../models/operations/CreateSubscriptionChargeResponse.md)**
 
 
+## createPreview
+
+Previews a new one-off charge for a subscription. Use to preview the outcome of adding non-recurring items to a subscription.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \paddle\Paddle\Paddle;
+use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewRequest;
+use \paddle\Paddle\Models\Shared\SubscriptionCharge;
+use \paddle\Paddle\Models\Shared\EffectiveFrom;
+use \paddle\Paddle\Models\Shared\SubscriptionChargeItems;
+
+$sdk = Paddle::builder()
+    ->build();
+
+try {
+    $request = new CreateSubscriptionChargePreviewRequest();
+    $request->subscriptionCharge = new SubscriptionCharge();
+    $request->subscriptionCharge->effectiveFrom = EffectiveFrom::NextBillingPeriod;
+    $request->subscriptionCharge->items = [
+        new SubscriptionChargeItems(),
+    ];
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+
+    $response = $sdk->subscriptions->createPreview($request);
+
+    if ($response->createSubscriptionChargePreview200ApplicationJSONObject !== null) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                                   | [\paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewRequest](../../models/operations/CreateSubscriptionChargePreviewRequest.md) | :heavy_check_mark:                                                                                                                           | The request object to use for the request.                                                                                                   |
+
+
+### Response
+
+**[?\paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewResponse](../../models/operations/CreateSubscriptionChargePreviewResponse.md)**
+
+
+## get
+
+Returns a subscription using its ID.
+
+Use the `include` parameter to include transaction information in the response.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \paddle\Paddle\Paddle;
+use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle\Models\Operations\GetSubscriptionRequest;
+use \paddle\Paddle\Models\Shared\IncludeSubscription;
+
+$sdk = Paddle::builder()
+    ->build();
+
+try {
+    $request = new GetSubscriptionRequest();
+    $request->include = IncludeSubscription::RecurringTransactionDetails;
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+
+    $response = $sdk->subscriptions->get($request);
+
+    if ($response->getSubscription200ApplicationJSONObject !== null) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                   | [\paddle\Paddle\Models\Operations\GetSubscriptionRequest](../../models/operations/GetSubscriptionRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+
+
+### Response
+
+**[?\paddle\Paddle\Models\Operations\GetSubscriptionResponse](../../models/operations/GetSubscriptionResponse.md)**
+
+
+## getUpdatedPaymentMethodTransaction
+
+Returns a transaction that you can pass to a checkout to let customers update their payment details. Only for subscriptions where `collection_mode` is `automatic`.
+
+The transaction returned depends on the status of the related subscription:
+
+* Where a subscription is `past_due`, it returns the most recent `past_due` transaction.
+* Where a subscription is `active`, it creates a new zero amount transaction for the items on a subscription.
+
+You can use the returned `checkout.url`, or pass the returned transaction ID to Paddle.js to open a checkout to present customers with a way of updating their payment details.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \paddle\Paddle\Paddle;
+use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest;
+
+$sdk = Paddle::builder()
+    ->build();
+
+try {
+    $request = new GetSubscriptionUpdatePaymentMethodTransactionRequest();
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+
+    $response = $sdk->subscriptions->getUpdatedPaymentMethodTransaction($request);
+
+    if ($response->getSubscriptionUpdatePaymentMethodTransaction200ApplicationJSONObject !== null) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                                                                               | [\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest](../../models/operations/GetSubscriptionUpdatePaymentMethodTransactionRequest.md) | :heavy_check_mark:                                                                                                                                                       | The request object to use for the request.                                                                                                                               |
+
+
+### Response
+
+**[?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionResponse](../../models/operations/GetSubscriptionUpdatePaymentMethodTransactionResponse.md)**
+
+
 ## list
 
 Returns a paginated list of subscriptions. Use the query parameters to page through results.
@@ -234,4 +394,222 @@ try {
 ### Response
 
 **[?\paddle\Paddle\Models\Operations\PauseSubscriptionResponse](../../models/operations/PauseSubscriptionResponse.md)**
+
+
+## previewSubscription
+
+Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.
+
+If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \paddle\Paddle\Paddle;
+use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle\Models\Operations\PreviewSubscriptionRequest;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdate;
+use \paddle\Paddle\Models\Shared\BillingDetails2;
+use \paddle\Paddle\Models\Shared\Period2;
+use \paddle\Paddle\Models\Shared\Period2Interval;
+use \paddle\Paddle\Models\Shared\CollectionMode2;
+use \paddle\Paddle\Models\Shared\CurrencyCode2;
+use \paddle\Paddle\Models\Shared\CustomData;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdateDiscount;
+use \paddle\Paddle\Models\Shared\EffectiveFrom;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdateItem;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdateProrationBillingMode;
+
+$sdk = Paddle::builder()
+    ->build();
+
+try {
+    $request = new PreviewSubscriptionRequest();
+    $request->subscriptionUpdate = new SubscriptionUpdate();
+    $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
+    $request->subscriptionUpdate->billingDetails = new BillingDetails2();
+    $request->subscriptionUpdate->billingDetails->additionalInformation = 'watt';
+    $request->subscriptionUpdate->billingDetails->enableCheckout = false;
+    $request->subscriptionUpdate->billingDetails->paymentTerms = new Period2();
+    $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 727815;
+    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Period2Interval::Day;
+    $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'Canyon fuchsia';
+    $request->subscriptionUpdate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
+    $request->subscriptionUpdate->collectionMode = CollectionMode2::Manual;
+    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Gbp;
+    $request->subscriptionUpdate->customData = new CustomData();
+    $request->subscriptionUpdate->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
+    $request->subscriptionUpdate->discount = new SubscriptionUpdateDiscount();
+    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::Immediately;
+    $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
+    $request->subscriptionUpdate->items = [
+        new SubscriptionUpdateItem(),
+    ];
+    $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
+    $request->subscriptionUpdate->scheduledChange = 'Hartford';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+
+    $response = $sdk->subscriptions->previewSubscription($request);
+
+    if ($response->previewSubscription200ApplicationJSONObject !== null) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                           | [\paddle\Paddle\Models\Operations\PreviewSubscriptionRequest](../../models/operations/PreviewSubscriptionRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+
+
+### Response
+
+**[?\paddle\Paddle\Models\Operations\PreviewSubscriptionResponse](../../models/operations/PreviewSubscriptionResponse.md)**
+
+
+## resumeSubscription
+
+Resumes a paused subscription using its ID. Only `paused` subscriptions can be resumed. You cannot resume a `canceled` subscription.
+
+On resume, Paddle bills for a subscription immediately. Subscription billing dates are recalculated based on the resume date.
+
+If successful, Paddle returns a copy of the updated subscription entity. The subscription status is `active`, and billing dates are updated to reflect the resume date.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \paddle\Paddle\Paddle;
+use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle\Models\Operations\ResumeSubscriptionRequest;
+
+$sdk = Paddle::builder()
+    ->build();
+
+try {
+    $request = new ResumeSubscriptionRequest();
+    $request->requestBody = new ResumeSubscriptionRequestBody3();
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+
+    $response = $sdk->subscriptions->resumeSubscription($request);
+
+    if ($response->resumeSubscription200ApplicationJSONObject !== null) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\ResumeSubscriptionRequest](../../models/operations/ResumeSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+
+
+### Response
+
+**[?\paddle\Paddle\Models\Operations\ResumeSubscriptionResponse](../../models/operations/ResumeSubscriptionResponse.md)**
+
+
+## update
+
+Updates a subscription using its ID.
+
+When making changes to items on a subscription, you must include the `proration_billing_mode` field to tell Paddle how to bill for those changes. Paddle returns an error if this field is missing when sending `items`.
+
+Send the complete list of items that you'd like to be on a subscription — including existing items. If you omit items, they're removed from the subscription.
+
+For each item, send `price_id` and `quantity`. Paddle responds with the full price object for each price. If you're updating an existing item, you can omit the `quantity` if you don't want to update it.
+
+If successful, your response includes a copy of the updated subscription entity.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \paddle\Paddle\Paddle;
+use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle\Models\Operations\UpdateSubscriptionRequest;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdate;
+use \paddle\Paddle\Models\Shared\BillingDetails2;
+use \paddle\Paddle\Models\Shared\Period2;
+use \paddle\Paddle\Models\Shared\Period2Interval;
+use \paddle\Paddle\Models\Shared\CollectionMode2;
+use \paddle\Paddle\Models\Shared\CurrencyCode2;
+use \paddle\Paddle\Models\Shared\CustomData;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdateDiscount;
+use \paddle\Paddle\Models\Shared\EffectiveFrom;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdateItem;
+use \paddle\Paddle\Models\Shared\SubscriptionUpdateProrationBillingMode;
+
+$sdk = Paddle::builder()
+    ->build();
+
+try {
+    $request = new UpdateSubscriptionRequest();
+    $request->subscriptionUpdate = new SubscriptionUpdate();
+    $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
+    $request->subscriptionUpdate->billingDetails = new BillingDetails2();
+    $request->subscriptionUpdate->billingDetails->additionalInformation = 'New Reactive dock';
+    $request->subscriptionUpdate->billingDetails->enableCheckout = false;
+    $request->subscriptionUpdate->billingDetails->paymentTerms = new Period2();
+    $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 627690;
+    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Period2Interval::Month;
+    $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'invoice Arizona';
+    $request->subscriptionUpdate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
+    $request->subscriptionUpdate->collectionMode = CollectionMode2::Automatic;
+    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Twd;
+    $request->subscriptionUpdate->customData = new CustomData();
+    $request->subscriptionUpdate->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
+    $request->subscriptionUpdate->discount = new SubscriptionUpdateDiscount();
+    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::NextBillingPeriod;
+    $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
+    $request->subscriptionUpdate->items = [
+        new SubscriptionUpdateItem(),
+    ];
+    $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullImmediately;
+    $request->subscriptionUpdate->scheduledChange = 'dynamic';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+
+    $response = $sdk->subscriptions->update($request);
+
+    if ($response->updateSubscription200ApplicationJSONObject !== null) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\UpdateSubscriptionRequest](../../models/operations/UpdateSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+
+
+### Response
+
+**[?\paddle\Paddle\Models\Operations\UpdateSubscriptionResponse](../../models/operations/UpdateSubscriptionResponse.md)**
 

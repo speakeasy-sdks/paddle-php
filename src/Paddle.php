@@ -91,6 +91,20 @@ class Paddle
 	public Notifications $notifications;
 	
     /**
+     * Work with prices.
+     * 
+     * @var Prices $$prices
+     */
+	public Prices $prices;
+	
+    /**
+     * Work with products.
+     * 
+     * @var Products $$products
+     */
+	public Products $products;
+	
+    /**
      * Work with subscriptions.
      * 
      * @var Subscriptions $$subscriptions
@@ -103,6 +117,8 @@ class Paddle
      * @var Transactions $$transactions
      */
 	public Transactions $transactions;
+	
+	public TransactionService $transactionService;
 		
 	private SDKConfiguration $sdkConfiguration;
 
@@ -141,8 +157,14 @@ class Paddle
 		
 		$this->notifications = new Notifications($this->sdkConfiguration);
 		
+		$this->prices = new Prices($this->sdkConfiguration);
+		
+		$this->products = new Products($this->sdkConfiguration);
+		
 		$this->subscriptions = new Subscriptions($this->sdkConfiguration);
 		
 		$this->transactions = new Transactions($this->sdkConfiguration);
+		
+		$this->transactionService = new TransactionService($this->sdkConfiguration);
 	}
 }

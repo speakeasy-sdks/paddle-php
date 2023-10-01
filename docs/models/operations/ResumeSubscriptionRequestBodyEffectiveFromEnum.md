@@ -1,0 +1,8 @@
+# ResumeSubscriptionRequestBodyEffectiveFromEnum
+
+
+## Fields
+
+| Field                                                                                                                               | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `effectiveFrom`                                                                                                                     | [\paddle\Paddle\Models\Shared\EffectiveFromNullable](../../models/shared/EffectiveFromNullable.md)                                  | :heavy_check_mark:                                                                                                                  | When this scheduled change should take effect from. `immediately` is only allowed when canceling or resuming a paused subscription. |

@@ -22,6 +22,204 @@ class Invoices
 	}
 	
     /**
+     * Cancel an invoice
+     * 
+     * Cancels an invoice using its ID.
+     * 
+     * Invoices can only be canceled where they are not `paid` or already canceled.
+     * 
+     * If successful, your response includes a copy of the invoice entity with the `status` of `canceled`.
+     * 
+     * @param \paddle\Paddle\Models\Operations\CancelInvoiceRequest $request
+     * @return \paddle\Paddle\Models\Operations\CancelInvoiceResponse
+     */
+	public function cancel(
+        ?\paddle\Paddle\Models\Operations\CancelInvoiceRequest $request,
+    ): \paddle\Paddle\Models\Operations\CancelInvoiceResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/invoices/{invoice_id}/cancel', \paddle\Paddle\Models\Operations\CancelInvoiceRequest::class, $request);
+        
+        $options = ['http_errors' => false];
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \paddle\Paddle\Models\Operations\CancelInvoiceResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->cancelInvoice200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CancelInvoice200ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->cancelInvoice401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CancelInvoice401ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 404) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->cancelInvoice404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CancelInvoice404ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 500) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->cancelInvoice500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CancelInvoice500ApplicationJSON', 'json');
+            }
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Create a draft invoice
+     * 
+     * Creates a draft invoice.
+     * 
+     * Invoices are always created with the `status` as `draft`. This means they don't have an `invoice_number` and you can make changes to the invoice and its items.
+     * 
+     * If successful, your response includes a copy of the new invoice entity.
+     * 
+     * @param \paddle\Paddle\Models\Shared\InvoiceInput $request
+     * @return \paddle\Paddle\Models\Operations\CreateInvoiceResponse
+     */
+	public function create(
+        ?\paddle\Paddle\Models\Shared\InvoiceInput $request,
+    ): \paddle\Paddle\Models\Operations\CreateInvoiceResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/invoices');
+        
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, "request", "json");
+        if ($body !== null) {
+            $options = array_merge_recursive($options, $body);
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \paddle\Paddle\Models\Operations\CreateInvoiceResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 201) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->createInvoice201ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateInvoice201ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 400) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->createInvoice400ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateInvoice400ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->createInvoice401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateInvoice401ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 500) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->createInvoice500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateInvoice500ApplicationJSON', 'json');
+            }
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Get an invoice
+     * 
+     * Returns an invoice using its ID.
+     * 
+     * @param \paddle\Paddle\Models\Operations\GetInvoiceRequest $request
+     * @return \paddle\Paddle\Models\Operations\GetInvoiceResponse
+     */
+	public function get(
+        ?\paddle\Paddle\Models\Operations\GetInvoiceRequest $request,
+    ): \paddle\Paddle\Models\Operations\GetInvoiceResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/invoices/{invoice_id}', \paddle\Paddle\Models\Operations\GetInvoiceRequest::class, $request);
+        
+        $options = ['http_errors' => false];
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \paddle\Paddle\Models\Operations\GetInvoiceResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->getInvoice200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetInvoice200ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->getInvoice401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetInvoice401ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 404) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->getInvoice404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetInvoice404ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 500) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->getInvoice500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetInvoice500ApplicationJSON', 'json');
+            }
+        }
+
+        return $response;
+    }
+	
+    /**
      * Get a PDF for an invoice
      * 
      * Generates a PDF for an invoice, then returns a link to it.
@@ -81,6 +279,237 @@ class Invoices
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $response->getInvoicePdf500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetInvoicePdf500ApplicationJSON', 'json');
+            }
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Issue an invoice
+     * 
+     * Issues a draft invoice, changing the `status` from `draft` to either:
+     * 
+     * * `pending_acceptance`, where a customer hasn't yet accepted the Paddle merchant of record terms
+     * * `unpaid` otherwise
+     * 
+     * At this point, Paddle:
+     * 
+     * * assigns an `invoice_number`
+     * * sends a copy of the invoice to your customer and any `contacts` against the business on the invoice
+     * 
+     * Issued invoices are considered a legal document, so you can't make any changes to them. Cancel an invoice and create another if you need to make changes.
+     * 
+     * If successful, your response includes a copy of the invoice entity with the new status.
+     * 
+     * @param \paddle\Paddle\Models\Operations\IssueInvoiceRequest $request
+     * @return \paddle\Paddle\Models\Operations\IssueInvoiceResponse
+     */
+	public function issueInvoice(
+        ?\paddle\Paddle\Models\Operations\IssueInvoiceRequest $request,
+    ): \paddle\Paddle\Models\Operations\IssueInvoiceResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/invoices/{invoice_id}/issue', \paddle\Paddle\Models\Operations\IssueInvoiceRequest::class, $request);
+        
+        $options = ['http_errors' => false];
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \paddle\Paddle\Models\Operations\IssueInvoiceResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->issueInvoice200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\IssueInvoice200ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 400) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->issueInvoice400ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\IssueInvoice400ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->issueInvoice401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\IssueInvoice401ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 404) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->issueInvoice404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\IssueInvoice404ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 422) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->issueInvoice422ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\IssueInvoice422ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 500) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->issueInvoice500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\IssueInvoice500ApplicationJSON', 'json');
+            }
+        }
+
+        return $response;
+    }
+	
+    /**
+     * List invoices
+     * 
+     * Returns a paginated list of invoices. Use the query parameters to page through results.
+     * 
+     * @param \paddle\Paddle\Models\Operations\ListInvoicesRequest $request
+     * @return \paddle\Paddle\Models\Operations\ListInvoicesResponse
+     */
+	public function list(
+        ?\paddle\Paddle\Models\Operations\ListInvoicesRequest $request,
+    ): \paddle\Paddle\Models\Operations\ListInvoicesResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/invoices');
+        
+        $options = ['http_errors' => false];
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\paddle\Paddle\Models\Operations\ListInvoicesRequest::class, $request, null));
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \paddle\Paddle\Models\Operations\ListInvoicesResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->listInvoices200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListInvoices200ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->listInvoices401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListInvoices401ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 500) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->listInvoices500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListInvoices500ApplicationJSON', 'json');
+            }
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Update a draft invoice
+     * 
+     * Updates a draft invoice using its ID.
+     * 
+     * Only invoices with the status of `draft` can be updated. You cannot update invoices that are issued, canceled, or paid.
+     * 
+     * If successful, your response includes a copy of the updated invoice entity.
+     * 
+     * @param \paddle\Paddle\Models\Operations\UpdateInvoiceRequest $request
+     * @return \paddle\Paddle\Models\Operations\UpdateInvoiceResponse
+     */
+	public function update(
+        ?\paddle\Paddle\Models\Operations\UpdateInvoiceRequest $request,
+    ): \paddle\Paddle\Models\Operations\UpdateInvoiceResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/invoices/{invoice_id}', \paddle\Paddle\Models\Operations\UpdateInvoiceRequest::class, $request);
+        
+        $options = ['http_errors' => false];
+        $body = Utils\Utils::serializeRequestBody($request, "invoiceForPatch", "json");
+        if ($body !== null) {
+            $options = array_merge_recursive($options, $body);
+        }
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('PATCH', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \paddle\Paddle\Models\Operations\UpdateInvoiceResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->updateInvoice200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateInvoice200ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 400) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->updateInvoice400ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateInvoice400ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->updateInvoice401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateInvoice401ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 404) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->updateInvoice404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateInvoice404ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 422) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->updateInvoice422ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateInvoice422ApplicationJSON', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 500) {
+            $response->headers = $httpResponse->getHeaders();
+            
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->updateInvoice500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateInvoice500ApplicationJSON', 'json');
             }
         }
 

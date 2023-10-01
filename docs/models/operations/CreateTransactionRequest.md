@@ -1,0 +1,9 @@
+# CreateTransactionRequest
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `include`                                                                                             | [?\paddle\Paddle\Models\Shared\IncludeTransaction](../../models/shared/IncludeTransaction.md)         | :heavy_minus_sign:                                                                                    | Include related entities in the response.                                                             |
+| `transactionCreateInput`                                                                              | [?\paddle\Paddle\Models\Shared\TransactionCreateInput](../../models/shared/TransactionCreateInput.md) | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
