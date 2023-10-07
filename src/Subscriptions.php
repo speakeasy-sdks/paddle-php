@@ -124,7 +124,7 @@ class Subscriptions
         $url = Utils\Utils::generateUrl($baseUrl, '/subscriptions/{subscription_id}/charge', \paddle\Paddle\Models\Operations\CreateSubscriptionChargeRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "subscriptionCharge", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
@@ -182,7 +182,7 @@ class Subscriptions
         $url = Utils\Utils::generateUrl($baseUrl, '/subscriptions/{subscription_id}/charge/preview', \paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "subscriptionCharge", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }

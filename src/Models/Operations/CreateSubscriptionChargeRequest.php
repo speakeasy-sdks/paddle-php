@@ -11,8 +11,13 @@ namespace paddle\Paddle\Models\Operations;
 use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class CreateSubscriptionChargeRequest
 {
+    /**
+     * $requestBody
+     * 
+     * @var ?array<string, mixed> $requestBody
+     */
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\SubscriptionCharge $subscriptionCharge = null;
+    public ?array $requestBody = null;
     
     /**
      * Paddle ID of the subscription entity to work with.
@@ -24,7 +29,7 @@ class CreateSubscriptionChargeRequest
     
 	public function __construct()
 	{
-		$this->subscriptionCharge = null;
+		$this->requestBody = null;
 		$this->subscriptionId = "";
 	}
 }

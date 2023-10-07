@@ -100,10 +100,10 @@ class SubscriptionUpdate
     /**
      * List of items on this subscription. Only recurring items may be added. Send the complete list of items that should be on this subscription, including existing items to retain.
      * 
-     * @var ?array<\paddle\Paddle\Models\Shared\SubscriptionUpdateItem> $items
+     * @var ?array<array<string, mixed>> $items
      */
 	#[\JMS\Serializer\Annotation\SerializedName('items')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\SubscriptionUpdateItem>')]
+    #[\JMS\Serializer\Annotation\Type('array<array<string, mixed>>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $items = null;
     

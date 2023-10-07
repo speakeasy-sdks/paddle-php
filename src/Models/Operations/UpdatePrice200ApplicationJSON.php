@@ -20,11 +20,11 @@ class UpdatePrice200ApplicationJSON
     /**
      * Represents a price entity.
      * 
-     * @var \paddle\Paddle\Models\Shared\Price $data
+     * @var array<string, mixed> $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Price')]
-    public \paddle\Paddle\Models\Shared\Price $data;
+    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    public array $data;
     
     /**
      * Information about this response.
@@ -37,7 +37,7 @@ class UpdatePrice200ApplicationJSON
     
 	public function __construct()
 	{
-		$this->data = new \paddle\Paddle\Models\Shared\Price();
+		$this->data = [];
 		$this->meta = new \paddle\Paddle\Models\Shared\Meta();
 	}
 }

@@ -97,19 +97,14 @@ require_once 'vendor/autoload.php';
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\CreateSubscriptionChargeRequest;
-use \paddle\Paddle\Models\Shared\SubscriptionCharge;
-use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionChargeItems;
 
 $sdk = Paddle::builder()
     ->build();
 
 try {
     $request = new CreateSubscriptionChargeRequest();
-    $request->subscriptionCharge = new SubscriptionCharge();
-    $request->subscriptionCharge->effectiveFrom = EffectiveFrom::NextBillingPeriod;
-    $request->subscriptionCharge->items = [
-        new SubscriptionChargeItems(),
+    $request->requestBody = [
+        'online' => 'Configuration',
     ];
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
@@ -150,19 +145,14 @@ require_once 'vendor/autoload.php';
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewRequest;
-use \paddle\Paddle\Models\Shared\SubscriptionCharge;
-use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionChargeItems;
 
 $sdk = Paddle::builder()
     ->build();
 
 try {
     $request = new CreateSubscriptionChargePreviewRequest();
-    $request->subscriptionCharge = new SubscriptionCharge();
-    $request->subscriptionCharge->effectiveFrom = EffectiveFrom::NextBillingPeriod;
-    $request->subscriptionCharge->items = [
-        new SubscriptionChargeItems(),
+    $request->requestBody = [
+        'phew' => 'Planner',
     ];
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
@@ -422,7 +412,6 @@ use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\CustomData;
 use \paddle\Paddle\Models\Shared\SubscriptionUpdateDiscount;
 use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateItem;
 use \paddle\Paddle\Models\Shared\SubscriptionUpdateProrationBillingMode;
 
 $sdk = Paddle::builder()
@@ -448,11 +437,13 @@ try {
     $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::Immediately;
     $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->subscriptionUpdate->items = [
-        new SubscriptionUpdateItem(),
+        [
+            'Markets' => 'Nevada',
+        ],
     ];
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
-    $request->subscriptionUpdate->scheduledChange = 'Hartford';
+    $request->subscriptionUpdate->scheduledChange = 'Northeast';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->previewSubscription($request);
@@ -502,7 +493,7 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ResumeSubscriptionRequest();
-    $request->requestBody = new ResumeSubscriptionRequestBody3();
+    $request->requestBody = 'Hyundai';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->resumeSubscription($request);
@@ -559,7 +550,6 @@ use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\CustomData;
 use \paddle\Paddle\Models\Shared\SubscriptionUpdateDiscount;
 use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateItem;
 use \paddle\Paddle\Models\Shared\SubscriptionUpdateProrationBillingMode;
 
 $sdk = Paddle::builder()
@@ -585,11 +575,13 @@ try {
     $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::NextBillingPeriod;
     $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->subscriptionUpdate->items = [
-        new SubscriptionUpdateItem(),
+        [
+            'withdrawal' => 'extend',
+        ],
     ];
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullImmediately;
-    $request->subscriptionUpdate->scheduledChange = 'dynamic';
+    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::ProratedNextBillingPeriod;
+    $request->subscriptionUpdate->scheduledChange = 'bifurcated';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->update($request);

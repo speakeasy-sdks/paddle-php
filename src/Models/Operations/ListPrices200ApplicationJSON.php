@@ -20,10 +20,10 @@ class ListPrices200ApplicationJSON
     /**
      * $data
      * 
-     * @var array<\paddle\Paddle\Models\Shared\PriceIncludes> $data
+     * @var array<array<string, mixed>> $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\PriceIncludes>')]
+    #[\JMS\Serializer\Annotation\Type('array<array<string, mixed>>')]
     public array $data;
     
     /**

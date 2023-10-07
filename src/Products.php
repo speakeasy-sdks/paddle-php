@@ -30,11 +30,11 @@ class Products
      * 
      * If successful, your response includes a copy of the new product entity.
      * 
-     * @param \paddle\Paddle\Models\Shared\ProductCreate $request
+     * @param array<string, mixed> $request
      * @return \paddle\Paddle\Models\Operations\CreateProductResponse
      */
 	public function create(
-        ?\paddle\Paddle\Models\Shared\ProductCreate $request,
+        ?array $request,
     ): \paddle\Paddle\Models\Operations\CreateProductResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -235,7 +235,7 @@ class Products
         $url = Utils\Utils::generateUrl($baseUrl, '/products/{product_id}', \paddle\Paddle\Models\Operations\UpdateProductRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "productPatch", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }

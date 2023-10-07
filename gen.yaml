@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 1fade75ac5b0bdfcf91084f35f8639c8
   docVersion: "1.0"
-  speakeasyVersion: 1.92.2
-  generationVersion: 2.142.2
+  speakeasyVersion: 1.96.1
+  generationVersion: 2.150.0
 generation:
   comments:
     disableComments: false
@@ -14,14 +14,14 @@ generation:
   tagNamespacingDisabled: false
 features:
   php:
-    core: 2.88.0
+    core: 2.88.2
     examples: 2.81.2
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
     inputOutputModels: 2.81.1
     nameOverrides: 2.81.1
 php:
-  version: 0.5.0
+  version: 0.5.1
   maxMethodParams: 0
   namespace: paddle\Paddle
   packageName: paddle/paddle

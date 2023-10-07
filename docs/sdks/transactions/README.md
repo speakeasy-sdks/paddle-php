@@ -58,12 +58,6 @@ use \paddle\Paddle\Models\Shared\CollectionMode2;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\CustomData;
 use \paddle\Paddle\Models\Shared\TransactionItemInput;
-use \paddle\Paddle\Models\Shared\PriceInput;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
-use \paddle\Paddle\Models\Shared\CountryCode2;
 
 $sdk = Paddle::builder()
     ->build();
@@ -318,14 +312,6 @@ use \paddle\Paddle\Models\Shared\CountryCode2;
 use \paddle\Paddle\Models\Shared\TransactionPreviewAdjustmentTotals;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\TransactionPreviewTransactionItemPreviewInput;
-use \paddle\Paddle\Models\Shared\PriceInput;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
 
 $sdk = Paddle::builder()
     ->build();
@@ -477,12 +463,6 @@ use \paddle\Paddle\Models\Shared\CollectionMode2;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\CustomData;
 use \paddle\Paddle\Models\Shared\TransactionItemInput;
-use \paddle\Paddle\Models\Shared\PriceInput;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
-use \paddle\Paddle\Models\Shared\CountryCode2;
 
 $sdk = Paddle::builder()
     ->build();

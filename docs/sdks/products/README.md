@@ -32,20 +32,14 @@ require_once 'vendor/autoload.php';
 
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\ProductCreate;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\TaxCategory1;
 
 $sdk = Paddle::builder()
     ->build();
 
 try {
-    $request = new ProductCreate();
-    $request->customData = new CustomData();
-    $request->description = 'Multi-tiered human-resource model';
-    $request->imageUrl = 'https://impartial-dump.com';
-    $request->name = 'Cambridgeshire grey technology';
-    $request->taxCategory = TaxCategory1::DigitalGoods;
+    $request = [
+        'online' => 'Configuration',
+    ]
 
     $response = $sdk->products->create($request);
 
@@ -59,9 +53,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `$request`                                                                         | [\paddle\Paddle\Models\Shared\ProductCreate](../../models/shared/ProductCreate.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `$request`                                 | [array](../../models//.md)                 | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
@@ -195,23 +189,15 @@ require_once 'vendor/autoload.php';
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\UpdateProductRequest;
-use \paddle\Paddle\Models\Shared\ProductPatch;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\Schemasstatus;
-use \paddle\Paddle\Models\Shared\TaxCategory1;
 
 $sdk = Paddle::builder()
     ->build();
 
 try {
     $request = new UpdateProductRequest();
-    $request->productPatch = new ProductPatch();
-    $request->productPatch->customData = new CustomData();
-    $request->productPatch->description = 'Synchronised 3rd generation matrix';
-    $request->productPatch->imageUrl = 'http://grand-pupa.org';
-    $request->productPatch->name = 'Quality';
-    $request->productPatch->status = Schemasstatus::Active;
-    $request->productPatch->taxCategory = TaxCategory1::ProfessionalServices;
+    $request->requestBody = [
+        'Van' => 'East',
+    ];
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
 
     $response = $sdk->products->update($request);
