@@ -20,11 +20,11 @@ class CreateProduct201ApplicationJSON
     /**
      * Represents a product entity.
      * 
-     * @var array<string, mixed> $data
+     * @var \paddle\Paddle\Models\Shared\Product $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
-    public array $data;
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Product')]
+    public \paddle\Paddle\Models\Shared\Product $data;
     
     /**
      * Information about this response.
@@ -37,7 +37,7 @@ class CreateProduct201ApplicationJSON
     
 	public function __construct()
 	{
-		$this->data = [];
+		$this->data = new \paddle\Paddle\Models\Shared\Product();
 		$this->meta = new \paddle\Paddle\Models\Shared\Meta();
 	}
 }

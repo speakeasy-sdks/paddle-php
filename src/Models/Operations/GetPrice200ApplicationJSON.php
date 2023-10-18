@@ -20,11 +20,11 @@ class GetPrice200ApplicationJSON
     /**
      * Represents a price entity with included entities.
      * 
-     * @var array<string, mixed> $data
+     * @var \paddle\Paddle\Models\Shared\PriceIncludes $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
-    public array $data;
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\PriceIncludes')]
+    public \paddle\Paddle\Models\Shared\PriceIncludes $data;
     
     /**
      * Information about this response.
@@ -37,7 +37,7 @@ class GetPrice200ApplicationJSON
     
 	public function __construct()
 	{
-		$this->data = [];
+		$this->data = new \paddle\Paddle\Models\Shared\PriceIncludes();
 		$this->meta = new \paddle\Paddle\Models\Shared\Meta();
 	}
 }

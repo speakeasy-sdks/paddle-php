@@ -14,12 +14,12 @@ class InvoiceDetailsLineItems
     /**
      * Represents a product entity.
      * 
-     * @var ?array<string, mixed> $product
+     * @var ?\paddle\Paddle\Models\Shared\Product $product
      */
 	#[\JMS\Serializer\Annotation\SerializedName('product')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Product')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?array $product = null;
+    public ?Product $product = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('quantity')]
     #[\JMS\Serializer\Annotation\Type('int')]

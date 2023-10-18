@@ -50,22 +50,22 @@ class TransactionPricingPreviewLineItem
     /**
      * Represents a price entity.
      * 
-     * @var ?array<string, mixed> $price
+     * @var ?\paddle\Paddle\Models\Shared\Price $price
      */
 	#[\JMS\Serializer\Annotation\SerializedName('price')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Price')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?array $price = null;
+    public ?Price $price = null;
     
     /**
      * Represents a product entity.
      * 
-     * @var ?array<string, mixed> $product
+     * @var ?\paddle\Paddle\Models\Shared\Product $product
      */
 	#[\JMS\Serializer\Annotation\SerializedName('product')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Product')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?array $product = null;
+    public ?Product $product = null;
     
     /**
      * Quantity of this preview line item.

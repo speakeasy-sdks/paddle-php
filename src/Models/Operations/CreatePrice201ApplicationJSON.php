@@ -20,11 +20,11 @@ class CreatePrice201ApplicationJSON
     /**
      * Represents a price entity.
      * 
-     * @var array<string, mixed> $data
+     * @var \paddle\Paddle\Models\Shared\Price $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
-    public array $data;
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Price')]
+    public \paddle\Paddle\Models\Shared\Price $data;
     
     /**
      * Information about this response.
@@ -37,7 +37,7 @@ class CreatePrice201ApplicationJSON
     
 	public function __construct()
 	{
-		$this->data = [];
+		$this->data = new \paddle\Paddle\Models\Shared\Price();
 		$this->meta = new \paddle\Paddle\Models\Shared\Meta();
 	}
 }

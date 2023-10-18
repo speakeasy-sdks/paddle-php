@@ -28,14 +28,18 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListEventsRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListEventsRequest();
-    $request->after = 'Northeast Metal Canada';
-    $request->orderBy = 'Data Response West';
-    $request->perPage = 718303;
+    $request->after = 'Bicycle';
+    $request->orderBy = 'Metal';
+    $request->perPage = 297548;
 
     $response = $sdk->events->list($request);
 
@@ -76,7 +80,11 @@ require_once 'vendor/autoload.php';
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {

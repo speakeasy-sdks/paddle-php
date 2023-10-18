@@ -20,10 +20,10 @@ class ListProducts200ApplicationJSON
     /**
      * $data
      * 
-     * @var array<array<string, mixed>> $data
+     * @var array<\paddle\Paddle\Models\Shared\ProductIncludes> $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<array<string, mixed>>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\ProductIncludes>')]
     public array $data;
     
     /**

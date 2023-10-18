@@ -50,7 +50,11 @@ use \paddle\Paddle\Models\Shared\CurrencyCodeChargeback;
 use \paddle\Paddle\Models\Shared\CurrencyCodePayouts;
 use \paddle\Paddle\Models\Shared\SchemasstatusAdjustment;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -74,10 +78,10 @@ try {
     $request->payoutTotals->subtotal = '15000';
     $request->payoutTotals->tax = '1500';
     $request->payoutTotals->total = '16500';
-    $request->reason = 'innovative blue';
+    $request->reason = 'Money';
     $request->status = SchemasstatusAdjustment::Rejected;
     $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
-    $request->transactionId = 'grey';
+    $request->transactionId = 'Cambridgeshire';
 
     $response = $sdk->adjustments->create($request);
 
@@ -119,17 +123,21 @@ use \paddle\Paddle\Models\Operations\ListAdjustmentsRequest;
 use \paddle\Paddle\Models\Shared\Action;
 use \paddle\Paddle\Models\Shared\StatusAdjustment;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListAdjustmentsRequest();
     $request->action = Action::CreditReverse;
-    $request->after = 'compress';
+    $request->after = 'Northeast';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->id = '<ID>';
-    $request->orderBy = 'Canada that orchid';
-    $request->perPage = 282238;
+    $request->orderBy = 'Metal';
+    $request->perPage = 297548;
     $request->status = StatusAdjustment::Approved;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';

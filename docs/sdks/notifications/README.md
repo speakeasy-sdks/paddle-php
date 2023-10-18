@@ -39,7 +39,11 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Shared\NotificationSettingCreateInput;
 use \paddle\Paddle\Models\Shared\NotificationSettingCreateType;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -47,12 +51,12 @@ try {
     $request->active = false;
     $request->apiVersion = 659672;
     $request->description = 'Persistent next generation circuit';
-    $request->destination = 'between cyan';
+    $request->destination = 'Forward';
     $request->includeSensitiveFields = false;
     $request->subscribedEvents = [
-        'input',
+        'Volvo',
     ];
-    $request->type = NotificationSettingCreateType::Url;
+    $request->type = NotificationSettingCreateType::Email;
 
     $response = $sdk->notifications->createSetting($request);
 
@@ -96,7 +100,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\DeleteNotificationSettingRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -141,7 +149,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetNotificationRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -186,7 +198,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetNotificationSettingRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -232,19 +248,23 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListNotificationsRequest;
 use \paddle\Paddle\Models\Shared\StatusNotification;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListNotificationsRequest();
-    $request->after = 'Northeast Metal Canada';
-    $request->filter = 'sub_01gw4rrmfrqcwkhjm04hr3ah4n';
+    $request->after = 'Bicycle';
+    $request->filter = 'txn_01h3cgmh9qn7yezn4rgze4nrg2';
     $request->from = '2023-04-18T17:03:26';
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
-    $request->orderBy = 'orchid Van';
-    $request->perPage = 86140;
+    $request->orderBy = 'Product';
+    $request->perPage = 53150;
     $request->search = 'upgrade';
-    $request->status = StatusNotification::Failed;
+    $request->status = StatusNotification::Delivered;
     $request->to = '2023-04-18T17:03:26';
 
     $response = $sdk->notifications->list($request);
@@ -285,14 +305,18 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListNotificationLogsRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListNotificationLogsRequest();
-    $request->after = 'Wiley joule Rapids';
+    $request->after = 'Cadillac';
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
-    $request->perPage = 9396;
+    $request->perPage = 244239;
 
     $response = $sdk->notifications->listLogs($request);
 
@@ -333,7 +357,11 @@ require_once 'vendor/autoload.php';
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -373,7 +401,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ReplayNotificationRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -419,7 +451,11 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayRequest;
 use \paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayRequestBody;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -475,7 +511,11 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\UpdateNotificationSettingRequest;
 use \paddle\Paddle\Models\Shared\NotificationSettingUpdate;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -484,10 +524,10 @@ try {
     $request->notificationSettingUpdate->active = false;
     $request->notificationSettingUpdate->apiVersion = 303975;
     $request->notificationSettingUpdate->description = 'Implemented clear-thinking firmware';
-    $request->notificationSettingUpdate->destination = 'shame dimly esse';
+    $request->notificationSettingUpdate->destination = 'pascal';
     $request->notificationSettingUpdate->includeSensitiveFields = false;
     $request->notificationSettingUpdate->subscribedEvents = [
-        'quibusdam',
+        'Grocery',
     ];
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
 

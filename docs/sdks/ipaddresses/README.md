@@ -26,7 +26,11 @@ require_once 'vendor/autoload.php';
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {

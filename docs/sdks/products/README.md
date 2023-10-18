@@ -32,14 +32,24 @@ require_once 'vendor/autoload.php';
 
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle\Models\Shared\ProductCreate;
+use \paddle\Paddle\Models\Shared\CustomData;
+use \paddle\Paddle\Models\Shared\TaxCategory1;
+
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
 
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
-    $request = [
-        'online' => 'Configuration',
-    ]
+    $request = new ProductCreate();
+    $request->customData = new CustomData();
+    $request->description = 'Multi-tiered human-resource model';
+    $request->imageUrl = 'https://impartial-dump.com';
+    $request->name = 'blue';
+    $request->taxCategory = TaxCategory1::WebsiteHosting;
 
     $response = $sdk->products->create($request);
 
@@ -53,9 +63,9 @@ try {
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `$request`                                 | [array](../../models//.md)                 | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `$request`                                                                         | [\paddle\Paddle\Models\Shared\ProductCreate](../../models/shared/ProductCreate.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -82,7 +92,11 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetProductRequest;
 use \paddle\Paddle\Models\Shared\IncludeProduct;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -135,18 +149,22 @@ use \paddle\Paddle\Models\Shared\IncludeProduct;
 use \paddle\Paddle\Models\Shared\Status;
 use \paddle\Paddle\Models\Shared\TaxCategory;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListProductsRequest();
-    $request->after = 'Northeast Metal Canada';
+    $request->after = 'Bicycle';
     $request->id = '<ID>';
     $request->include = IncludeProduct::Prices;
-    $request->orderBy = 'Data Response West';
-    $request->perPage = 718303;
-    $request->status = Status::Archived;
-    $request->taxCategory = TaxCategory::DigitalGoods;
+    $request->orderBy = 'Metal';
+    $request->perPage = 297548;
+    $request->status = Status::Active;
+    $request->taxCategory = TaxCategory::SoftwareProgrammingServices;
 
     $response = $sdk->products->list($request);
 
@@ -189,15 +207,27 @@ require_once 'vendor/autoload.php';
 use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\UpdateProductRequest;
+use \paddle\Paddle\Models\Shared\ProductPatch;
+use \paddle\Paddle\Models\Shared\CustomData;
+use \paddle\Paddle\Models\Shared\Schemasstatus;
+use \paddle\Paddle\Models\Shared\TaxCategory1;
+
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
 
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new UpdateProductRequest();
-    $request->requestBody = [
-        'Van' => 'East',
-    ];
+    $request->productPatch = new ProductPatch();
+    $request->productPatch->customData = new CustomData();
+    $request->productPatch->description = 'Synchronised 3rd generation matrix';
+    $request->productPatch->imageUrl = 'http://grand-pupa.org';
+    $request->productPatch->name = 'Metal';
+    $request->productPatch->status = Schemasstatus::Archived;
+    $request->productPatch->taxCategory = TaxCategory1::Ebooks;
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
 
     $response = $sdk->products->update($request);

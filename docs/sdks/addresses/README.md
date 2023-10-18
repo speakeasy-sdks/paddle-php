@@ -36,7 +36,11 @@ use \paddle\Paddle\Models\Operations\CreateAddressRequest;
 use \paddle\Paddle\Models\Shared\AddressCreateInput;
 use \paddle\Paddle\Models\Shared\CountryCode2;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -49,7 +53,7 @@ try {
     $request->addressCreateInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressCreateInput->postalCode = '11105-1803';
     $request->addressCreateInput->region = 'NY';
-    $request->addressCreateInput->secondLine = 'Configuration Money';
+    $request->addressCreateInput->secondLine = 'bluetooth';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->addresses->create($request);
@@ -90,7 +94,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetAddressRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -139,18 +147,22 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListAddressesRequest;
 use \paddle\Paddle\Models\Shared\Status;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListAddressesRequest();
-    $request->after = 'Northeast Metal Canada';
+    $request->after = 'Bicycle';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
     $request->id = '<ID>';
-    $request->orderBy = 'Data Response West';
-    $request->perPage = 718303;
+    $request->orderBy = 'Metal';
+    $request->perPage = 297548;
     $request->search = 'upgrade';
-    $request->status = Status::Archived;
+    $request->status = Status::Active;
 
     $response = $sdk->addresses->list($request);
 
@@ -195,7 +207,11 @@ use \paddle\Paddle\Models\Shared\AddressInput;
 use \paddle\Paddle\Models\Shared\CountryCode2;
 use \paddle\Paddle\Models\Shared\Schemasstatus;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -208,7 +224,7 @@ try {
     $request->addressInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressInput->postalCode = '11105-1803';
     $request->addressInput->region = 'NY';
-    $request->addressInput->secondLine = 'Rock';
+    $request->addressInput->secondLine = 'New';
     $request->addressInput->status = Schemasstatus::Active;
     $request->addressId = 'add_01gvcz6r0t0g5cphhwd8n952gb';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';

@@ -58,8 +58,18 @@ use \paddle\Paddle\Models\Shared\CollectionMode2;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\CustomData;
 use \paddle\Paddle\Models\Shared\TransactionItemInput;
+use \paddle\Paddle\Models\Shared\PriceInput;
+use \paddle\Paddle\Models\Shared\PriceQuantity;
+use \paddle\Paddle\Models\Shared\TaxMode1;
+use \paddle\Paddle\Models\Shared\Money2;
+use \paddle\Paddle\Models\Shared\UnitPriceOverride;
+use \paddle\Paddle\Models\Shared\CountryCode2;
+
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
 
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -69,26 +79,26 @@ try {
     $request->transactionCreateInput->addressId = 'bluetooth';
     $request->transactionCreateInput->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionCreateInput->billingDetails = new BillingDetails2();
-    $request->transactionCreateInput->billingDetails->additionalInformation = 'Money blue shred';
+    $request->transactionCreateInput->billingDetails->additionalInformation = 'Extended';
     $request->transactionCreateInput->billingDetails->enableCheckout = false;
     $request->transactionCreateInput->billingDetails->paymentTerms = new Period2();
-    $request->transactionCreateInput->billingDetails->paymentTerms->frequency = 376844;
+    $request->transactionCreateInput->billingDetails->paymentTerms->frequency = 134365;
     $request->transactionCreateInput->billingDetails->paymentTerms->interval = Period2Interval::Year;
-    $request->transactionCreateInput->billingDetails->purchaseOrderNumber = 'East orange Northwest';
+    $request->transactionCreateInput->billingDetails->purchaseOrderNumber = 'Cambridgeshire';
     $request->transactionCreateInput->billingPeriod = new TimePeriod();
     $request->transactionCreateInput->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionCreateInput->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionCreateInput->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->transactionCreateInput->collectionMode = CollectionMode2::Manual;
-    $request->transactionCreateInput->currencyCode = CurrencyCode2::Try;
+    $request->transactionCreateInput->currencyCode = CurrencyCode2::Hkd;
     $request->transactionCreateInput->customData = new CustomData();
-    $request->transactionCreateInput->customerId = 'Gasoline';
+    $request->transactionCreateInput->customerId = 'technology';
     $request->transactionCreateInput->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->transactionCreateInput->id = 'txn_01h04vsbhqc62t8hmd4z3b578c';
     $request->transactionCreateInput->items = [
         new TransactionItemInput(),
     ];
-    $request->transactionCreateInput->status = 'Screen';
+    $request->transactionCreateInput->status = 'East';
     $request->transactionCreateInput->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
 
     $response = $sdk->transactions->create($request);
@@ -132,7 +142,11 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetTransactionRequest;
 use \paddle\Paddle\Models\Shared\IncludeTransaction;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -185,7 +199,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetTransactionInvoiceRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -235,22 +253,26 @@ use \paddle\Paddle\Models\Shared\CollectionMode;
 use \paddle\Paddle\Models\Shared\IncludeTransaction;
 use \paddle\Paddle\Models\Shared\StatusTransaction;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListTransactionsRequest();
-    $request->after = 'Northeast Metal Canada';
+    $request->after = 'Bicycle';
     $request->billedAt = '2023-04-18T17:03:26';
-    $request->collectionMode = CollectionMode::Manual;
+    $request->collectionMode = CollectionMode::Automatic;
     $request->createdAt = '2023-04-18T17:03:26';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->id = '<ID>';
-    $request->include = IncludeTransaction::Business;
+    $request->include = IncludeTransaction::Customer;
     $request->invoiceNumber = 'ABC-12345';
-    $request->orderBy = 'Response West male';
-    $request->perPage = 86140;
-    $request->status = StatusTransaction::Billed;
+    $request->orderBy = 'Canada';
+    $request->perPage = 917416;
+    $request->status = StatusTransaction::Completed;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->updatedAt = '2023-04-18T17:03:26';
 
@@ -312,8 +334,20 @@ use \paddle\Paddle\Models\Shared\CountryCode2;
 use \paddle\Paddle\Models\Shared\TransactionPreviewAdjustmentTotals;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\TransactionPreviewTransactionItemPreviewInput;
+use \paddle\Paddle\Models\Shared\PriceInput;
+use \paddle\Paddle\Models\Shared\Period2;
+use \paddle\Paddle\Models\Shared\Period2Interval;
+use \paddle\Paddle\Models\Shared\CustomData;
+use \paddle\Paddle\Models\Shared\PriceQuantity;
+use \paddle\Paddle\Models\Shared\TaxMode1;
+use \paddle\Paddle\Models\Shared\Money2;
+use \paddle\Paddle\Models\Shared\UnitPriceOverride;
+
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
 
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -329,7 +363,7 @@ try {
     $request->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->currencyCode = CurrencyCode2::Mxn;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->customerIpAddress = 'Savings transmit tan';
+    $request->customerIpAddress = 'Administrator';
     $request->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->ignoreTrials = false;
     $request->items = [
@@ -388,7 +422,11 @@ use \paddle\Paddle\Models\Shared\CountryCode2;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\TransactionPricingPreviewItem;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -400,7 +438,7 @@ try {
     $request->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->currencyCode = CurrencyCode2::Eur;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->customerIpAddress = 'disguise Northeast';
+    $request->customerIpAddress = 'Wooden';
     $request->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->items = [
         new TransactionPricingPreviewItem(),
@@ -463,8 +501,18 @@ use \paddle\Paddle\Models\Shared\CollectionMode2;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\CustomData;
 use \paddle\Paddle\Models\Shared\TransactionItemInput;
+use \paddle\Paddle\Models\Shared\PriceInput;
+use \paddle\Paddle\Models\Shared\PriceQuantity;
+use \paddle\Paddle\Models\Shared\TaxMode1;
+use \paddle\Paddle\Models\Shared\Money2;
+use \paddle\Paddle\Models\Shared\UnitPriceOverride;
+use \paddle\Paddle\Models\Shared\CountryCode2;
+
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
 
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -473,18 +521,18 @@ try {
     $request->transactionUpdateInput->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->transactionUpdateInput->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionUpdateInput->billingDetails = new BillingDetails2();
-    $request->transactionUpdateInput->billingDetails->additionalInformation = 'New Reactive dock';
+    $request->transactionUpdateInput->billingDetails->additionalInformation = 'Van';
     $request->transactionUpdateInput->billingDetails->enableCheckout = false;
     $request->transactionUpdateInput->billingDetails->paymentTerms = new Period2();
-    $request->transactionUpdateInput->billingDetails->paymentTerms->frequency = 627690;
-    $request->transactionUpdateInput->billingDetails->paymentTerms->interval = Period2Interval::Month;
-    $request->transactionUpdateInput->billingDetails->purchaseOrderNumber = 'invoice Arizona';
+    $request->transactionUpdateInput->billingDetails->paymentTerms->frequency = 15652;
+    $request->transactionUpdateInput->billingDetails->paymentTerms->interval = Period2Interval::Week;
+    $request->transactionUpdateInput->billingDetails->purchaseOrderNumber = 'male';
     $request->transactionUpdateInput->billingPeriod = new TimePeriod();
     $request->transactionUpdateInput->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionUpdateInput->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionUpdateInput->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->transactionUpdateInput->collectionMode = CollectionMode2::Automatic;
-    $request->transactionUpdateInput->currencyCode = CurrencyCode2::Twd;
+    $request->transactionUpdateInput->currencyCode = CurrencyCode2::Nzd;
     $request->transactionUpdateInput->customData = new CustomData();
     $request->transactionUpdateInput->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->transactionUpdateInput->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
@@ -492,7 +540,7 @@ try {
     $request->transactionUpdateInput->items = [
         new TransactionItemInput(),
     ];
-    $request->transactionUpdateInput->status = 'online';
+    $request->transactionUpdateInput->status = 'Analyst';
     $request->transactionUpdateInput->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 

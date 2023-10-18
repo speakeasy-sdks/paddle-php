@@ -34,7 +34,11 @@ use \paddle\Paddle\Models\Operations\CreateBusinessRequest;
 use \paddle\Paddle\Models\Shared\BusinessCreateInput;
 use \paddle\Paddle\Models\Shared\BusinessCreateContacts;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -45,7 +49,7 @@ try {
         new BusinessCreateContacts(),
     ];
     $request->businessCreateInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessCreateInput->name = 'bluetooth Extended';
+    $request->businessCreateInput->name = 'online';
     $request->businessCreateInput->taxIdentifier = 'AB0123456789';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
@@ -87,7 +91,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetBusinessRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -136,18 +144,22 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListBusinessesRequest;
 use \paddle\Paddle\Models\Shared\Status;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListBusinessesRequest();
-    $request->after = 'Northeast Metal Canada';
+    $request->after = 'Bicycle';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
     $request->id = '<ID>';
-    $request->orderBy = 'Data Response West';
-    $request->perPage = 718303;
+    $request->orderBy = 'Metal';
+    $request->perPage = 297548;
     $request->search = 'upgrade';
-    $request->status = Status::Archived;
+    $request->status = Status::Active;
 
     $response = $sdk->businesses->list($request);
 
@@ -192,7 +204,11 @@ use \paddle\Paddle\Models\Shared\BusinessInput;
 use \paddle\Paddle\Models\Shared\BusinessContacts;
 use \paddle\Paddle\Models\Shared\Schemasstatus;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -203,8 +219,8 @@ try {
         new BusinessContacts(),
     ];
     $request->businessInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessInput->name = 'New Reactive dock';
-    $request->businessInput->status = Schemasstatus::Archived;
+    $request->businessInput->name = 'Van';
+    $request->businessInput->status = Schemasstatus::Active;
     $request->businessInput->taxIdentifier = 'AB0123456789';
     $request->businessId = 'biz_01gvcz4m28csa5kem2gqq5ymxn';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';

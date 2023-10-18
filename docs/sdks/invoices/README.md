@@ -37,7 +37,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\CancelInvoiceRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -94,29 +98,36 @@ use \paddle\Paddle\Models\Shared\CurrencyCodeInvoice;
 use \paddle\Paddle\Models\Shared\CustomDataInvoice;
 use \paddle\Paddle\Models\Shared\InvoiceDetailsInput;
 use \paddle\Paddle\Models\Shared\InvoiceDetailsLineItemsInput;
+use \paddle\Paddle\Models\Shared\ProductInput;
+use \paddle\Paddle\Models\Shared\CustomData;
+use \paddle\Paddle\Models\Shared\TaxCategory1;
 use \paddle\Paddle\Models\Shared\InvoiceItem;
 use \paddle\Paddle\Models\Shared\InvoiceItemPrice;
 use \paddle\Paddle\Models\Shared\MoneyInvoice;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new InvoiceInput();
     $request->addressId = 'add_01ghbkbv8s6kjram8fbfz49p45';
     $request->billingDetails = new BillingDetails1();
-    $request->billingDetails->additionalInformation = 'bluetooth Extended';
+    $request->billingDetails->additionalInformation = 'online';
     $request->billingDetails->enableCheckout = false;
     $request->billingDetails->paymentTerms = new Period1();
-    $request->billingDetails->paymentTerms->frequency = 134365;
+    $request->billingDetails->paymentTerms->frequency = 638424;
     $request->billingDetails->paymentTerms->interval = Period1Interval::Year;
-    $request->billingDetails->purchaseOrderNumber = 'shred';
+    $request->billingDetails->purchaseOrderNumber = 'Money';
     $request->billingPeriod = new InvoiceBillingPeriod();
-    $request->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2022-02-17');
-    $request->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2023-11-08');
+    $request->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2023-05-12');
+    $request->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2021-03-17');
     $request->billingPeriod->type = InvoiceBillingPeriodType::Service;
     $request->businessId = 'biz_01ghbkcbs88yxj4fxecevjz9g7';
-    $request->currencyCode = CurrencyCodeInvoice::Eur;
+    $request->currencyCode = CurrencyCodeInvoice::Usd;
     $request->customData = new CustomDataInvoice();
     $request->customerId = 'ctm_01ghbkbbm326p19wh85fnr0xft';
     $request->details = new InvoiceDetailsInput();
@@ -165,7 +176,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetInvoiceRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -212,7 +227,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetInvoicePdfRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -269,7 +288,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\IssueInvoiceRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -315,16 +338,20 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListInvoicesRequest;
 use \paddle\Paddle\Models\Shared\StatusInvoice;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListInvoicesRequest();
-    $request->after = 'Northeast Metal Canada';
+    $request->after = 'Bicycle';
     $request->id = '<ID>';
-    $request->perPage = 917416;
+    $request->perPage = 257649;
     $request->search = 'upgrade';
-    $request->status = StatusInvoice::Unpaid;
+    $request->status = StatusInvoice::Canceled;
 
     $response = $sdk->invoices->list($request);
 
@@ -379,7 +406,11 @@ use \paddle\Paddle\Models\Shared\InvoiceItem;
 use \paddle\Paddle\Models\Shared\InvoiceItemPrice;
 use \paddle\Paddle\Models\Shared\MoneyInvoice;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -387,16 +418,16 @@ try {
     $request->invoiceForPatch = new InvoiceForPatch();
     $request->invoiceForPatch->addressId = 'add_01ghbm9egqcxtz4ap4dfg8dtaf';
     $request->invoiceForPatch->billingDetails = new BillingDetails1();
-    $request->invoiceForPatch->billingDetails->additionalInformation = 'New Reactive dock';
+    $request->invoiceForPatch->billingDetails->additionalInformation = 'Van';
     $request->invoiceForPatch->billingDetails->enableCheckout = false;
     $request->invoiceForPatch->billingDetails->paymentTerms = new Period1();
-    $request->invoiceForPatch->billingDetails->paymentTerms->frequency = 627690;
-    $request->invoiceForPatch->billingDetails->paymentTerms->interval = Period1Interval::Month;
-    $request->invoiceForPatch->billingDetails->purchaseOrderNumber = 'invoice Arizona';
+    $request->invoiceForPatch->billingDetails->paymentTerms->frequency = 15652;
+    $request->invoiceForPatch->billingDetails->paymentTerms->interval = Period1Interval::Week;
+    $request->invoiceForPatch->billingDetails->purchaseOrderNumber = 'male';
     $request->invoiceForPatch->billingPeriod = new InvoiceForPatchBillingPeriod();
-    $request->invoiceForPatch->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2021-11-01');
-    $request->invoiceForPatch->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2023-09-09');
-    $request->invoiceForPatch->billingPeriod->type = InvoiceForPatchBillingPeriodType::Contract;
+    $request->invoiceForPatch->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2021-10-24');
+    $request->invoiceForPatch->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2022-11-19');
+    $request->invoiceForPatch->billingPeriod->type = InvoiceForPatchBillingPeriodType::Service;
     $request->invoiceForPatch->businessId = 'biz_01ghbmaszjgjd47g5f3d9vw7hg';
     $request->invoiceForPatch->currencyCode = CurrencyCodeInvoice::Gbp;
     $request->invoiceForPatch->customData = new CustomDataInvoice();

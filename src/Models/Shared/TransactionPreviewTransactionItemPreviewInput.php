@@ -24,12 +24,12 @@ class TransactionPreviewTransactionItemPreviewInput
     /**
      * Represents a price entity.
      * 
-     * @var ?array<string, mixed> $price
+     * @var ?\paddle\Paddle\Models\Shared\PriceInput $price
      */
 	#[\JMS\Serializer\Annotation\SerializedName('price')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\PriceInput')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?array $price = null;
+    public ?PriceInput $price = null;
     
     /**
      * Unique Paddle ID for this price, prefixed with `pri_`.

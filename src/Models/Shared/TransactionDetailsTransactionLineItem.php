@@ -40,12 +40,12 @@ class TransactionDetailsTransactionLineItem
     /**
      * Represents a product entity.
      * 
-     * @var ?array<string, mixed> $product
+     * @var ?\paddle\Paddle\Models\Shared\Product $product
      */
 	#[\JMS\Serializer\Annotation\SerializedName('product')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Product')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?array $product = null;
+    public ?Product $product = null;
     
     /**
      * How proration was calculated for this item. Populated when a transaction is created from a subscription change, where `proration_billing_mode` was `prorated_immediately` or `prorated_next_billing_period`. Set automatically by Paddle.

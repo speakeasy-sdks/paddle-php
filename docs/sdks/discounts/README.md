@@ -34,25 +34,29 @@ use \paddle\Paddle\Models\Shared\DiscountCreateInput;
 use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\DiscountCreateType;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new DiscountCreateInput();
     $request->amount = '486.59';
-    $request->code = 'Configuration Money';
-    $request->currencyCode = CurrencyCode2::Sgd;
-    $request->description = 'Business-focused zero tolerance project';
+    $request->code = 'bluetooth';
+    $request->currencyCode = CurrencyCode2::Try;
+    $request->description = 'Inverse discrete benchmark';
     $request->enabledForCheckout = false;
     $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->maximumRecurringIntervals = 376844;
+    $request->maximumRecurringIntervals = 786546;
     $request->recur = false;
     $request->restrictTo = [
-        'technology',
+        'Cambridgeshire',
     ];
-    $request->type = DiscountCreateType::Flat;
-    $request->usageLimit = 455222;
+    $request->type = DiscountCreateType::Percentage;
+    $request->usageLimit = 376844;
 
     $response = $sdk->discounts->create($request);
 
@@ -92,7 +96,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetDiscountRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -140,17 +148,21 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListDiscountsRequest;
 use \paddle\Paddle\Models\Shared\StatusDiscount;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListDiscountsRequest();
-    $request->after = 'Northeast Metal Canada';
+    $request->after = 'Bicycle';
     $request->code = 'BLACKFRIDAY';
     $request->id = '<ID>';
-    $request->orderBy = 'Data Response West';
-    $request->perPage = 718303;
-    $request->status = StatusDiscount::Used;
+    $request->orderBy = 'Metal';
+    $request->perPage = 297548;
+    $request->status = StatusDiscount::Active;
 
     $response = $sdk->discounts->list($request);
 
@@ -196,14 +208,18 @@ use \paddle\Paddle\Models\Shared\CurrencyCode2;
 use \paddle\Paddle\Models\Shared\SchemasstatusDiscount;
 use \paddle\Paddle\Models\Shared\DiscountType;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new UpdateDiscountRequest();
     $request->discountInput = new DiscountInput();
     $request->discountInput->amount = '857.48';
-    $request->discountInput->code = 'Rock';
+    $request->discountInput->code = 'New';
     $request->discountInput->currencyCode = CurrencyCode2::Gbp;
     $request->discountInput->description = 'Reactive zero tolerance definition';
     $request->discountInput->enabledForCheckout = false;

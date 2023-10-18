@@ -11,13 +11,8 @@ namespace paddle\Paddle\Models\Operations;
 use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class UpdatePriceRequest
 {
-    /**
-     * $requestBody
-     * 
-     * @var ?array<string, mixed> $requestBody
-     */
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?array $requestBody = null;
+    public ?\paddle\Paddle\Models\Shared\PriceUpdate $priceUpdate = null;
     
     /**
      * Paddle ID of the price entity to work with.
@@ -29,7 +24,7 @@ class UpdatePriceRequest
     
 	public function __construct()
 	{
-		$this->requestBody = null;
+		$this->priceUpdate = null;
 		$this->priceId = "";
 	}
 }

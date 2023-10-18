@@ -26,10 +26,10 @@ class Error
     /**
      * $errors
      * 
-     * @var ?array<array<string, mixed>> $errors
+     * @var ?array<\paddle\Paddle\Models\Shared\ErrorErrors> $errors
      */
 	#[\JMS\Serializer\Annotation\SerializedName('errors')]
-    #[\JMS\Serializer\Annotation\Type('array<array<string, mixed>>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\ErrorErrors>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $errors = null;
     

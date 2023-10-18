@@ -11,13 +11,8 @@ namespace paddle\Paddle\Models\Operations;
 use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class UpdateProductRequest
 {
-    /**
-     * $requestBody
-     * 
-     * @var ?array<string, mixed> $requestBody
-     */
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?array $requestBody = null;
+    public ?\paddle\Paddle\Models\Shared\ProductPatch $productPatch = null;
     
     /**
      * Paddle ID of the product entity to work with.
@@ -29,7 +24,7 @@ class UpdateProductRequest
     
 	public function __construct()
 	{
-		$this->requestBody = null;
+		$this->productPatch = null;
 		$this->productId = "";
 	}
 }

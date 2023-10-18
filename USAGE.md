@@ -7,13 +7,17 @@
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\CreateAddressRequest;
-use \paddle\Paddle\Models\Shared\AddressCreateInput;
-use \paddle\Paddle\Models\Shared\CountryCode2;
+use paddle\Paddle\Paddle;
+use paddle\Paddle\Models\Shared\Security;
+use paddle\Paddle\Models\Operations\CreateAddressRequest;
+use paddle\Paddle\Models\Shared\AddressCreateInput;
+use paddle\Paddle\Models\Shared\CountryCode2;
+
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
 
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -26,7 +30,7 @@ try {
     $request->addressCreateInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressCreateInput->postalCode = '11105-1803';
     $request->addressCreateInput->region = 'NY';
-    $request->addressCreateInput->secondLine = 'Configuration Money';
+    $request->addressCreateInput->secondLine = 'bluetooth';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->addresses->create($request);
@@ -37,5 +41,6 @@ try {
 } catch (Exception $e) {
     // handle exception
 }
+
 ```
 <!-- End SDK Example Usage -->

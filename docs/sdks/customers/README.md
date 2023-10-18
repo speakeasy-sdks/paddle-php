@@ -33,7 +33,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Shared\CustomerCreateInput;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -41,7 +45,7 @@ try {
     $request->email = 'weloveyourproduct@paddle.com';
     $request->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->locale = 'fr_CH';
-    $request->name = 'Configuration Money';
+    $request->name = 'bluetooth';
 
     $response = $sdk->customers->create($request);
 
@@ -81,7 +85,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\GetCustomerRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -129,17 +137,21 @@ use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListCustomersRequest;
 use \paddle\Paddle\Models\Shared\Status;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new ListCustomersRequest();
-    $request->after = 'Northeast Metal Canada';
+    $request->after = 'Bicycle';
     $request->id = '<ID>';
-    $request->orderBy = 'Data Response West';
-    $request->perPage = 718303;
+    $request->orderBy = 'Metal';
+    $request->perPage = 297548;
     $request->search = 'upgrade';
-    $request->status = Status::Archived;
+    $request->status = Status::Active;
 
     $response = $sdk->customers->list($request);
 
@@ -189,7 +201,11 @@ use \paddle\Paddle\Paddle;
 use \paddle\Paddle\Models\Shared\Security;
 use \paddle\Paddle\Models\Operations\ListCreditBalancesRequest;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -239,7 +255,11 @@ use \paddle\Paddle\Models\Operations\UpdateCustomerRequest;
 use \paddle\Paddle\Models\Shared\CustomerInput;
 use \paddle\Paddle\Models\Shared\Schemasstatus;
 
+$security = new Security();
+$security->bearerAuth = 'YOUR_API_KEY';
+
 $sdk = Paddle::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -248,7 +268,7 @@ try {
     $request->customerInput->email = 'weloveyourproduct@paddle.com';
     $request->customerInput->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->customerInput->locale = 'sk';
-    $request->customerInput->name = 'Rock';
+    $request->customerInput->name = 'New';
     $request->customerInput->status = Schemasstatus::Active;
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 

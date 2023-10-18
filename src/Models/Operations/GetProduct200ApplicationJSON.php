@@ -20,11 +20,11 @@ class GetProduct200ApplicationJSON
     /**
      * Represents a product entity with included entities.
      * 
-     * @var array<string, mixed> $data
+     * @var \paddle\Paddle\Models\Shared\ProductIncludes $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('array<string, mixed>')]
-    public array $data;
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\ProductIncludes')]
+    public \paddle\Paddle\Models\Shared\ProductIncludes $data;
     
     /**
      * Information about this response.
@@ -37,7 +37,7 @@ class GetProduct200ApplicationJSON
     
 	public function __construct()
 	{
-		$this->data = [];
+		$this->data = new \paddle\Paddle\Models\Shared\ProductIncludes();
 		$this->meta = new \paddle\Paddle\Models\Shared\Meta();
 	}
 }

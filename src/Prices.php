@@ -32,11 +32,11 @@ class Prices
      * 
      * If successful, your response includes a copy of the new price entity.
      * 
-     * @param array<string, mixed> $request
+     * @param \paddle\Paddle\Models\Shared\PriceCreate $request
      * @return \paddle\Paddle\Models\Operations\CreatePriceResponse
      */
 	public function create(
-        ?array $request,
+        ?\paddle\Paddle\Models\Shared\PriceCreate $request,
     ): \paddle\Paddle\Models\Operations\CreatePriceResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -235,7 +235,7 @@ class Prices
         $url = Utils\Utils::generateUrl($baseUrl, '/prices/{price_id}', \paddle\Paddle\Models\Operations\UpdatePriceRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "priceUpdate", "json");
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
