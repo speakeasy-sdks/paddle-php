@@ -335,10 +335,10 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListSubscriptionsRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
     $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
     $request->status = StatusSubscription::Active;
 
@@ -465,26 +465,26 @@ try {
     $request->subscriptionUpdate = new SubscriptionUpdate();
     $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->subscriptionUpdate->billingDetails = new BillingDetails2();
-    $request->subscriptionUpdate->billingDetails->additionalInformation = 'Metal';
+    $request->subscriptionUpdate->billingDetails->additionalInformation = 'string';
     $request->subscriptionUpdate->billingDetails->enableCheckout = false;
     $request->subscriptionUpdate->billingDetails->paymentTerms = new Period2();
-    $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 430887;
+    $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 243733;
     $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Period2Interval::Month;
-    $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'Northwest';
+    $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'string';
     $request->subscriptionUpdate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->subscriptionUpdate->collectionMode = CollectionMode2::Automatic;
-    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Usd;
+    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Sek;
     $request->subscriptionUpdate->customData = new CustomData();
     $request->subscriptionUpdate->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->subscriptionUpdate->discount = new SubscriptionUpdateDiscount();
-    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::Immediately;
+    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::NextBillingPeriod;
     $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->subscriptionUpdate->items = [
         new SubscriptionUpdateItem(),
     ];
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::ProratedImmediately;
-    $request->subscriptionUpdate->scheduledChange = 'indigo';
+    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
+    $request->subscriptionUpdate->scheduledChange = 'string';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->previewSubscription($request);
@@ -538,7 +538,7 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ResumeSubscriptionRequest();
-    $request->requestBody = 'Hyundai';
+    $request->requestBody = 'string';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->resumeSubscription($request);
@@ -610,26 +610,26 @@ try {
     $request->subscriptionUpdate = new SubscriptionUpdate();
     $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->subscriptionUpdate->billingDetails = new BillingDetails2();
-    $request->subscriptionUpdate->billingDetails->additionalInformation = 'Van';
+    $request->subscriptionUpdate->billingDetails->additionalInformation = 'string';
     $request->subscriptionUpdate->billingDetails->enableCheckout = false;
     $request->subscriptionUpdate->billingDetails->paymentTerms = new Period2();
-    $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 15652;
-    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Period2Interval::Week;
-    $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'male';
+    $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 857478;
+    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Period2Interval::Day;
+    $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'string';
     $request->subscriptionUpdate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->subscriptionUpdate->collectionMode = CollectionMode2::Automatic;
-    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Nzd;
+    $request->subscriptionUpdate->collectionMode = CollectionMode2::Manual;
+    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Ars;
     $request->subscriptionUpdate->customData = new CustomData();
     $request->subscriptionUpdate->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->subscriptionUpdate->discount = new SubscriptionUpdateDiscount();
-    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::Immediately;
+    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::NextBillingPeriod;
     $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->subscriptionUpdate->items = [
         new SubscriptionUpdateItem(),
     ];
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullImmediately;
-    $request->subscriptionUpdate->scheduledChange = 'invoice';
+    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
+    $request->subscriptionUpdate->scheduledChange = 'string';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->update($request);

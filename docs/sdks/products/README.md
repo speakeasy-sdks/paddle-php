@@ -48,8 +48,8 @@ try {
     $request->customData = new CustomData();
     $request->description = 'Multi-tiered human-resource model';
     $request->imageUrl = 'https://impartial-dump.com';
-    $request->name = 'blue';
-    $request->taxCategory = TaxCategory1::WebsiteHosting;
+    $request->name = 'string';
+    $request->taxCategory = TaxCategory1::TrainingServices;
 
     $response = $sdk->products->create($request);
 
@@ -158,13 +158,13 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListProductsRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->id = '<ID>';
     $request->include = IncludeProduct::Prices;
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
     $request->status = Status::Active;
-    $request->taxCategory = TaxCategory::SoftwareProgrammingServices;
+    $request->taxCategory = TaxCategory::Saas;
 
     $response = $sdk->products->list($request);
 
@@ -225,9 +225,9 @@ try {
     $request->productPatch->customData = new CustomData();
     $request->productPatch->description = 'Synchronised 3rd generation matrix';
     $request->productPatch->imageUrl = 'http://grand-pupa.org';
-    $request->productPatch->name = 'Metal';
-    $request->productPatch->status = Schemasstatus::Archived;
-    $request->productPatch->taxCategory = TaxCategory1::Ebooks;
+    $request->productPatch->name = 'string';
+    $request->productPatch->status = Schemasstatus::Active;
+    $request->productPatch->taxCategory = TaxCategory1::SoftwareProgrammingServices;
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
 
     $response = $sdk->products->update($request);

@@ -45,7 +45,7 @@ try {
     $request->email = 'weloveyourproduct@paddle.com';
     $request->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->locale = 'fr_CH';
-    $request->name = 'bluetooth';
+    $request->name = 'string';
 
     $response = $sdk->customers->create($request);
 
@@ -146,10 +146,10 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListCustomersRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->id = '<ID>';
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
     $request->search = 'upgrade';
     $request->status = Status::Active;
 
@@ -268,7 +268,7 @@ try {
     $request->customerInput->email = 'weloveyourproduct@paddle.com';
     $request->customerInput->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->customerInput->locale = 'sk';
-    $request->customerInput->name = 'New';
+    $request->customerInput->name = 'string';
     $request->customerInput->status = Schemasstatus::Active;
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 

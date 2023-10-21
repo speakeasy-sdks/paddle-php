@@ -53,7 +53,7 @@ try {
     $request->addressCreateInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressCreateInput->postalCode = '11105-1803';
     $request->addressCreateInput->region = 'NY';
-    $request->addressCreateInput->secondLine = 'bluetooth';
+    $request->addressCreateInput->secondLine = 'string';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->addresses->create($request);
@@ -156,11 +156,11 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListAddressesRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
     $request->id = '<ID>';
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
     $request->search = 'upgrade';
     $request->status = Status::Active;
 
@@ -224,7 +224,7 @@ try {
     $request->addressInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressInput->postalCode = '11105-1803';
     $request->addressInput->region = 'NY';
-    $request->addressInput->secondLine = 'New';
+    $request->addressInput->secondLine = 'string';
     $request->addressInput->status = Schemasstatus::Active;
     $request->addressId = 'add_01gvcz6r0t0g5cphhwd8n952gb';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';

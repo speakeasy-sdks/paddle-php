@@ -69,29 +69,29 @@ try {
     $request = new CreateTransactionRequest();
     $request->include = IncludeTransaction::AdjustmentsTotals;
     $request->transactionCreateInput = new TransactionCreateInput();
-    $request->transactionCreateInput->addressId = 'bluetooth';
+    $request->transactionCreateInput->addressId = 'string';
     $request->transactionCreateInput->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionCreateInput->billingDetails = new BillingDetails2();
-    $request->transactionCreateInput->billingDetails->additionalInformation = 'Extended';
+    $request->transactionCreateInput->billingDetails->additionalInformation = 'string';
     $request->transactionCreateInput->billingDetails->enableCheckout = false;
     $request->transactionCreateInput->billingDetails->paymentTerms = new Period2();
-    $request->transactionCreateInput->billingDetails->paymentTerms->frequency = 134365;
-    $request->transactionCreateInput->billingDetails->paymentTerms->interval = Period2Interval::Year;
-    $request->transactionCreateInput->billingDetails->purchaseOrderNumber = 'Cambridgeshire';
+    $request->transactionCreateInput->billingDetails->paymentTerms->frequency = 489382;
+    $request->transactionCreateInput->billingDetails->paymentTerms->interval = Period2Interval::Month;
+    $request->transactionCreateInput->billingDetails->purchaseOrderNumber = 'string';
     $request->transactionCreateInput->billingPeriod = new TimePeriod();
     $request->transactionCreateInput->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionCreateInput->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionCreateInput->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->transactionCreateInput->collectionMode = CollectionMode2::Manual;
-    $request->transactionCreateInput->currencyCode = CurrencyCode2::Hkd;
+    $request->transactionCreateInput->currencyCode = CurrencyCode2::Ils;
     $request->transactionCreateInput->customData = new CustomData();
-    $request->transactionCreateInput->customerId = 'technology';
+    $request->transactionCreateInput->customerId = 'string';
     $request->transactionCreateInput->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->transactionCreateInput->id = 'txn_01h04vsbhqc62t8hmd4z3b578c';
     $request->transactionCreateInput->items = [
         new TransactionItemInput(),
     ];
-    $request->transactionCreateInput->status = 'East';
+    $request->transactionCreateInput->status = 'string';
     $request->transactionCreateInput->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
 
     $response = $sdk->transactionService->create($request);
@@ -199,17 +199,17 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListTransactionsRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->billedAt = '2023-04-18T17:03:26';
-    $request->collectionMode = CollectionMode::Automatic;
+    $request->collectionMode = CollectionMode::Manual;
     $request->createdAt = '2023-04-18T17:03:26';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->id = '<ID>';
-    $request->include = IncludeTransaction::Customer;
+    $request->include = IncludeTransaction::Address;
     $request->invoiceNumber = 'ABC-12345';
-    $request->orderBy = 'Canada';
-    $request->perPage = 917416;
-    $request->status = StatusTransaction::Completed;
+    $request->orderBy = 'string';
+    $request->perPage = 547272;
+    $request->status = StatusTransaction::Ready;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->updatedAt = '2023-04-18T17:03:26';
 
@@ -295,12 +295,12 @@ try {
     $request->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->adjustmentsTotals = new TransactionPreviewAdjustmentTotals();
     $request->adjustmentsTotals->otherBalances = [
-        'North',
+        'string',
     ];
     $request->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->currencyCode = CurrencyCode2::Mxn;
+    $request->currencyCode = CurrencyCode2::Ars;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->customerIpAddress = 'Administrator';
+    $request->customerIpAddress = 'string';
     $request->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->ignoreTrials = false;
     $request->items = [
@@ -375,7 +375,7 @@ try {
     $request->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->currencyCode = CurrencyCode2::Eur;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->customerIpAddress = 'Wooden';
+    $request->customerIpAddress = 'string';
     $request->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->items = [
         new TransactionPricingPreviewItem(),
@@ -458,18 +458,18 @@ try {
     $request->transactionUpdateInput->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->transactionUpdateInput->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionUpdateInput->billingDetails = new BillingDetails2();
-    $request->transactionUpdateInput->billingDetails->additionalInformation = 'Van';
+    $request->transactionUpdateInput->billingDetails->additionalInformation = 'string';
     $request->transactionUpdateInput->billingDetails->enableCheckout = false;
     $request->transactionUpdateInput->billingDetails->paymentTerms = new Period2();
-    $request->transactionUpdateInput->billingDetails->paymentTerms->frequency = 15652;
-    $request->transactionUpdateInput->billingDetails->paymentTerms->interval = Period2Interval::Week;
-    $request->transactionUpdateInput->billingDetails->purchaseOrderNumber = 'male';
+    $request->transactionUpdateInput->billingDetails->paymentTerms->frequency = 857478;
+    $request->transactionUpdateInput->billingDetails->paymentTerms->interval = Period2Interval::Day;
+    $request->transactionUpdateInput->billingDetails->purchaseOrderNumber = 'string';
     $request->transactionUpdateInput->billingPeriod = new TimePeriod();
     $request->transactionUpdateInput->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionUpdateInput->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->transactionUpdateInput->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->transactionUpdateInput->collectionMode = CollectionMode2::Automatic;
-    $request->transactionUpdateInput->currencyCode = CurrencyCode2::Nzd;
+    $request->transactionUpdateInput->collectionMode = CollectionMode2::Manual;
+    $request->transactionUpdateInput->currencyCode = CurrencyCode2::Ars;
     $request->transactionUpdateInput->customData = new CustomData();
     $request->transactionUpdateInput->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->transactionUpdateInput->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
@@ -477,7 +477,7 @@ try {
     $request->transactionUpdateInput->items = [
         new TransactionItemInput(),
     ];
-    $request->transactionUpdateInput->status = 'Analyst';
+    $request->transactionUpdateInput->status = 'string';
     $request->transactionUpdateInput->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 

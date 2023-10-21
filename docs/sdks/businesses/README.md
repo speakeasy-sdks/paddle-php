@@ -49,7 +49,7 @@ try {
         new BusinessCreateContacts(),
     ];
     $request->businessCreateInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessCreateInput->name = 'online';
+    $request->businessCreateInput->name = 'string';
     $request->businessCreateInput->taxIdentifier = 'AB0123456789';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
@@ -153,11 +153,11 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListBusinessesRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
     $request->id = '<ID>';
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
     $request->search = 'upgrade';
     $request->status = Status::Active;
 
@@ -219,8 +219,8 @@ try {
         new BusinessContacts(),
     ];
     $request->businessInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessInput->name = 'Van';
-    $request->businessInput->status = Schemasstatus::Active;
+    $request->businessInput->name = 'string';
+    $request->businessInput->status = Schemasstatus::Archived;
     $request->businessInput->taxIdentifier = 'AB0123456789';
     $request->businessId = 'biz_01gvcz4m28csa5kem2gqq5ymxn';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';

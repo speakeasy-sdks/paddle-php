@@ -51,12 +51,12 @@ try {
     $request->active = false;
     $request->apiVersion = 659672;
     $request->description = 'Persistent next generation circuit';
-    $request->destination = 'Forward';
+    $request->destination = 'string';
     $request->includeSensitiveFields = false;
     $request->subscribedEvents = [
-        'Volvo',
+        'string',
     ];
-    $request->type = NotificationSettingCreateType::Email;
+    $request->type = NotificationSettingCreateType::Url;
 
     $response = $sdk->notifications->createSetting($request);
 
@@ -257,14 +257,14 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListNotificationsRequest();
-    $request->after = 'Bicycle';
-    $request->filter = 'txn_01h3cgmh9qn7yezn4rgze4nrg2';
+    $request->after = 'string';
+    $request->filter = 'sub_01gw4rrmfrqcwkhjm04hr3ah4n';
     $request->from = '2023-04-18T17:03:26';
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
-    $request->orderBy = 'Product';
-    $request->perPage = 53150;
+    $request->orderBy = 'string';
+    $request->perPage = 99895;
     $request->search = 'upgrade';
-    $request->status = StatusNotification::Delivered;
+    $request->status = StatusNotification::NeedsRetry;
     $request->to = '2023-04-18T17:03:26';
 
     $response = $sdk->notifications->list($request);
@@ -314,9 +314,9 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListNotificationLogsRequest();
-    $request->after = 'Cadillac';
+    $request->after = 'string';
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
-    $request->perPage = 244239;
+    $request->perPage = 822522;
 
     $response = $sdk->notifications->listLogs($request);
 
@@ -524,10 +524,10 @@ try {
     $request->notificationSettingUpdate->active = false;
     $request->notificationSettingUpdate->apiVersion = 303975;
     $request->notificationSettingUpdate->description = 'Implemented clear-thinking firmware';
-    $request->notificationSettingUpdate->destination = 'pascal';
+    $request->notificationSettingUpdate->destination = 'string';
     $request->notificationSettingUpdate->includeSensitiveFields = false;
     $request->notificationSettingUpdate->subscribedEvents = [
-        'Grocery',
+        'string',
     ];
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
 

@@ -78,10 +78,10 @@ try {
     $request->payoutTotals->subtotal = '15000';
     $request->payoutTotals->tax = '1500';
     $request->payoutTotals->total = '16500';
-    $request->reason = 'Money';
-    $request->status = SchemasstatusAdjustment::Rejected;
+    $request->reason = 'string';
+    $request->status = SchemasstatusAdjustment::Approved;
     $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
-    $request->transactionId = 'Cambridgeshire';
+    $request->transactionId = 'string';
 
     $response = $sdk->adjustments->create($request);
 
@@ -133,12 +133,12 @@ $sdk = Paddle::builder()
 try {
     $request = new ListAdjustmentsRequest();
     $request->action = Action::CreditReverse;
-    $request->after = 'Northeast';
+    $request->after = 'string';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->id = '<ID>';
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
-    $request->status = StatusAdjustment::Approved;
+    $request->orderBy = 'string';
+    $request->perPage = 99895;
+    $request->status = StatusAdjustment::Rejected;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 

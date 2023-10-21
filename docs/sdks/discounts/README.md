@@ -44,19 +44,19 @@ $sdk = Paddle::builder()
 try {
     $request = new DiscountCreateInput();
     $request->amount = '486.59';
-    $request->code = 'bluetooth';
-    $request->currencyCode = CurrencyCode2::Try;
-    $request->description = 'Inverse discrete benchmark';
+    $request->code = 'string';
+    $request->currencyCode = CurrencyCode2::Jpy;
+    $request->description = 'Proactive systematic Graphical User Interface';
     $request->enabledForCheckout = false;
     $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->maximumRecurringIntervals = 786546;
+    $request->maximumRecurringIntervals = 288408;
     $request->recur = false;
     $request->restrictTo = [
-        'Cambridgeshire',
+        'string',
     ];
-    $request->type = DiscountCreateType::Percentage;
-    $request->usageLimit = 376844;
+    $request->type = DiscountCreateType::Flat;
+    $request->usageLimit = 786546;
 
     $response = $sdk->discounts->create($request);
 
@@ -157,11 +157,11 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListDiscountsRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->code = 'BLACKFRIDAY';
     $request->id = '<ID>';
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
     $request->status = StatusDiscount::Active;
 
     $response = $sdk->discounts->list($request);
@@ -219,20 +219,20 @@ try {
     $request = new UpdateDiscountRequest();
     $request->discountInput = new DiscountInput();
     $request->discountInput->amount = '857.48';
-    $request->discountInput->code = 'New';
-    $request->discountInput->currencyCode = CurrencyCode2::Gbp;
-    $request->discountInput->description = 'Reactive zero tolerance definition';
+    $request->discountInput->code = 'string';
+    $request->discountInput->currencyCode = CurrencyCode2::Ars;
+    $request->discountInput->description = 'Persistent 24/7 focus group';
     $request->discountInput->enabledForCheckout = false;
     $request->discountInput->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->discountInput->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->discountInput->maximumRecurringIntervals = 627690;
+    $request->discountInput->maximumRecurringIntervals = 708455;
     $request->discountInput->recur = false;
     $request->discountInput->restrictTo = [
-        'Analyst',
+        'string',
     ];
-    $request->discountInput->status = SchemasstatusDiscount::Archived;
-    $request->discountInput->type = DiscountType::Percentage;
-    $request->discountInput->usageLimit = 134151;
+    $request->discountInput->status = SchemasstatusDiscount::Used;
+    $request->discountInput->type = DiscountType::Flat;
+    $request->discountInput->usageLimit = 627690;
     $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';
 
     $response = $sdk->discounts->update($request);

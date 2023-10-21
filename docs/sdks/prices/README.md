@@ -59,17 +59,17 @@ try {
     $request->billingCycle->interval = Period2Interval::Week;
     $request->customData = new CustomData();
     $request->description = 'Proactive systematic Graphical User Interface';
-    $request->productId = 'innovative';
+    $request->productId = 'string';
     $request->quantity = new PriceQuantity();
     $request->quantity->maximum = 100;
     $request->quantity->minimum = 1;
-    $request->taxMode = TaxMode1::Internal;
+    $request->taxMode = TaxMode1::AccountSetting;
     $request->trialPeriod = new Period2();
-    $request->trialPeriod->frequency = 69025;
+    $request->trialPeriod->frequency = 134365;
     $request->trialPeriod->interval = Period2Interval::Year;
     $request->unitPrice = new Money2();
-    $request->unitPrice->amount = '796.48';
-    $request->unitPrice->currencyCode = CurrencyCode2::Hkd;
+    $request->unitPrice->amount = '69.02';
+    $request->unitPrice->currencyCode = CurrencyCode2::Zar;
     $request->unitPriceOverrides = [
         new UnitPriceOverride(),
     ];
@@ -180,11 +180,11 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListPricesRequest();
-    $request->after = 'Bicycle';
+    $request->after = 'string';
     $request->id = '<ID>';
     $request->include = IncludePrice::Product;
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
     $request->recurring = false;
     $request->status = Status::Active;

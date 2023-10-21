@@ -30,7 +30,7 @@ try {
     $request->addressCreateInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->addressCreateInput->postalCode = '11105-1803';
     $request->addressCreateInput->region = 'NY';
-    $request->addressCreateInput->secondLine = 'bluetooth';
+    $request->addressCreateInput->secondLine = 'string';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->addresses->create($request);

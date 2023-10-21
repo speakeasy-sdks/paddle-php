@@ -37,9 +37,9 @@ $sdk = Paddle::builder()
 
 try {
     $request = new ListEventsRequest();
-    $request->after = 'Bicycle';
-    $request->orderBy = 'Metal';
-    $request->perPage = 297548;
+    $request->after = 'string';
+    $request->orderBy = 'string';
+    $request->perPage = 768578;
 
     $response = $sdk->events->list($request);
 
