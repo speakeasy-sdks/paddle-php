@@ -70,12 +70,12 @@ class Notification
     /**
      * Describes how this notification was created.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\NotificationOrigin $origin
+     * @var ?\paddle\Paddle\Models\Shared\Origin $origin
      */
 	#[\JMS\Serializer\Annotation\SerializedName('origin')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\NotificationOrigin>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\Origin>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?NotificationOrigin $origin = null;
+    public ?Origin $origin = null;
     
     /**
      * Represents an event entity.
@@ -110,12 +110,12 @@ class Notification
     /**
      * Status of this notification.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\SchemasstatusNotification $status
+     * @var ?\paddle\Paddle\Models\Shared\SchemaStatusNotification $status
      */
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemasstatusNotification>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemaStatusNotification>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?SchemasstatusNotification $status = null;
+    public ?SchemaStatusNotification $status = null;
     
     /**
      * How many times delivery of this notification has been attempted. Automatically incremented by Paddle after an attempt.

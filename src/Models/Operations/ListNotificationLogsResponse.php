@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class ListNotificationLogsResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogsResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListNotificationLogsResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogsNotificationsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListNotificationLogsNotificationsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogsNotificationsResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?ListNotificationLogsNotificationsResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogsNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListNotificationLogsNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class ListNotificationLogsResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogs200ApplicationJSON $listNotificationLogs200ApplicationJSONObject
-     */
-	
-    public ?ListNotificationLogs200ApplicationJSON $listNotificationLogs200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogs401ApplicationJSON $listNotificationLogs401ApplicationJSONObject
-     */
-	
-    public ?ListNotificationLogs401ApplicationJSON $listNotificationLogs401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogs404ApplicationJSON $listNotificationLogs404ApplicationJSONObject
-     */
-	
-    public ?ListNotificationLogs404ApplicationJSON $listNotificationLogs404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListNotificationLogs500ApplicationJSON $listNotificationLogs500ApplicationJSONObject
-     */
-	
-    public ?ListNotificationLogs500ApplicationJSON $listNotificationLogs500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listNotificationLogs200ApplicationJSONObject = null;
-		$this->listNotificationLogs401ApplicationJSONObject = null;
-		$this->listNotificationLogs404ApplicationJSONObject = null;
-		$this->listNotificationLogs500ApplicationJSONObject = null;
 	}
 }

@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class UpdateTransactionResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateTransactionResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?UpdateTransactionResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateTransactionTransactionsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?UpdateTransactionTransactionsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateTransactionTransactionsTransactionServiceResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?UpdateTransactionTransactionsTransactionServiceResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateTransactionTransactionsTransactionServiceResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?UpdateTransactionTransactionsTransactionServiceResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class UpdateTransactionResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateTransaction200ApplicationJSON $updateTransaction200ApplicationJSONObject
-     */
-	
-    public ?UpdateTransaction200ApplicationJSON $updateTransaction200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateTransaction401ApplicationJSON $updateTransaction401ApplicationJSONObject
-     */
-	
-    public ?UpdateTransaction401ApplicationJSON $updateTransaction401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateTransaction404ApplicationJSON $updateTransaction404ApplicationJSONObject
-     */
-	
-    public ?UpdateTransaction404ApplicationJSON $updateTransaction404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateTransaction500ApplicationJSON $updateTransaction500ApplicationJSONObject
-     */
-	
-    public ?UpdateTransaction500ApplicationJSON $updateTransaction500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->updateTransaction200ApplicationJSONObject = null;
-		$this->updateTransaction401ApplicationJSONObject = null;
-		$this->updateTransaction404ApplicationJSONObject = null;
-		$this->updateTransaction500ApplicationJSONObject = null;
 	}
 }

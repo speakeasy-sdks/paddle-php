@@ -1,5 +1,5 @@
 # Events
-(*events*)
+
 
 ## Overview
 
@@ -24,26 +24,26 @@ This is sometimes referred to as "the event stream."
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListEventsRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListEventsRequest();
+    $request = new Operations\ListEventsRequest();
     $request->after = 'string';
     $request->orderBy = 'string';
     $request->perPage = 768578;
 
     $response = $sdk->events->list($request);
 
-    if ($response->listEvents200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -77,20 +77,20 @@ The response is not paginated.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
     $response = $sdk->events->listTypes();
 
-    if ($response->listEventTypes200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

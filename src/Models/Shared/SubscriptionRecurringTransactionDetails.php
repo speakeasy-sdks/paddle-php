@@ -30,10 +30,10 @@ class SubscriptionRecurringTransactionDetails
     /**
      * List of tax rates applied to this transaction preview.
      * 
-     * @var ?array<\paddle\Paddle\Models\Shared\SubscriptionRecurringTransactionDetailsTaxRatesUsed> $taxRatesUsed
+     * @var ?array<\paddle\Paddle\Models\Shared\TaxRatesUsed> $taxRatesUsed
      */
 	#[\JMS\Serializer\Annotation\SerializedName('tax_rates_used')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\SubscriptionRecurringTransactionDetailsTaxRatesUsed>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\TaxRatesUsed>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $taxRatesUsed = null;
     

@@ -12,6 +12,54 @@ namespace paddle\Paddle\Models\Operations;
 class CreateBusinessResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateBusinessResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateBusinessResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateBusinessBusinessesResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreateBusinessBusinessesResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateBusinessBusinessesResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateBusinessBusinessesResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateBusinessBusinessesResponse403ResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?CreateBusinessBusinessesResponse403ResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateBusinessBusinessesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?CreateBusinessBusinessesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateBusinessBusinessesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateBusinessBusinessesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,65 +91,17 @@ class CreateBusinessResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateBusiness201ApplicationJSON $createBusiness201ApplicationJSONObject
-     */
-	
-    public ?CreateBusiness201ApplicationJSON $createBusiness201ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateBusiness400ApplicationJSON $createBusiness400ApplicationJSONObject
-     */
-	
-    public ?CreateBusiness400ApplicationJSON $createBusiness400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateBusiness401ApplicationJSON $createBusiness401ApplicationJSONObject
-     */
-	
-    public ?CreateBusiness401ApplicationJSON $createBusiness401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateBusiness403ApplicationJSON $createBusiness403ApplicationJSONObject
-     */
-	
-    public ?CreateBusiness403ApplicationJSON $createBusiness403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateBusiness404ApplicationJSON $createBusiness404ApplicationJSONObject
-     */
-	
-    public ?CreateBusiness404ApplicationJSON $createBusiness404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateBusiness500ApplicationJSON $createBusiness500ApplicationJSONObject
-     */
-	
-    public ?CreateBusiness500ApplicationJSON $createBusiness500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createBusiness201ApplicationJSONObject = null;
-		$this->createBusiness400ApplicationJSONObject = null;
-		$this->createBusiness401ApplicationJSONObject = null;
-		$this->createBusiness403ApplicationJSONObject = null;
-		$this->createBusiness404ApplicationJSONObject = null;
-		$this->createBusiness500ApplicationJSONObject = null;
 	}
 }

@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetInvoicePdfResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdfResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetInvoicePdfResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdfInvoicesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetInvoicePdfInvoicesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdfInvoicesResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetInvoicePdfInvoicesResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdfInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetInvoicePdfInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetInvoicePdfResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdf200ApplicationJSON $getInvoicePdf200ApplicationJSONObject
-     */
-	
-    public ?GetInvoicePdf200ApplicationJSON $getInvoicePdf200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdf401ApplicationJSON $getInvoicePdf401ApplicationJSONObject
-     */
-	
-    public ?GetInvoicePdf401ApplicationJSON $getInvoicePdf401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdf404ApplicationJSON $getInvoicePdf404ApplicationJSONObject
-     */
-	
-    public ?GetInvoicePdf404ApplicationJSON $getInvoicePdf404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoicePdf500ApplicationJSON $getInvoicePdf500ApplicationJSONObject
-     */
-	
-    public ?GetInvoicePdf500ApplicationJSON $getInvoicePdf500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getInvoicePdf200ApplicationJSONObject = null;
-		$this->getInvoicePdf401ApplicationJSONObject = null;
-		$this->getInvoicePdf404ApplicationJSONObject = null;
-		$this->getInvoicePdf500ApplicationJSONObject = null;
 	}
 }

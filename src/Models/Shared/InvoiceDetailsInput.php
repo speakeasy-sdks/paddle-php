@@ -14,10 +14,10 @@ class InvoiceDetailsInput
     /**
      * $lineItems
      * 
-     * @var ?array<\paddle\Paddle\Models\Shared\InvoiceDetailsLineItemsInput> $lineItems
+     * @var ?array<\paddle\Paddle\Models\Shared\InvoiceDetailsLineItems> $lineItems
      */
 	#[\JMS\Serializer\Annotation\SerializedName('line_items')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\InvoiceDetailsLineItemsInput>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\InvoiceDetailsLineItems>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $lineItems = null;
     

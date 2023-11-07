@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class CreateNotificationSettingResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSettingResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateNotificationSettingResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSettingNotificationsResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreateNotificationSettingNotificationsResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSettingNotificationsResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateNotificationSettingNotificationsResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSettingNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateNotificationSettingNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class CreateNotificationSettingResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSetting201ApplicationJSON $createNotificationSetting201ApplicationJSONObject
-     */
-	
-    public ?CreateNotificationSetting201ApplicationJSON $createNotificationSetting201ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSetting400ApplicationJSON $createNotificationSetting400ApplicationJSONObject
-     */
-	
-    public ?CreateNotificationSetting400ApplicationJSON $createNotificationSetting400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSetting401ApplicationJSON $createNotificationSetting401ApplicationJSONObject
-     */
-	
-    public ?CreateNotificationSetting401ApplicationJSON $createNotificationSetting401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateNotificationSetting500ApplicationJSON $createNotificationSetting500ApplicationJSONObject
-     */
-	
-    public ?CreateNotificationSetting500ApplicationJSON $createNotificationSetting500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createNotificationSetting201ApplicationJSONObject = null;
-		$this->createNotificationSetting400ApplicationJSONObject = null;
-		$this->createNotificationSetting401ApplicationJSONObject = null;
-		$this->createNotificationSetting500ApplicationJSONObject = null;
 	}
 }

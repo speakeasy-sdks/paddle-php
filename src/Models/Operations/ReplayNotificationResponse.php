@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class ReplayNotificationResponse
 {
     /**
+     * Accepted
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ReplayNotificationResponseBody $twoHundredAndTwoApplicationJsonObject
+     */
+	
+    public ?ReplayNotificationResponseBody $twoHundredAndTwoApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ReplayNotificationNotificationsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ReplayNotificationNotificationsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ReplayNotificationNotificationsResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?ReplayNotificationNotificationsResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ReplayNotificationNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ReplayNotificationNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class ReplayNotificationResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Accepted
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ReplayNotification202ApplicationJSON $replayNotification202ApplicationJSONObject
-     */
-	
-    public ?ReplayNotification202ApplicationJSON $replayNotification202ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ReplayNotification401ApplicationJSON $replayNotification401ApplicationJSONObject
-     */
-	
-    public ?ReplayNotification401ApplicationJSON $replayNotification401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ReplayNotification404ApplicationJSON $replayNotification404ApplicationJSONObject
-     */
-	
-    public ?ReplayNotification404ApplicationJSON $replayNotification404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ReplayNotification500ApplicationJSON $replayNotification500ApplicationJSONObject
-     */
-	
-    public ?ReplayNotification500ApplicationJSON $replayNotification500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndTwoApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->replayNotification202ApplicationJSONObject = null;
-		$this->replayNotification401ApplicationJSONObject = null;
-		$this->replayNotification404ApplicationJSONObject = null;
-		$this->replayNotification500ApplicationJSONObject = null;
 	}
 }

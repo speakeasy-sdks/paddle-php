@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetTransactionInvoiceResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoiceResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetTransactionInvoiceResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoiceTransactionsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetTransactionInvoiceTransactionsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoiceTransactionsResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetTransactionInvoiceTransactionsResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoiceTransactionsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetTransactionInvoiceTransactionsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetTransactionInvoiceResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoice200ApplicationJSON $getTransactionInvoice200ApplicationJSONObject
-     */
-	
-    public ?GetTransactionInvoice200ApplicationJSON $getTransactionInvoice200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoice401ApplicationJSON $getTransactionInvoice401ApplicationJSONObject
-     */
-	
-    public ?GetTransactionInvoice401ApplicationJSON $getTransactionInvoice401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoice404ApplicationJSON $getTransactionInvoice404ApplicationJSONObject
-     */
-	
-    public ?GetTransactionInvoice404ApplicationJSON $getTransactionInvoice404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransactionInvoice500ApplicationJSON $getTransactionInvoice500ApplicationJSONObject
-     */
-	
-    public ?GetTransactionInvoice500ApplicationJSON $getTransactionInvoice500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getTransactionInvoice200ApplicationJSONObject = null;
-		$this->getTransactionInvoice401ApplicationJSONObject = null;
-		$this->getTransactionInvoice404ApplicationJSONObject = null;
-		$this->getTransactionInvoice500ApplicationJSONObject = null;
 	}
 }

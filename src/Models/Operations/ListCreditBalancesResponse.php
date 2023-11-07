@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class ListCreditBalancesResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalancesResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListCreditBalancesResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalancesCustomersResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?ListCreditBalancesCustomersResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalancesCustomersResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?ListCreditBalancesCustomersResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalancesCustomersResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListCreditBalancesCustomersResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class ListCreditBalancesResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalances200ApplicationJSON $listCreditBalances200ApplicationJSONObject
-     */
-	
-    public ?ListCreditBalances200ApplicationJSON $listCreditBalances200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalances400ApplicationJSON $listCreditBalances400ApplicationJSONObject
-     */
-	
-    public ?ListCreditBalances400ApplicationJSON $listCreditBalances400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalances404ApplicationJSON $listCreditBalances404ApplicationJSONObject
-     */
-	
-    public ?ListCreditBalances404ApplicationJSON $listCreditBalances404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCreditBalances500ApplicationJSON $listCreditBalances500ApplicationJSONObject
-     */
-	
-    public ?ListCreditBalances500ApplicationJSON $listCreditBalances500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listCreditBalances200ApplicationJSONObject = null;
-		$this->listCreditBalances400ApplicationJSONObject = null;
-		$this->listCreditBalances404ApplicationJSONObject = null;
-		$this->listCreditBalances500ApplicationJSONObject = null;
 	}
 }

@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class GetBusinessResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetBusinessResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetBusinessResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetBusinessBusinessesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetBusinessBusinessesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetBusinessBusinessesResponseResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?GetBusinessBusinessesResponseResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetBusinessBusinessesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetBusinessBusinessesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetBusinessBusinessesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetBusinessBusinessesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class GetBusinessResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetBusiness200ApplicationJSON $getBusiness200ApplicationJSONObject
-     */
-	
-    public ?GetBusiness200ApplicationJSON $getBusiness200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetBusiness401ApplicationJSON $getBusiness401ApplicationJSONObject
-     */
-	
-    public ?GetBusiness401ApplicationJSON $getBusiness401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetBusiness403ApplicationJSON $getBusiness403ApplicationJSONObject
-     */
-	
-    public ?GetBusiness403ApplicationJSON $getBusiness403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetBusiness404ApplicationJSON $getBusiness404ApplicationJSONObject
-     */
-	
-    public ?GetBusiness404ApplicationJSON $getBusiness404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetBusiness500ApplicationJSON $getBusiness500ApplicationJSONObject
-     */
-	
-    public ?GetBusiness500ApplicationJSON $getBusiness500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getBusiness200ApplicationJSONObject = null;
-		$this->getBusiness401ApplicationJSONObject = null;
-		$this->getBusiness403ApplicationJSONObject = null;
-		$this->getBusiness404ApplicationJSONObject = null;
-		$this->getBusiness500ApplicationJSONObject = null;
 	}
 }

@@ -44,35 +44,44 @@ composer update
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use paddle\Paddle\Paddle;
-use paddle\Paddle\Models\Shared\Security;
-use paddle\Paddle\Models\Operations\CreateAddressRequest;
-use paddle\Paddle\Models\Shared\AddressCreateInput;
-use paddle\Paddle\Models\Shared\CountryCode2;
+use paddle\Paddle;
+use paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CreateAddressRequest();
-    $request->addressCreateInput = new AddressCreateInput();
-    $request->addressCreateInput->city = 'Astoria';
-    $request->addressCreateInput->countryCode = CountryCode2::Kn;
-    $request->addressCreateInput->description = 'Paddle.com';
-    $request->addressCreateInput->firstLine = '3811 Ditmars Blvd';
-    $request->addressCreateInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
-    $request->addressCreateInput->postalCode = '11105-1803';
-    $request->addressCreateInput->region = 'NY';
-    $request->addressCreateInput->secondLine = 'string';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request = new Shared\AdjustmentCreate();
+    $request->action = Shared\SchemaAction::Refund;
+    $request->currencyCode = Shared\CurrencyCode2::Jpy;
+    $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
+    $request->id = 'adj_01gya6twkp8y0tv1e19rsgst9m';
+    $request->items = [new Shared\AdjustmentCreateAdjustmentItem()];
+    $request->payoutTotals = new Shared\AdjustmentPayoutTotals();
+    $request->payoutTotals->chargebackFee = new Shared\ChargebackFee();
+    $request->payoutTotals->chargebackFee->amount = '1680';
+    $request->payoutTotals->chargebackFee->original = new Shared\Original();
+    $request->payoutTotals->chargebackFee->original->amount = '1500';
+    $request->payoutTotals->chargebackFee->original->currencyCode =
+        Shared\CurrencyCodeChargeback::Gbp;
+    $request->payoutTotals->currencyCode = Shared\CurrencyCodePayouts::Usd;
+    $request->payoutTotals->earnings = '15120';
+    $request->payoutTotals->fee = '300';
+    $request->payoutTotals->subtotal = '15000';
+    $request->payoutTotals->tax = '1500';
+    $request->payoutTotals->total = '16500';
+    $request->reason = 'string';
+    $request->status = Shared\SchemaStatusAdjustment::Approved;
+    $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
+    $request->transactionId = 'string';
 
-    $response = $sdk->addresses->create($request);
+    $response = $sdk->adjustments->create($request);
 
-    if ($response->createAddress201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -86,26 +95,12 @@ try {
 ## Available Resources and Operations
 
 
-### [addresses](docs/sdks/addresses/README.md)
-
-* [create](docs/sdks/addresses/README.md#create) - Create an address for a customer
-* [get](docs/sdks/addresses/README.md#get) - Get an address for a customer
-* [list](docs/sdks/addresses/README.md#list) - List addresses for a customer
-* [update](docs/sdks/addresses/README.md#update) - Update an address for a customer
-
-### [adjustments](docs/sdks/adjustments/README.md)
+### [Adjustments](docs/sdks/adjustments/README.md)
 
 * [create](docs/sdks/adjustments/README.md#create) - Create an adjustment
 * [list](docs/sdks/adjustments/README.md#list) - List adjustments
 
-### [businesses](docs/sdks/businesses/README.md)
-
-* [create](docs/sdks/businesses/README.md#create) - Create a business for a customer
-* [get](docs/sdks/businesses/README.md#get) - Get a business for a customer
-* [list](docs/sdks/businesses/README.md#list) - List businesses for a customer
-* [update](docs/sdks/businesses/README.md#update) - Update a business for a customer
-
-### [customers](docs/sdks/customers/README.md)
+### [Customers](docs/sdks/customers/README.md)
 
 * [create](docs/sdks/customers/README.md#create) - Create a customer
 * [get](docs/sdks/customers/README.md#get) - Get a customer
@@ -113,23 +108,33 @@ try {
 * [listCreditBalances](docs/sdks/customers/README.md#listcreditbalances) - List credit balances for a customer
 * [update](docs/sdks/customers/README.md#update) - Update a customer
 
-### [discounts](docs/sdks/discounts/README.md)
+### [Addresses](docs/sdks/addresses/README.md)
+
+* [create](docs/sdks/addresses/README.md#create) - Create an address for a customer
+* [get](docs/sdks/addresses/README.md#get) - Get an address for a customer
+* [list](docs/sdks/addresses/README.md#list) - List addresses for a customer
+* [update](docs/sdks/addresses/README.md#update) - Update an address for a customer
+
+### [Businesses](docs/sdks/businesses/README.md)
+
+* [create](docs/sdks/businesses/README.md#create) - Create a business for a customer
+* [get](docs/sdks/businesses/README.md#get) - Get a business for a customer
+* [list](docs/sdks/businesses/README.md#list) - List businesses for a customer
+* [update](docs/sdks/businesses/README.md#update) - Update a business for a customer
+
+### [Discounts](docs/sdks/discounts/README.md)
 
 * [create](docs/sdks/discounts/README.md#create) - Create a discount
 * [get](docs/sdks/discounts/README.md#get) - Get a discount
 * [list](docs/sdks/discounts/README.md#list) - List discounts
 * [update](docs/sdks/discounts/README.md#update) - Update a discount
 
-### [events](docs/sdks/events/README.md)
+### [Events](docs/sdks/events/README.md)
 
 * [list](docs/sdks/events/README.md#list) - List events
 * [listTypes](docs/sdks/events/README.md#listtypes) - List events types
 
-### [ipAddresses](docs/sdks/ipaddresses/README.md)
-
-* [get](docs/sdks/ipaddresses/README.md#get) - Get Paddle IP addresses
-
-### [invoices](docs/sdks/invoices/README.md)
+### [Invoices](docs/sdks/invoices/README.md)
 
 * [cancel](docs/sdks/invoices/README.md#cancel) - Cancel an invoice
 * [create](docs/sdks/invoices/README.md#create) - Create a draft invoice
@@ -139,7 +144,11 @@ try {
 * [list](docs/sdks/invoices/README.md#list) - List invoices
 * [update](docs/sdks/invoices/README.md#update) - Update a draft invoice
 
-### [notifications](docs/sdks/notifications/README.md)
+### [IPAddresses](docs/sdks/ipaddresses/README.md)
+
+* [get](docs/sdks/ipaddresses/README.md#get) - Get Paddle IP addresses
+
+### [Notifications](docs/sdks/notifications/README.md)
 
 * [createSetting](docs/sdks/notifications/README.md#createsetting) - Create a notification setting
 * [deleteSetting](docs/sdks/notifications/README.md#deletesetting) - Delete a notification setting
@@ -152,21 +161,40 @@ try {
 * [replayBySetting](docs/sdks/notifications/README.md#replaybysetting) - Replay notifications by notification setting
 * [updateSettings](docs/sdks/notifications/README.md#updatesettings) - Update a notification setting
 
-### [prices](docs/sdks/prices/README.md)
+### [Prices](docs/sdks/prices/README.md)
 
 * [create](docs/sdks/prices/README.md#create) - Create a price
 * [get](docs/sdks/prices/README.md#get) - Get a price
 * [list](docs/sdks/prices/README.md#list) - List prices
 * [update](docs/sdks/prices/README.md#update) - Update a price
 
-### [products](docs/sdks/products/README.md)
+### [Transactions](docs/sdks/transactions/README.md)
+
+* [create](docs/sdks/transactions/README.md#create) - Create a transaction
+* [get](docs/sdks/transactions/README.md#get) - Get a transaction
+* [getInvoice](docs/sdks/transactions/README.md#getinvoice) - Get a PDF invoice for a transaction
+* [list](docs/sdks/transactions/README.md#list) - List transactions
+* [previewTransaction](docs/sdks/transactions/README.md#previewtransaction) - Preview a transaction
+* [pricePreview](docs/sdks/transactions/README.md#pricepreview) - Preview prices
+* [update](docs/sdks/transactions/README.md#update) - Update a transaction
+
+### [TransactionService](docs/sdks/transactionservice/README.md)
+
+* [create](docs/sdks/transactionservice/README.md#create) - Create a transaction
+* [get](docs/sdks/transactionservice/README.md#get) - Get a transaction
+* [list](docs/sdks/transactionservice/README.md#list) - List transactions
+* [previewTransaction](docs/sdks/transactionservice/README.md#previewtransaction) - Preview a transaction
+* [pricePreview](docs/sdks/transactionservice/README.md#pricepreview) - Preview prices
+* [update](docs/sdks/transactionservice/README.md#update) - Update a transaction
+
+### [Products](docs/sdks/products/README.md)
 
 * [create](docs/sdks/products/README.md#create) - Create a product
 * [get](docs/sdks/products/README.md#get) - Get a product
 * [list](docs/sdks/products/README.md#list) - List products
 * [update](docs/sdks/products/README.md#update) - Update a product
 
-### [subscriptions](docs/sdks/subscriptions/README.md)
+### [Subscriptions](docs/sdks/subscriptions/README.md)
 
 * [cancel](docs/sdks/subscriptions/README.md#cancel) - Cancel a subscription
 * [create](docs/sdks/subscriptions/README.md#create) - Create a one-time charge for a subscription
@@ -178,25 +206,6 @@ try {
 * [previewSubscription](docs/sdks/subscriptions/README.md#previewsubscription) - Preview an update to a subscription
 * [resumeSubscription](docs/sdks/subscriptions/README.md#resumesubscription) - Resume a paused subscription
 * [update](docs/sdks/subscriptions/README.md#update) - Update a subscription
-
-### [transactions](docs/sdks/transactions/README.md)
-
-* [create](docs/sdks/transactions/README.md#create) - Create a transaction
-* [get](docs/sdks/transactions/README.md#get) - Get a transaction
-* [getInvoice](docs/sdks/transactions/README.md#getinvoice) - Get a PDF invoice for a transaction
-* [list](docs/sdks/transactions/README.md#list) - List transactions
-* [previewTransaction](docs/sdks/transactions/README.md#previewtransaction) - Preview a transaction
-* [pricePreview](docs/sdks/transactions/README.md#pricepreview) - Preview prices
-* [update](docs/sdks/transactions/README.md#update) - Update a transaction
-
-### [transactionService](docs/sdks/transactionservice/README.md)
-
-* [create](docs/sdks/transactionservice/README.md#create) - Create a transaction
-* [get](docs/sdks/transactionservice/README.md#get) - Get a transaction
-* [list](docs/sdks/transactionservice/README.md#list) - List transactions
-* [previewTransaction](docs/sdks/transactionservice/README.md#previewtransaction) - Preview a transaction
-* [pricePreview](docs/sdks/transactionservice/README.md#pricepreview) - Preview prices
-* [update](docs/sdks/transactionservice/README.md#update) - Update a transaction
 <!-- End SDK Available Operations -->
 
 

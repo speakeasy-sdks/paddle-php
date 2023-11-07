@@ -265,12 +265,12 @@ class TransactionIncludes
     /**
      * Status of this transaction. You may set a transaction to `billed` or `canceled`, other statuses are set automatically by Paddle.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\SchemasstatusTransaction $status
+     * @var ?\paddle\Paddle\Models\Shared\SchemaStatusTransaction $status
      */
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemasstatusTransaction>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemaStatusTransaction>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?SchemasstatusTransaction $status = null;
+    public ?SchemaStatusTransaction $status = null;
     
     /**
      * Unique Paddle ID for this subscription entity, prefixed with `sub_`.

@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class CreateProductResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateProductResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateProductResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateProductProductsResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreateProductProductsResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateProductProductsResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateProductProductsResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateProductProductsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateProductProductsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class CreateProductResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateProduct201ApplicationJSON $createProduct201ApplicationJSONObject
-     */
-	
-    public ?CreateProduct201ApplicationJSON $createProduct201ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateProduct400ApplicationJSON $createProduct400ApplicationJSONObject
-     */
-	
-    public ?CreateProduct400ApplicationJSON $createProduct400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateProduct401ApplicationJSON $createProduct401ApplicationJSONObject
-     */
-	
-    public ?CreateProduct401ApplicationJSON $createProduct401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateProduct500ApplicationJSON $createProduct500ApplicationJSONObject
-     */
-	
-    public ?CreateProduct500ApplicationJSON $createProduct500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createProduct201ApplicationJSONObject = null;
-		$this->createProduct400ApplicationJSONObject = null;
-		$this->createProduct401ApplicationJSONObject = null;
-		$this->createProduct500ApplicationJSONObject = null;
 	}
 }

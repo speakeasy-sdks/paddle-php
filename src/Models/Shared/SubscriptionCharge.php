@@ -23,10 +23,10 @@ class SubscriptionCharge
     /**
      * $items
      * 
-     * @var array<\paddle\Paddle\Models\Shared\SubscriptionChargeItems> $items
+     * @var array<\paddle\Paddle\Models\Shared\Items> $items
      */
 	#[\JMS\Serializer\Annotation\SerializedName('items')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\SubscriptionChargeItems>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\Items>')]
     public array $items;
     
 	public function __construct()

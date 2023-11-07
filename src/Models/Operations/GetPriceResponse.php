@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetPriceResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetPriceResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetPriceResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetPricePricesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetPricePricesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetPricePricesResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetPricePricesResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetPricePricesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetPricePricesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetPriceResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetPrice200ApplicationJSON $getPrice200ApplicationJSONObject
-     */
-	
-    public ?GetPrice200ApplicationJSON $getPrice200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetPrice401ApplicationJSON $getPrice401ApplicationJSONObject
-     */
-	
-    public ?GetPrice401ApplicationJSON $getPrice401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetPrice404ApplicationJSON $getPrice404ApplicationJSONObject
-     */
-	
-    public ?GetPrice404ApplicationJSON $getPrice404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetPrice500ApplicationJSON $getPrice500ApplicationJSONObject
-     */
-	
-    public ?GetPrice500ApplicationJSON $getPrice500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getPrice200ApplicationJSONObject = null;
-		$this->getPrice401ApplicationJSONObject = null;
-		$this->getPrice404ApplicationJSONObject = null;
-		$this->getPrice500ApplicationJSONObject = null;
 	}
 }

@@ -38,16 +38,16 @@ class CreateDiscountResponse
     /**
      * OK
      * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateDiscount200ApplicationJSON $createDiscount200ApplicationJSONObject
+     * @var ?\paddle\Paddle\Models\Operations\CreateDiscountResponseBody $object
      */
 	
-    public ?CreateDiscount200ApplicationJSON $createDiscount200ApplicationJSONObject = null;
+    public ?CreateDiscountResponseBody $object = null;
     
 	public function __construct()
 	{
 		$this->contentType = "";
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createDiscount200ApplicationJSONObject = null;
+		$this->object = null;
 	}
 }

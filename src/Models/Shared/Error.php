@@ -26,17 +26,17 @@ class Error
     /**
      * $errors
      * 
-     * @var ?array<\paddle\Paddle\Models\Shared\ErrorErrors> $errors
+     * @var ?array<\paddle\Paddle\Models\Shared\Errors> $errors
      */
 	#[\JMS\Serializer\Annotation\SerializedName('errors')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\ErrorErrors>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\Errors>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $errors = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('extra')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\ErrorExtra')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Extra')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?ErrorExtra $extra = null;
+    public ?Extra $extra = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('type')]
     #[\JMS\Serializer\Annotation\Type('string')]

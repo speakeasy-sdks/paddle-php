@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class ListNotificationSettingsResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListNotificationSettingsResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListNotificationSettingsResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListNotificationSettingsNotificationsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListNotificationSettingsNotificationsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListNotificationSettingsNotificationsResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListNotificationSettingsNotificationsResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class ListNotificationSettingsResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListNotificationSettings200ApplicationJSON $listNotificationSettings200ApplicationJSONObject
-     */
-	
-    public ?ListNotificationSettings200ApplicationJSON $listNotificationSettings200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListNotificationSettings401ApplicationJSON $listNotificationSettings401ApplicationJSONObject
-     */
-	
-    public ?ListNotificationSettings401ApplicationJSON $listNotificationSettings401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListNotificationSettings500ApplicationJSON $listNotificationSettings500ApplicationJSONObject
-     */
-	
-    public ?ListNotificationSettings500ApplicationJSON $listNotificationSettings500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listNotificationSettings200ApplicationJSONObject = null;
-		$this->listNotificationSettings401ApplicationJSONObject = null;
-		$this->listNotificationSettings500ApplicationJSONObject = null;
 	}
 }

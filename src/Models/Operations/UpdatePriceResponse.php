@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class UpdatePriceResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdatePriceResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?UpdatePriceResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdatePricePricesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?UpdatePricePricesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdatePricePricesResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?UpdatePricePricesResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdatePricePricesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?UpdatePricePricesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class UpdatePriceResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdatePrice200ApplicationJSON $updatePrice200ApplicationJSONObject
-     */
-	
-    public ?UpdatePrice200ApplicationJSON $updatePrice200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdatePrice401ApplicationJSON $updatePrice401ApplicationJSONObject
-     */
-	
-    public ?UpdatePrice401ApplicationJSON $updatePrice401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdatePrice404ApplicationJSON $updatePrice404ApplicationJSONObject
-     */
-	
-    public ?UpdatePrice404ApplicationJSON $updatePrice404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdatePrice500ApplicationJSON $updatePrice500ApplicationJSONObject
-     */
-	
-    public ?UpdatePrice500ApplicationJSON $updatePrice500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->updatePrice200ApplicationJSONObject = null;
-		$this->updatePrice401ApplicationJSONObject = null;
-		$this->updatePrice404ApplicationJSONObject = null;
-		$this->updatePrice500ApplicationJSONObject = null;
 	}
 }

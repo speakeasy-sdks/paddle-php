@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class ListSubscriptionsResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListSubscriptionsResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListSubscriptionsResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListSubscriptionsSubscriptionsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListSubscriptionsSubscriptionsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListSubscriptionsSubscriptionsResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListSubscriptionsSubscriptionsResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class ListSubscriptionsResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListSubscriptions200ApplicationJSON $listSubscriptions200ApplicationJSONObject
-     */
-	
-    public ?ListSubscriptions200ApplicationJSON $listSubscriptions200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListSubscriptions401ApplicationJSON $listSubscriptions401ApplicationJSONObject
-     */
-	
-    public ?ListSubscriptions401ApplicationJSON $listSubscriptions401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListSubscriptions500ApplicationJSON $listSubscriptions500ApplicationJSONObject
-     */
-	
-    public ?ListSubscriptions500ApplicationJSON $listSubscriptions500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listSubscriptions200ApplicationJSONObject = null;
-		$this->listSubscriptions401ApplicationJSONObject = null;
-		$this->listSubscriptions500ApplicationJSONObject = null;
 	}
 }

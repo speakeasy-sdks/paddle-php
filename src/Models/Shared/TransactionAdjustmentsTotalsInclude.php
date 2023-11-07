@@ -20,12 +20,12 @@ class TransactionAdjustmentsTotalsInclude
     /**
      * Breakdown of the total adjustments by adjustment action.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\TransactionAdjustmentsTotalsIncludeBreakdown $breakdown
+     * @var ?\paddle\Paddle\Models\Shared\Breakdown $breakdown
      */
 	#[\JMS\Serializer\Annotation\SerializedName('breakdown')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\TransactionAdjustmentsTotalsIncludeBreakdown')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Breakdown')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?TransactionAdjustmentsTotalsIncludeBreakdown $breakdown = null;
+    public ?Breakdown $breakdown = null;
     
     /**
      * Supported three-letter ISO 4217 currency code.

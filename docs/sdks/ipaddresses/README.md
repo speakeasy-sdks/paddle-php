@@ -1,5 +1,5 @@
 # IPAddresses
-(*ipAddresses*)
+
 
 ## Overview
 
@@ -23,20 +23,20 @@ IP addresses returned are for the environment that you're making the request in.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
     $response = $sdk->ipAddresses->get();
 
-    if ($response->getIpAddresses200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

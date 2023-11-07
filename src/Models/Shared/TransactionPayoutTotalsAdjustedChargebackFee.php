@@ -30,12 +30,12 @@ class TransactionPayoutTotalsAdjustedChargebackFee
     /**
      * Chargeback fee before conversion to the payout currency. `null` when the chargeback fee is the same as the payout currency.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\TransactionPayoutTotalsAdjustedChargebackFeeOriginal $original
+     * @var ?\paddle\Paddle\Models\Shared\TransactionPayoutTotalsAdjustedOriginal $original
      */
 	#[\JMS\Serializer\Annotation\SerializedName('original')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\TransactionPayoutTotalsAdjustedChargebackFeeOriginal')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\TransactionPayoutTotalsAdjustedOriginal')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?TransactionPayoutTotalsAdjustedChargebackFeeOriginal $original = null;
+    public ?TransactionPayoutTotalsAdjustedOriginal $original = null;
     
 	public function __construct()
 	{

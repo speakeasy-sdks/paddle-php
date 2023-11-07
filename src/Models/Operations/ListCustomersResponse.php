@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class ListCustomersResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCustomersResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListCustomersResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCustomersCustomersResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListCustomersCustomersResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCustomersCustomersResponseResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?ListCustomersCustomersResponseResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCustomersCustomersResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?ListCustomersCustomersResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListCustomersCustomersResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListCustomersCustomersResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class ListCustomersResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCustomers200ApplicationJSON $listCustomers200ApplicationJSONObject
-     */
-	
-    public ?ListCustomers200ApplicationJSON $listCustomers200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCustomers401ApplicationJSON $listCustomers401ApplicationJSONObject
-     */
-	
-    public ?ListCustomers401ApplicationJSON $listCustomers401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCustomers403ApplicationJSON $listCustomers403ApplicationJSONObject
-     */
-	
-    public ?ListCustomers403ApplicationJSON $listCustomers403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCustomers404ApplicationJSON $listCustomers404ApplicationJSONObject
-     */
-	
-    public ?ListCustomers404ApplicationJSON $listCustomers404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListCustomers500ApplicationJSON $listCustomers500ApplicationJSONObject
-     */
-	
-    public ?ListCustomers500ApplicationJSON $listCustomers500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listCustomers200ApplicationJSONObject = null;
-		$this->listCustomers401ApplicationJSONObject = null;
-		$this->listCustomers403ApplicationJSONObject = null;
-		$this->listCustomers404ApplicationJSONObject = null;
-		$this->listCustomers500ApplicationJSONObject = null;
 	}
 }

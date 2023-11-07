@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetProductResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetProductResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetProductResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetProductProductsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetProductProductsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetProductProductsResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetProductProductsResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetProductProductsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetProductProductsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetProductResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetProduct200ApplicationJSON $getProduct200ApplicationJSONObject
-     */
-	
-    public ?GetProduct200ApplicationJSON $getProduct200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetProduct401ApplicationJSON $getProduct401ApplicationJSONObject
-     */
-	
-    public ?GetProduct401ApplicationJSON $getProduct401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetProduct404ApplicationJSON $getProduct404ApplicationJSONObject
-     */
-	
-    public ?GetProduct404ApplicationJSON $getProduct404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetProduct500ApplicationJSON $getProduct500ApplicationJSONObject
-     */
-	
-    public ?GetProduct500ApplicationJSON $getProduct500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getProduct200ApplicationJSONObject = null;
-		$this->getProduct401ApplicationJSONObject = null;
-		$this->getProduct404ApplicationJSONObject = null;
-		$this->getProduct500ApplicationJSONObject = null;
 	}
 }

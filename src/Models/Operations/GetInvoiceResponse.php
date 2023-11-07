@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetInvoiceResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoiceResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetInvoiceResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoiceInvoicesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetInvoiceInvoicesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoiceInvoicesResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetInvoiceInvoicesResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetInvoiceInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetInvoiceInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetInvoiceResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoice200ApplicationJSON $getInvoice200ApplicationJSONObject
-     */
-	
-    public ?GetInvoice200ApplicationJSON $getInvoice200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoice401ApplicationJSON $getInvoice401ApplicationJSONObject
-     */
-	
-    public ?GetInvoice401ApplicationJSON $getInvoice401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoice404ApplicationJSON $getInvoice404ApplicationJSONObject
-     */
-	
-    public ?GetInvoice404ApplicationJSON $getInvoice404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetInvoice500ApplicationJSON $getInvoice500ApplicationJSONObject
-     */
-	
-    public ?GetInvoice500ApplicationJSON $getInvoice500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getInvoice200ApplicationJSONObject = null;
-		$this->getInvoice401ApplicationJSONObject = null;
-		$this->getInvoice404ApplicationJSONObject = null;
-		$this->getInvoice500ApplicationJSONObject = null;
 	}
 }

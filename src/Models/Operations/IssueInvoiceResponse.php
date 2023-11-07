@@ -12,6 +12,54 @@ namespace paddle\Paddle\Models\Operations;
 class IssueInvoiceResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\IssueInvoiceResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?IssueInvoiceResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\IssueInvoiceInvoicesResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?IssueInvoiceInvoicesResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\IssueInvoiceInvoicesResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?IssueInvoiceInvoicesResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\IssueInvoiceInvoicesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?IssueInvoiceInvoicesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\IssueInvoiceInvoicesResponse422ResponseBody $fourHundredAndTwentyTwoApplicationJsonObject
+     */
+	
+    public ?IssueInvoiceInvoicesResponse422ResponseBody $fourHundredAndTwentyTwoApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\IssueInvoiceInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?IssueInvoiceInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,65 +91,17 @@ class IssueInvoiceResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\IssueInvoice200ApplicationJSON $issueInvoice200ApplicationJSONObject
-     */
-	
-    public ?IssueInvoice200ApplicationJSON $issueInvoice200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\IssueInvoice400ApplicationJSON $issueInvoice400ApplicationJSONObject
-     */
-	
-    public ?IssueInvoice400ApplicationJSON $issueInvoice400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\IssueInvoice401ApplicationJSON $issueInvoice401ApplicationJSONObject
-     */
-	
-    public ?IssueInvoice401ApplicationJSON $issueInvoice401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\IssueInvoice404ApplicationJSON $issueInvoice404ApplicationJSONObject
-     */
-	
-    public ?IssueInvoice404ApplicationJSON $issueInvoice404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\IssueInvoice422ApplicationJSON $issueInvoice422ApplicationJSONObject
-     */
-	
-    public ?IssueInvoice422ApplicationJSON $issueInvoice422ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\IssueInvoice500ApplicationJSON $issueInvoice500ApplicationJSONObject
-     */
-	
-    public ?IssueInvoice500ApplicationJSON $issueInvoice500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fourHundredAndTwentyTwoApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->issueInvoice200ApplicationJSONObject = null;
-		$this->issueInvoice400ApplicationJSONObject = null;
-		$this->issueInvoice401ApplicationJSONObject = null;
-		$this->issueInvoice404ApplicationJSONObject = null;
-		$this->issueInvoice422ApplicationJSONObject = null;
-		$this->issueInvoice500ApplicationJSONObject = null;
 	}
 }

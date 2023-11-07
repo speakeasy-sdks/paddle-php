@@ -1,5 +1,5 @@
 # Subscriptions
-(*subscriptions*)
+
 
 ## Overview
 
@@ -38,28 +38,26 @@ You cannot reactivate a canceled subscription.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\CancelSubscriptionRequest;
-use \paddle\Paddle\Models\Operations\CancelSubscriptionRequestBody;
-use \paddle\Paddle\Models\Shared\EffectiveFromNullable;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CancelSubscriptionRequest();
-    $request->requestBody = new CancelSubscriptionRequestBody();
-    $request->requestBody->effectiveFrom = EffectiveFromNullable::NextBillingPeriod;
+    $request = new Operations\CancelSubscriptionRequest();
+    $request->requestBody = new Operations\CancelSubscriptionRequestBody();
+    $request->requestBody->effectiveFrom = Shared\EffectiveFromNullable::NextBillingPeriod;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->cancel($request);
 
-    if ($response->cancelSubscription200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -98,32 +96,29 @@ Once created, to get details of a one-time charge:
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\CreateSubscriptionChargeRequest;
-use \paddle\Paddle\Models\Shared\SubscriptionCharge;
-use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionChargeItems;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CreateSubscriptionChargeRequest();
-    $request->subscriptionCharge = new SubscriptionCharge();
-    $request->subscriptionCharge->effectiveFrom = EffectiveFrom::NextBillingPeriod;
+    $request = new Operations\CreateSubscriptionChargeRequest();
+    $request->subscriptionCharge = new Shared\SubscriptionCharge();
+    $request->subscriptionCharge->effectiveFrom = Shared\EffectiveFrom::NextBillingPeriod;
     $request->subscriptionCharge->items = [
-        new SubscriptionChargeItems(),
+        new Shared\Items(),
     ];
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->create($request);
 
-    if ($response->createSubscriptionCharge201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -155,32 +150,29 @@ Previews a new one-off charge for a subscription. Use to preview the outcome of 
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewRequest;
-use \paddle\Paddle\Models\Shared\SubscriptionCharge;
-use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionChargeItems;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CreateSubscriptionChargePreviewRequest();
-    $request->subscriptionCharge = new SubscriptionCharge();
-    $request->subscriptionCharge->effectiveFrom = EffectiveFrom::NextBillingPeriod;
+    $request = new Operations\CreateSubscriptionChargePreviewRequest();
+    $request->subscriptionCharge = new Shared\SubscriptionCharge();
+    $request->subscriptionCharge->effectiveFrom = Shared\EffectiveFrom::NextBillingPeriod;
     $request->subscriptionCharge->items = [
-        new SubscriptionChargeItems(),
+        new Shared\Items(),
     ];
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->createPreview($request);
 
-    if ($response->createSubscriptionChargePreview200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -214,26 +206,25 @@ Use the `include` parameter to include transaction information in the response.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetSubscriptionRequest;
-use \paddle\Paddle\Models\Shared\IncludeSubscription;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetSubscriptionRequest();
-    $request->include = IncludeSubscription::RecurringTransactionDetails;
+    $request = new Operations\GetSubscriptionRequest();
+    $request->include = Shared\IncludeSubscription::RecurringTransactionDetails;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->get($request);
 
-    if ($response->getSubscription200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -272,24 +263,24 @@ You can use the returned `checkout.url`, or pass the returned transaction ID to 
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetSubscriptionUpdatePaymentMethodTransactionRequest();
+    $request = new Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest();
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->getUpdatedPaymentMethodTransaction($request);
 
-    if ($response->getSubscriptionUpdatePaymentMethodTransaction200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -321,30 +312,29 @@ Returns a paginated list of subscriptions. Use the query parameters to page thro
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListSubscriptionsRequest;
-use \paddle\Paddle\Models\Shared\StatusSubscription;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListSubscriptionsRequest();
+    $request = new Operations\ListSubscriptionsRequest();
     $request->after = 'string';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
-    $request->status = StatusSubscription::Active;
+    $request->status = Shared\StatusSubscription::Active;
 
     $response = $sdk->subscriptions->list($request);
 
-    if ($response->listSubscriptions200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -382,29 +372,27 @@ Pauses take place at the end of a subscription billing period. If successful, yo
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\PauseSubscriptionRequest;
-use \paddle\Paddle\Models\Operations\PauseSubscriptionRequestBody;
-use \paddle\Paddle\Models\Shared\EffectiveFromNullable;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new PauseSubscriptionRequest();
-    $request->requestBody = new PauseSubscriptionRequestBody();
-    $request->requestBody->effectiveFrom = EffectiveFromNullable::NextBillingPeriod;
+    $request = new Operations\PauseSubscriptionRequest();
+    $request->requestBody = new Operations\PauseSubscriptionRequestBody();
+    $request->requestBody->effectiveFrom = Shared\EffectiveFromNullable::NextBillingPeriod;
     $request->requestBody->resumeAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->pause($request);
 
-    if ($response->pauseSubscription200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -438,58 +426,47 @@ If successful, your response includes `immediate_transaction`, `next_transaction
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\PreviewSubscriptionRequest;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdate;
-use \paddle\Paddle\Models\Shared\BillingDetails2;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\CollectionMode2;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateDiscount;
-use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateItem;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateProrationBillingMode;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new PreviewSubscriptionRequest();
-    $request->subscriptionUpdate = new SubscriptionUpdate();
+    $request = new Operations\PreviewSubscriptionRequest();
+    $request->subscriptionUpdate = new Shared\SubscriptionUpdate();
     $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
-    $request->subscriptionUpdate->billingDetails = new BillingDetails2();
+    $request->subscriptionUpdate->billingDetails = new Shared\BillingDetails2();
     $request->subscriptionUpdate->billingDetails->additionalInformation = 'string';
     $request->subscriptionUpdate->billingDetails->enableCheckout = false;
-    $request->subscriptionUpdate->billingDetails->paymentTerms = new Period2();
+    $request->subscriptionUpdate->billingDetails->paymentTerms = new Shared\Period2();
     $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 243733;
-    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Period2Interval::Month;
+    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Shared\Period2Interval::Month;
     $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'string';
     $request->subscriptionUpdate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->subscriptionUpdate->collectionMode = CollectionMode2::Automatic;
-    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Sek;
-    $request->subscriptionUpdate->customData = new CustomData();
+    $request->subscriptionUpdate->collectionMode = Shared\CollectionMode2::Automatic;
+    $request->subscriptionUpdate->currencyCode = Shared\CurrencyCode2::Sek;
+    $request->subscriptionUpdate->customData = new Shared\CustomData();
     $request->subscriptionUpdate->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->subscriptionUpdate->discount = new SubscriptionUpdateDiscount();
-    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::NextBillingPeriod;
+    $request->subscriptionUpdate->discount = new Shared\SubscriptionUpdateDiscount();
+    $request->subscriptionUpdate->discount->effectiveFrom = Shared\EffectiveFrom::NextBillingPeriod;
     $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->subscriptionUpdate->items = [
-        new SubscriptionUpdateItem(),
+        new Shared\SubscriptionUpdateItem(),
     ];
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
+    $request->subscriptionUpdate->prorationBillingMode = Shared\SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
     $request->subscriptionUpdate->scheduledChange = 'string';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->previewSubscription($request);
 
-    if ($response->previewSubscription200ApplicationJSONObject !== null) {
+    if ($response->object !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -525,25 +502,25 @@ If successful, Paddle returns a copy of the updated subscription entity. The sub
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ResumeSubscriptionRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ResumeSubscriptionRequest();
+    $request = new Operations\ResumeSubscriptionRequest();
     $request->requestBody = 'string';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->resumeSubscription($request);
 
-    if ($response->resumeSubscription200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -583,58 +560,47 @@ If successful, your response includes a copy of the updated subscription entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateSubscriptionRequest;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdate;
-use \paddle\Paddle\Models\Shared\BillingDetails2;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\CollectionMode2;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateDiscount;
-use \paddle\Paddle\Models\Shared\EffectiveFrom;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateItem;
-use \paddle\Paddle\Models\Shared\SubscriptionUpdateProrationBillingMode;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateSubscriptionRequest();
-    $request->subscriptionUpdate = new SubscriptionUpdate();
+    $request = new Operations\UpdateSubscriptionRequest();
+    $request->subscriptionUpdate = new Shared\SubscriptionUpdate();
     $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
-    $request->subscriptionUpdate->billingDetails = new BillingDetails2();
+    $request->subscriptionUpdate->billingDetails = new Shared\BillingDetails2();
     $request->subscriptionUpdate->billingDetails->additionalInformation = 'string';
     $request->subscriptionUpdate->billingDetails->enableCheckout = false;
-    $request->subscriptionUpdate->billingDetails->paymentTerms = new Period2();
+    $request->subscriptionUpdate->billingDetails->paymentTerms = new Shared\Period2();
     $request->subscriptionUpdate->billingDetails->paymentTerms->frequency = 857478;
-    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Period2Interval::Day;
+    $request->subscriptionUpdate->billingDetails->paymentTerms->interval = Shared\Period2Interval::Day;
     $request->subscriptionUpdate->billingDetails->purchaseOrderNumber = 'string';
     $request->subscriptionUpdate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->subscriptionUpdate->collectionMode = CollectionMode2::Manual;
-    $request->subscriptionUpdate->currencyCode = CurrencyCode2::Ars;
-    $request->subscriptionUpdate->customData = new CustomData();
+    $request->subscriptionUpdate->collectionMode = Shared\CollectionMode2::Manual;
+    $request->subscriptionUpdate->currencyCode = Shared\CurrencyCode2::Ars;
+    $request->subscriptionUpdate->customData = new Shared\CustomData();
     $request->subscriptionUpdate->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->subscriptionUpdate->discount = new SubscriptionUpdateDiscount();
-    $request->subscriptionUpdate->discount->effectiveFrom = EffectiveFrom::NextBillingPeriod;
+    $request->subscriptionUpdate->discount = new Shared\SubscriptionUpdateDiscount();
+    $request->subscriptionUpdate->discount->effectiveFrom = Shared\EffectiveFrom::NextBillingPeriod;
     $request->subscriptionUpdate->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->subscriptionUpdate->items = [
-        new SubscriptionUpdateItem(),
+        new Shared\SubscriptionUpdateItem(),
     ];
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->subscriptionUpdate->prorationBillingMode = SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
+    $request->subscriptionUpdate->prorationBillingMode = Shared\SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
     $request->subscriptionUpdate->scheduledChange = 'string';
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
 
     $response = $sdk->subscriptions->update($request);
 
-    if ($response->updateSubscription200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

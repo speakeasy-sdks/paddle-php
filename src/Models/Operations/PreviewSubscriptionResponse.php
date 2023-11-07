@@ -38,16 +38,16 @@ class PreviewSubscriptionResponse
     /**
      * OK
      * 
-     * @var ?\paddle\Paddle\Models\Operations\PreviewSubscription200ApplicationJSON $previewSubscription200ApplicationJSONObject
+     * @var ?\paddle\Paddle\Models\Operations\PreviewSubscriptionResponseBody $object
      */
 	
-    public ?PreviewSubscription200ApplicationJSON $previewSubscription200ApplicationJSONObject = null;
+    public ?PreviewSubscriptionResponseBody $object = null;
     
 	public function __construct()
 	{
 		$this->contentType = "";
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->previewSubscription200ApplicationJSONObject = null;
+		$this->object = null;
 	}
 }

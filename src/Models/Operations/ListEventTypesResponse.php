@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class ListEventTypesResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListEventTypesResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListEventTypesResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListEventTypesEventsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListEventTypesEventsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListEventTypesEventsResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListEventTypesEventsResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class ListEventTypesResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListEventTypes200ApplicationJSON $listEventTypes200ApplicationJSONObject
-     */
-	
-    public ?ListEventTypes200ApplicationJSON $listEventTypes200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListEventTypes401ApplicationJSON $listEventTypes401ApplicationJSONObject
-     */
-	
-    public ?ListEventTypes401ApplicationJSON $listEventTypes401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListEventTypes500ApplicationJSON $listEventTypes500ApplicationJSONObject
-     */
-	
-    public ?ListEventTypes500ApplicationJSON $listEventTypes500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listEventTypes200ApplicationJSONObject = null;
-		$this->listEventTypes401ApplicationJSONObject = null;
-		$this->listEventTypes500ApplicationJSONObject = null;
 	}
 }

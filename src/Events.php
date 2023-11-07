@@ -47,15 +47,17 @@ class Events
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\ListEventsResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listEvents200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEvents200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -63,7 +65,7 @@ class Events
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listEvents401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEvents401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventsEventsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -71,7 +73,7 @@ class Events
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listEvents500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEvents500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventsEventsResponseResponseBody', 'json');
             }
         }
 
@@ -101,15 +103,17 @@ class Events
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\ListEventTypesResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listEventTypes200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventTypes200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventTypesResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -117,7 +121,7 @@ class Events
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listEventTypes401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventTypes401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventTypesEventsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -125,7 +129,7 @@ class Events
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listEventTypes500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventTypes500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListEventTypesEventsResponseResponseBody', 'json');
             }
         }
 

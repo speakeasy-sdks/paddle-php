@@ -20,12 +20,12 @@ class Adjustment2
     /**
      * How this adjustment impacts the related transaction. `refund` adjustments must be approved by Paddle, and are created with the status `pending_approval`. `chargeback` and `chargeback_warning` adjustments are created automatically by Paddle.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\Schemasaction $action
+     * @var ?\paddle\Paddle\Models\Shared\SchemaAction $action
      */
 	#[\JMS\Serializer\Annotation\SerializedName('action')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\Schemasaction>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemaAction>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?Schemasaction $action = null;
+    public ?SchemaAction $action = null;
     
     /**
      * RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.
@@ -87,10 +87,10 @@ class Adjustment2
     /**
      * List of items on this adjustment.
      * 
-     * @var ?array<\paddle\Paddle\Models\Shared\Adjustment2AdjustmentItem> $items
+     * @var ?array<\paddle\Paddle\Models\Shared\AdjustmentItem> $items
      */
 	#[\JMS\Serializer\Annotation\SerializedName('items')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\Adjustment2AdjustmentItem>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\AdjustmentItem>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $items = null;
     
@@ -121,12 +121,12 @@ class Adjustment2
      * `refund` adjustments must be approved by Paddle, and are created with the status `pending_approval` 
      * until they move to `approved` or `rejected` on review.  `credit` adjustments are created with the status `approved`.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\SchemasstatusAdjustment $status
+     * @var ?\paddle\Paddle\Models\Shared\SchemaStatusAdjustment $status
      */
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemasstatusAdjustment>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemaStatusAdjustment>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?SchemasstatusAdjustment $status = null;
+    public ?SchemaStatusAdjustment $status = null;
     
     /**
      * Unique Paddle ID for this subscription entity, prefixed with `sub_`.

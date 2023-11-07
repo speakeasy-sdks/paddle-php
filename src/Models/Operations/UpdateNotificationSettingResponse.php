@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class UpdateNotificationSettingResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSettingResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?UpdateNotificationSettingResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSettingNotificationsResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?UpdateNotificationSettingNotificationsResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSettingNotificationsResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?UpdateNotificationSettingNotificationsResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSettingNotificationsResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?UpdateNotificationSettingNotificationsResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSettingNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?UpdateNotificationSettingNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class UpdateNotificationSettingResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSetting200ApplicationJSON $updateNotificationSetting200ApplicationJSONObject
-     */
-	
-    public ?UpdateNotificationSetting200ApplicationJSON $updateNotificationSetting200ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSetting400ApplicationJSON $updateNotificationSetting400ApplicationJSONObject
-     */
-	
-    public ?UpdateNotificationSetting400ApplicationJSON $updateNotificationSetting400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSetting401ApplicationJSON $updateNotificationSetting401ApplicationJSONObject
-     */
-	
-    public ?UpdateNotificationSetting401ApplicationJSON $updateNotificationSetting401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSetting404ApplicationJSON $updateNotificationSetting404ApplicationJSONObject
-     */
-	
-    public ?UpdateNotificationSetting404ApplicationJSON $updateNotificationSetting404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateNotificationSetting500ApplicationJSON $updateNotificationSetting500ApplicationJSONObject
-     */
-	
-    public ?UpdateNotificationSetting500ApplicationJSON $updateNotificationSetting500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->updateNotificationSetting200ApplicationJSONObject = null;
-		$this->updateNotificationSetting400ApplicationJSONObject = null;
-		$this->updateNotificationSetting401ApplicationJSONObject = null;
-		$this->updateNotificationSetting404ApplicationJSONObject = null;
-		$this->updateNotificationSetting500ApplicationJSONObject = null;
 	}
 }

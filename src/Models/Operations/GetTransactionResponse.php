@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetTransactionResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetTransactionResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionTransactionsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetTransactionTransactionsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionTransactionsTransactionServiceResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetTransactionTransactionsTransactionServiceResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetTransactionTransactionsTransactionServiceResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetTransactionTransactionsTransactionServiceResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetTransactionResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransaction200ApplicationJSON $getTransaction200ApplicationJSONObject
-     */
-	
-    public ?GetTransaction200ApplicationJSON $getTransaction200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransaction401ApplicationJSON $getTransaction401ApplicationJSONObject
-     */
-	
-    public ?GetTransaction401ApplicationJSON $getTransaction401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransaction404ApplicationJSON $getTransaction404ApplicationJSONObject
-     */
-	
-    public ?GetTransaction404ApplicationJSON $getTransaction404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetTransaction500ApplicationJSON $getTransaction500ApplicationJSONObject
-     */
-	
-    public ?GetTransaction500ApplicationJSON $getTransaction500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getTransaction200ApplicationJSONObject = null;
-		$this->getTransaction401ApplicationJSONObject = null;
-		$this->getTransaction404ApplicationJSONObject = null;
-		$this->getTransaction500ApplicationJSONObject = null;
 	}
 }

@@ -120,12 +120,12 @@ class DiscountInput
     /**
      * Whether this entity can be used in Paddle. `expired` and `used` are set automatically by Paddle.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\SchemasstatusDiscount $status
+     * @var ?\paddle\Paddle\Models\Shared\SchemaStatusDiscount $status
      */
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemasstatusDiscount>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemaStatusDiscount>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?SchemasstatusDiscount $status = null;
+    public ?SchemaStatusDiscount $status = null;
     
     /**
      * Type of discount.

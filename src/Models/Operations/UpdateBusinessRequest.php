@@ -12,7 +12,7 @@ use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class UpdateBusinessRequest
 {
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\BusinessInput $businessInput = null;
+    public ?\paddle\Paddle\Models\Shared\BusinessInput $business = null;
     
     /**
      * Paddle ID of the business entity to work with.
@@ -32,7 +32,7 @@ class UpdateBusinessRequest
     
 	public function __construct()
 	{
-		$this->businessInput = null;
+		$this->business = null;
 		$this->businessId = "";
 		$this->customerId = "";
 	}

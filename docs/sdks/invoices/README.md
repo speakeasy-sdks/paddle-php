@@ -1,5 +1,5 @@
 # Invoices
-(*invoices*)
+
 
 ## Overview
 
@@ -33,24 +33,24 @@ If successful, your response includes a copy of the invoice entity with the `sta
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\CancelInvoiceRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CancelInvoiceRequest();
+    $request = new Operations\CancelInvoiceRequest();
     $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
 
     $response = $sdk->invoices->cancel($request);
 
-    if ($response->cancelInvoice200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -86,61 +86,45 @@ If successful, your response includes a copy of the new invoice entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\InvoiceInput;
-use \paddle\Paddle\Models\Shared\BillingDetails1;
-use \paddle\Paddle\Models\Shared\Period1;
-use \paddle\Paddle\Models\Shared\Period1Interval;
-use \paddle\Paddle\Models\Shared\InvoiceBillingPeriod;
-use \paddle\Paddle\Models\Shared\InvoiceBillingPeriodType;
-use \paddle\Paddle\Models\Shared\CurrencyCodeInvoice;
-use \paddle\Paddle\Models\Shared\CustomDataInvoice;
-use \paddle\Paddle\Models\Shared\InvoiceDetailsInput;
-use \paddle\Paddle\Models\Shared\InvoiceDetailsLineItemsInput;
-use \paddle\Paddle\Models\Shared\ProductInput;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\TaxCategory1;
-use \paddle\Paddle\Models\Shared\InvoiceItem;
-use \paddle\Paddle\Models\Shared\InvoiceItemPrice;
-use \paddle\Paddle\Models\Shared\MoneyInvoice;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new InvoiceInput();
+    $request = new Shared\InvoiceInput();
     $request->addressId = 'add_01ghbkbv8s6kjram8fbfz49p45';
-    $request->billingDetails = new BillingDetails1();
+    $request->billingDetails = new Shared\BillingDetails1();
     $request->billingDetails->additionalInformation = 'string';
     $request->billingDetails->enableCheckout = false;
-    $request->billingDetails->paymentTerms = new Period1();
+    $request->billingDetails->paymentTerms = new Shared\Period1();
     $request->billingDetails->paymentTerms->frequency = 486589;
-    $request->billingDetails->paymentTerms->interval = Period1Interval::Week;
+    $request->billingDetails->paymentTerms->interval = Shared\Interval::Week;
     $request->billingDetails->purchaseOrderNumber = 'string';
-    $request->billingPeriod = new InvoiceBillingPeriod();
+    $request->billingPeriod = new Shared\BillingPeriod();
     $request->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2022-12-01');
     $request->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2023-07-30');
-    $request->billingPeriod->type = InvoiceBillingPeriodType::Contract;
+    $request->billingPeriod->type = Shared\InvoiceType::Contract;
     $request->businessId = 'biz_01ghbkcbs88yxj4fxecevjz9g7';
-    $request->currencyCode = CurrencyCodeInvoice::Eur;
-    $request->customData = new CustomDataInvoice();
+    $request->currencyCode = Shared\CurrencyCodeInvoice::Eur;
+    $request->customData = new Shared\CustomDataInvoice();
     $request->customerId = 'ctm_01ghbkbbm326p19wh85fnr0xft';
-    $request->details = new InvoiceDetailsInput();
+    $request->details = new Shared\InvoiceDetailsInput();
     $request->details->lineItems = [
-        new InvoiceDetailsLineItemsInput(),
+        new Shared\InvoiceDetailsLineItems(),
     ];
     $request->items = [
-        new InvoiceItem(),
+        new Shared\InvoiceItem(),
     ];
 
     $response = $sdk->invoices->create($request);
 
-    if ($response->createInvoice201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -172,24 +156,24 @@ Returns an invoice using its ID.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetInvoiceRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetInvoiceRequest();
+    $request = new Operations\GetInvoiceRequest();
     $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
 
     $response = $sdk->invoices->get($request);
 
-    if ($response->getInvoice200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -223,24 +207,24 @@ The link returned is not a permanent link. It expires at the date and time retur
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetInvoicePdfRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetInvoicePdfRequest();
+    $request = new Operations\GetInvoicePdfRequest();
     $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
 
     $response = $sdk->invoices->getPdf($request);
 
-    if ($response->getInvoicePdf200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -284,24 +268,24 @@ If successful, your response includes a copy of the invoice entity with the new 
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\IssueInvoiceRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new IssueInvoiceRequest();
+    $request = new Operations\IssueInvoiceRequest();
     $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
 
     $response = $sdk->invoices->issueInvoice($request);
 
-    if ($response->issueInvoice200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -333,29 +317,28 @@ Returns a paginated list of invoices. Use the query parameters to page through r
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListInvoicesRequest;
-use \paddle\Paddle\Models\Shared\StatusInvoice;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListInvoicesRequest();
+    $request = new Operations\ListInvoicesRequest();
     $request->after = 'string';
     $request->id = '<ID>';
     $request->perPage = 768578;
     $request->search = 'upgrade';
-    $request->status = StatusInvoice::Paid;
+    $request->status = Shared\StatusInvoice::Paid;
 
     $response = $sdk->invoices->list($request);
 
-    if ($response->listInvoices200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -391,55 +374,44 @@ If successful, your response includes a copy of the updated invoice entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateInvoiceRequest;
-use \paddle\Paddle\Models\Shared\InvoiceForPatch;
-use \paddle\Paddle\Models\Shared\BillingDetails1;
-use \paddle\Paddle\Models\Shared\Period1;
-use \paddle\Paddle\Models\Shared\Period1Interval;
-use \paddle\Paddle\Models\Shared\InvoiceForPatchBillingPeriod;
-use \paddle\Paddle\Models\Shared\InvoiceForPatchBillingPeriodType;
-use \paddle\Paddle\Models\Shared\CurrencyCodeInvoice;
-use \paddle\Paddle\Models\Shared\CustomDataInvoice;
-use \paddle\Paddle\Models\Shared\InvoiceItem;
-use \paddle\Paddle\Models\Shared\InvoiceItemPrice;
-use \paddle\Paddle\Models\Shared\MoneyInvoice;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateInvoiceRequest();
-    $request->invoiceForPatch = new InvoiceForPatch();
+    $request = new Operations\UpdateInvoiceRequest();
+    $request->invoiceForPatch = new Shared\InvoiceForPatch();
     $request->invoiceForPatch->addressId = 'add_01ghbm9egqcxtz4ap4dfg8dtaf';
-    $request->invoiceForPatch->billingDetails = new BillingDetails1();
+    $request->invoiceForPatch->billingDetails = new Shared\BillingDetails1();
     $request->invoiceForPatch->billingDetails->additionalInformation = 'string';
     $request->invoiceForPatch->billingDetails->enableCheckout = false;
-    $request->invoiceForPatch->billingDetails->paymentTerms = new Period1();
+    $request->invoiceForPatch->billingDetails->paymentTerms = new Shared\Period1();
     $request->invoiceForPatch->billingDetails->paymentTerms->frequency = 857478;
-    $request->invoiceForPatch->billingDetails->paymentTerms->interval = Period1Interval::Day;
+    $request->invoiceForPatch->billingDetails->paymentTerms->interval = Shared\Interval::Day;
     $request->invoiceForPatch->billingDetails->purchaseOrderNumber = 'string';
-    $request->invoiceForPatch->billingPeriod = new InvoiceForPatchBillingPeriod();
+    $request->invoiceForPatch->billingPeriod = new Shared\InvoiceForPatchBillingPeriod();
     $request->invoiceForPatch->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2022-10-16');
     $request->invoiceForPatch->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2021-01-18');
-    $request->invoiceForPatch->billingPeriod->type = InvoiceForPatchBillingPeriodType::Contract;
+    $request->invoiceForPatch->billingPeriod->type = Shared\InvoiceForPatchType::Contract;
     $request->invoiceForPatch->businessId = 'biz_01ghbmaszjgjd47g5f3d9vw7hg';
-    $request->invoiceForPatch->currencyCode = CurrencyCodeInvoice::Usd;
-    $request->invoiceForPatch->customData = new CustomDataInvoice();
+    $request->invoiceForPatch->currencyCode = Shared\CurrencyCodeInvoice::Usd;
+    $request->invoiceForPatch->customData = new Shared\CustomDataInvoice();
     $request->invoiceForPatch->customerId = 'ctm_01ghbm8g2qxsjp07p5ywsy61cs';
     $request->invoiceForPatch->items = [
-        new InvoiceItem(),
+        new Shared\InvoiceItem(),
     ];
     $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
 
     $response = $sdk->invoices->update($request);
 
-    if ($response->updateInvoice200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

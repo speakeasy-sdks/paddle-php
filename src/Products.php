@@ -52,15 +52,17 @@ class Products
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\CreateProductResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 201) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createProduct201ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProduct201ApplicationJSON', 'json');
+                $response->twoHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProductResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 400) {
@@ -68,7 +70,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createProduct400ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProduct400ApplicationJSON', 'json');
+                $response->fourHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProductProductsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -76,7 +78,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createProduct401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProduct401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProductProductsResponseResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -84,7 +86,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createProduct500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProduct500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateProductProductsResponse500ResponseBody', 'json');
             }
         }
 
@@ -117,15 +119,17 @@ class Products
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\GetProductResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getProduct200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProduct200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProductResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -133,7 +137,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getProduct401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProduct401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProductProductsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -141,7 +145,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getProduct404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProduct404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProductProductsResponseResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -149,7 +153,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getProduct500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProduct500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetProductProductsResponse500ResponseBody', 'json');
             }
         }
 
@@ -184,15 +188,17 @@ class Products
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\ListProductsResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listProducts200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListProducts200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListProductsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -200,7 +206,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listProducts401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListProducts401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListProductsProductsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -208,7 +214,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listProducts500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListProducts500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListProductsProductsResponseResponseBody', 'json');
             }
         }
 
@@ -246,15 +252,17 @@ class Products
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\UpdateProductResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateProduct200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProduct200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProductResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 400) {
@@ -262,7 +270,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateProduct400ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProduct400ApplicationJSON', 'json');
+                $response->fourHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProductProductsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -270,7 +278,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateProduct401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProduct401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProductProductsResponseResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -278,7 +286,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateProduct404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProduct404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProductProductsResponse404ResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -286,7 +294,7 @@ class Products
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateProduct500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProduct500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateProductProductsResponse500ResponseBody', 'json');
             }
         }
 

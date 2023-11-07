@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class CreateAdjustmentResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustmentResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateAdjustmentResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreateAdjustmentAdjustmentsResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?CreateAdjustmentAdjustmentsResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponse409ResponseBody $fourHundredAndNineApplicationJsonObject
+     */
+	
+    public ?CreateAdjustmentAdjustmentsResponse409ResponseBody $fourHundredAndNineApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateAdjustmentAdjustmentsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class CreateAdjustmentResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustment201ApplicationJSON $createAdjustment201ApplicationJSONObject
-     */
-	
-    public ?CreateAdjustment201ApplicationJSON $createAdjustment201ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustment400ApplicationJSON $createAdjustment400ApplicationJSONObject
-     */
-	
-    public ?CreateAdjustment400ApplicationJSON $createAdjustment400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustment404ApplicationJSON $createAdjustment404ApplicationJSONObject
-     */
-	
-    public ?CreateAdjustment404ApplicationJSON $createAdjustment404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustment409ApplicationJSON $createAdjustment409ApplicationJSONObject
-     */
-	
-    public ?CreateAdjustment409ApplicationJSON $createAdjustment409ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAdjustment500ApplicationJSON $createAdjustment500ApplicationJSONObject
-     */
-	
-    public ?CreateAdjustment500ApplicationJSON $createAdjustment500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fourHundredAndNineApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createAdjustment201ApplicationJSONObject = null;
-		$this->createAdjustment400ApplicationJSONObject = null;
-		$this->createAdjustment404ApplicationJSONObject = null;
-		$this->createAdjustment409ApplicationJSONObject = null;
-		$this->createAdjustment500ApplicationJSONObject = null;
 	}
 }

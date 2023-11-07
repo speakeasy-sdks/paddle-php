@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class CreateCustomerResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateCustomerResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateCustomerResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateCustomerCustomersResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreateCustomerCustomersResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateCustomerCustomersResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateCustomerCustomersResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateCustomerCustomersResponse403ResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?CreateCustomerCustomersResponse403ResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateCustomerCustomersResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateCustomerCustomersResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class CreateCustomerResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateCustomer201ApplicationJSON $createCustomer201ApplicationJSONObject
-     */
-	
-    public ?CreateCustomer201ApplicationJSON $createCustomer201ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateCustomer400ApplicationJSON $createCustomer400ApplicationJSONObject
-     */
-	
-    public ?CreateCustomer400ApplicationJSON $createCustomer400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateCustomer401ApplicationJSON $createCustomer401ApplicationJSONObject
-     */
-	
-    public ?CreateCustomer401ApplicationJSON $createCustomer401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateCustomer403ApplicationJSON $createCustomer403ApplicationJSONObject
-     */
-	
-    public ?CreateCustomer403ApplicationJSON $createCustomer403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateCustomer500ApplicationJSON $createCustomer500ApplicationJSONObject
-     */
-	
-    public ?CreateCustomer500ApplicationJSON $createCustomer500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createCustomer201ApplicationJSONObject = null;
-		$this->createCustomer400ApplicationJSONObject = null;
-		$this->createCustomer401ApplicationJSONObject = null;
-		$this->createCustomer403ApplicationJSONObject = null;
-		$this->createCustomer500ApplicationJSONObject = null;
 	}
 }

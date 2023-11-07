@@ -1,5 +1,5 @@
 # Adjustments
-(*adjustments*)
+
 
 ## Overview
 
@@ -36,56 +36,45 @@ If successful, your response includes a copy of the new adjustment entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\AdjustmentCreateInput;
-use \paddle\Paddle\Models\Shared\Schemasaction;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\AdjustmentCreateAdjustmentItemInput;
-use \paddle\Paddle\Models\Shared\AdjustmentCreateAdjustmentItemType;
-use \paddle\Paddle\Models\Shared\AdjustmentPayoutTotals;
-use \paddle\Paddle\Models\Shared\AdjustmentPayoutTotalsChargebackFee;
-use \paddle\Paddle\Models\Shared\AdjustmentPayoutTotalsChargebackFeeOriginal;
-use \paddle\Paddle\Models\Shared\CurrencyCodeChargeback;
-use \paddle\Paddle\Models\Shared\CurrencyCodePayouts;
-use \paddle\Paddle\Models\Shared\SchemasstatusAdjustment;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new AdjustmentCreateInput();
-    $request->action = Schemasaction::Refund;
-    $request->currencyCode = CurrencyCode2::Jpy;
+    $request = new Shared\AdjustmentCreate();
+    $request->action = Shared\SchemaAction::Refund;
+    $request->currencyCode = Shared\CurrencyCode2::Jpy;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->id = 'adj_01gya6twkp8y0tv1e19rsgst9m';
     $request->items = [
-        new AdjustmentCreateAdjustmentItemInput(),
+        new Shared\AdjustmentCreateAdjustmentItem(),
     ];
-    $request->payoutTotals = new AdjustmentPayoutTotals();
-    $request->payoutTotals->chargebackFee = new AdjustmentPayoutTotalsChargebackFee();
+    $request->payoutTotals = new Shared\AdjustmentPayoutTotals();
+    $request->payoutTotals->chargebackFee = new Shared\ChargebackFee();
     $request->payoutTotals->chargebackFee->amount = '1680';
-    $request->payoutTotals->chargebackFee->original = new AdjustmentPayoutTotalsChargebackFeeOriginal();
+    $request->payoutTotals->chargebackFee->original = new Shared\Original();
     $request->payoutTotals->chargebackFee->original->amount = '1500';
-    $request->payoutTotals->chargebackFee->original->currencyCode = CurrencyCodeChargeback::Gbp;
-    $request->payoutTotals->currencyCode = CurrencyCodePayouts::Usd;
+    $request->payoutTotals->chargebackFee->original->currencyCode = Shared\CurrencyCodeChargeback::Gbp;
+    $request->payoutTotals->currencyCode = Shared\CurrencyCodePayouts::Usd;
     $request->payoutTotals->earnings = '15120';
     $request->payoutTotals->fee = '300';
     $request->payoutTotals->subtotal = '15000';
     $request->payoutTotals->tax = '1500';
     $request->payoutTotals->total = '16500';
     $request->reason = 'string';
-    $request->status = SchemasstatusAdjustment::Approved;
+    $request->status = Shared\SchemaStatusAdjustment::Approved;
     $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
     $request->transactionId = 'string';
 
     $response = $sdk->adjustments->create($request);
 
-    if ($response->createAdjustment201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -95,9 +84,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [\paddle\Paddle\Models\Shared\AdjustmentCreateInput](../../models/shared/AdjustmentCreateInput.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `$request`                                                                               | [\paddle\Paddle\Models\Shared\AdjustmentCreate](../../models/shared/AdjustmentCreate.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -117,34 +106,32 @@ Returns a paginated list of adjustments. Use the query parameters to page throug
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListAdjustmentsRequest;
-use \paddle\Paddle\Models\Shared\Action;
-use \paddle\Paddle\Models\Shared\StatusAdjustment;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListAdjustmentsRequest();
-    $request->action = Action::CreditReverse;
+    $request = new Operations\ListAdjustmentsRequest();
+    $request->action = Shared\Action::CreditReverse;
     $request->after = 'string';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 99895;
-    $request->status = StatusAdjustment::Rejected;
+    $request->status = Shared\StatusAdjustment::Rejected;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 
     $response = $sdk->adjustments->list($request);
 
-    if ($response->listAdjustments200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

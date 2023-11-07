@@ -40,10 +40,10 @@ class TransactionDetails
     /**
      * Information about line items for this transaction. Different from transaction `items` as they include totals calculated by Paddle. Considered the source of truth for line item totals.
      * 
-     * @var ?array<\paddle\Paddle\Models\Shared\TransactionDetailsTransactionLineItem> $lineItems
+     * @var ?array<\paddle\Paddle\Models\Shared\TransactionLineItem> $lineItems
      */
 	#[\JMS\Serializer\Annotation\SerializedName('line_items')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\TransactionDetailsTransactionLineItem>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\TransactionLineItem>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?array $lineItems = null;
     

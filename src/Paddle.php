@@ -28,13 +28,6 @@ class Paddle
 	];
   	
     /**
-     * Work with addresses for a customer.
-     * 
-     * @var Addresses $$addresses
-     */
-	public Addresses $addresses;
-	
-    /**
      * Work with adjustments.
      * 
      * @var Adjustments $$adjustments
@@ -42,18 +35,25 @@ class Paddle
 	public Adjustments $adjustments;
 	
     /**
-     * Work with businesses for a customer.
-     * 
-     * @var Businesses $$businesses
-     */
-	public Businesses $businesses;
-	
-    /**
      * Work with customers.
      * 
      * @var Customers $$customers
      */
 	public Customers $customers;
+	
+    /**
+     * Work with addresses for a customer.
+     * 
+     * @var Addresses $$addresses
+     */
+	public Addresses $addresses;
+	
+    /**
+     * Work with businesses for a customer.
+     * 
+     * @var Businesses $$businesses
+     */
+	public Businesses $businesses;
 	
     /**
      * Work with discounts.
@@ -70,18 +70,18 @@ class Paddle
 	public Events $events;
 	
     /**
-     * Get Paddle IP addresses.
-     * 
-     * @var IPAddresses $$ipAddresses
-     */
-	public IPAddresses $ipAddresses;
-	
-    /**
      * Work with invoices.
      * 
      * @var Invoices $$invoices
      */
 	public Invoices $invoices;
+	
+    /**
+     * Get Paddle IP addresses.
+     * 
+     * @var IPAddresses $$ipAddresses
+     */
+	public IPAddresses $ipAddresses;
 	
     /**
      * Work with notifications and notification settings.
@@ -98,6 +98,15 @@ class Paddle
 	public Prices $prices;
 	
     /**
+     * Work with transactions.
+     * 
+     * @var Transactions $$transactions
+     */
+	public Transactions $transactions;
+	
+	public TransactionService $transactionService;
+	
+    /**
      * Work with products.
      * 
      * @var Products $$products
@@ -110,15 +119,6 @@ class Paddle
      * @var Subscriptions $$subscriptions
      */
 	public Subscriptions $subscriptions;
-	
-    /**
-     * Work with transactions.
-     * 
-     * @var Transactions $$transactions
-     */
-	public Transactions $transactions;
-	
-	public TransactionService $transactionService;
 		
 	private SDKConfiguration $sdkConfiguration;
 
@@ -139,32 +139,32 @@ class Paddle
 	{
 		$this->sdkConfiguration = $sdkConfiguration;
 		
-		$this->addresses = new Addresses($this->sdkConfiguration);
-		
 		$this->adjustments = new Adjustments($this->sdkConfiguration);
 		
-		$this->businesses = new Businesses($this->sdkConfiguration);
-		
 		$this->customers = new Customers($this->sdkConfiguration);
+		
+		$this->addresses = new Addresses($this->sdkConfiguration);
+		
+		$this->businesses = new Businesses($this->sdkConfiguration);
 		
 		$this->discounts = new Discounts($this->sdkConfiguration);
 		
 		$this->events = new Events($this->sdkConfiguration);
 		
-		$this->ipAddresses = new IPAddresses($this->sdkConfiguration);
-		
 		$this->invoices = new Invoices($this->sdkConfiguration);
+		
+		$this->ipAddresses = new IPAddresses($this->sdkConfiguration);
 		
 		$this->notifications = new Notifications($this->sdkConfiguration);
 		
 		$this->prices = new Prices($this->sdkConfiguration);
 		
-		$this->products = new Products($this->sdkConfiguration);
-		
-		$this->subscriptions = new Subscriptions($this->sdkConfiguration);
-		
 		$this->transactions = new Transactions($this->sdkConfiguration);
 		
 		$this->transactionService = new TransactionService($this->sdkConfiguration);
+		
+		$this->products = new Products($this->sdkConfiguration);
+		
+		$this->subscriptions = new Subscriptions($this->sdkConfiguration);
 	}
 }

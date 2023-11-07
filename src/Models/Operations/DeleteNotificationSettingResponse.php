@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class DeleteNotificationSettingResponse
 {
     /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\DeleteNotificationSettingResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?DeleteNotificationSettingResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\DeleteNotificationSettingNotificationsResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?DeleteNotificationSettingNotificationsResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\DeleteNotificationSettingNotificationsResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?DeleteNotificationSettingNotificationsResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class DeleteNotificationSettingResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\DeleteNotificationSetting401ApplicationJSON $deleteNotificationSetting401ApplicationJSONObject
-     */
-	
-    public ?DeleteNotificationSetting401ApplicationJSON $deleteNotificationSetting401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\DeleteNotificationSetting404ApplicationJSON $deleteNotificationSetting404ApplicationJSONObject
-     */
-	
-    public ?DeleteNotificationSetting404ApplicationJSON $deleteNotificationSetting404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\DeleteNotificationSetting500ApplicationJSON $deleteNotificationSetting500ApplicationJSONObject
-     */
-	
-    public ?DeleteNotificationSetting500ApplicationJSON $deleteNotificationSetting500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->deleteNotificationSetting401ApplicationJSONObject = null;
-		$this->deleteNotificationSetting404ApplicationJSONObject = null;
-		$this->deleteNotificationSetting500ApplicationJSONObject = null;
 	}
 }

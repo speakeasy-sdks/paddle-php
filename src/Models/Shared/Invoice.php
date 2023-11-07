@@ -25,9 +25,9 @@ class Invoice
     public BillingDetails1 $billingDetails;
     
 	#[\JMS\Serializer\Annotation\SerializedName('billing_period')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\InvoiceBillingPeriod')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\BillingPeriod')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?InvoiceBillingPeriod $billingPeriod = null;
+    public ?BillingPeriod $billingPeriod = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('business_id')]
     #[\JMS\Serializer\Annotation\Type('string')]
@@ -35,9 +35,9 @@ class Invoice
     public ?string $businessId = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('checkout')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\InvoiceCheckout')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Checkout')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?InvoiceCheckout $checkout = null;
+    public ?Checkout $checkout = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('created_at')]
     #[\JMS\Serializer\Annotation\Type("DateTime<'Y-m-d\TH:i:s.up'>")]

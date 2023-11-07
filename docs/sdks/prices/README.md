@@ -1,5 +1,5 @@
 # Prices
-(*prices*)
+
 
 ## Overview
 
@@ -32,51 +32,41 @@ If successful, your response includes a copy of the new price entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\PriceCreate;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
-use \paddle\Paddle\Models\Shared\CountryCode2;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new PriceCreate();
-    $request->billingCycle = new Period2();
+    $request = new Shared\PriceCreate();
+    $request->billingCycle = new Shared\Period2();
     $request->billingCycle->frequency = 486589;
-    $request->billingCycle->interval = Period2Interval::Week;
-    $request->customData = new CustomData();
+    $request->billingCycle->interval = Shared\Period2Interval::Week;
+    $request->customData = new Shared\CustomData();
     $request->description = 'Proactive systematic Graphical User Interface';
     $request->productId = 'string';
-    $request->quantity = new PriceQuantity();
+    $request->quantity = new Shared\PriceQuantity();
     $request->quantity->maximum = 100;
     $request->quantity->minimum = 1;
-    $request->taxMode = TaxMode1::AccountSetting;
-    $request->trialPeriod = new Period2();
+    $request->taxMode = Shared\TaxMode1::AccountSetting;
+    $request->trialPeriod = new Shared\Period2();
     $request->trialPeriod->frequency = 134365;
-    $request->trialPeriod->interval = Period2Interval::Year;
-    $request->unitPrice = new Money2();
+    $request->trialPeriod->interval = Shared\Period2Interval::Year;
+    $request->unitPrice = new Shared\Money2();
     $request->unitPrice->amount = '69.02';
-    $request->unitPrice->currencyCode = CurrencyCode2::Zar;
+    $request->unitPrice->currencyCode = Shared\CurrencyCode2::Zar;
     $request->unitPriceOverrides = [
-        new UnitPriceOverride(),
+        new Shared\UnitPriceOverride(),
     ];
 
     $response = $sdk->prices->create($request);
 
-    if ($response->createPrice201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -110,26 +100,25 @@ Use the `include` parameter to include the related product entity in the respons
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetPriceRequest;
-use \paddle\Paddle\Models\Shared\IncludePrice;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetPriceRequest();
-    $request->include = IncludePrice::Product;
+    $request = new Operations\GetPriceRequest();
+    $request->include = Shared\IncludePrice::Product;
     $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
 
     $response = $sdk->prices->get($request);
 
-    if ($response->getPrice200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -165,33 +154,31 @@ Use the `include` parameter to include the related product entity in the respons
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListPricesRequest;
-use \paddle\Paddle\Models\Shared\IncludePrice;
-use \paddle\Paddle\Models\Shared\Status;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListPricesRequest();
+    $request = new Operations\ListPricesRequest();
     $request->after = 'string';
     $request->id = '<ID>';
-    $request->include = IncludePrice::Product;
+    $request->include = Shared\IncludePrice::Product;
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
     $request->recurring = false;
-    $request->status = Status::Active;
+    $request->status = Shared\Status::Active;
 
     $response = $sdk->prices->list($request);
 
-    if ($response->listPrices200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -225,55 +212,44 @@ If successful, your response includes a copy of the updated price entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdatePriceRequest;
-use \paddle\Paddle\Models\Shared\PriceUpdate;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\Schemasstatus;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
-use \paddle\Paddle\Models\Shared\CountryCode2;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdatePriceRequest();
-    $request->priceUpdate = new PriceUpdate();
-    $request->priceUpdate->billingCycle = new Period2();
+    $request = new Operations\UpdatePriceRequest();
+    $request->priceUpdate = new Shared\PriceUpdate();
+    $request->priceUpdate->billingCycle = new Shared\Period2();
     $request->priceUpdate->billingCycle->frequency = 857478;
-    $request->priceUpdate->billingCycle->interval = Period2Interval::Day;
-    $request->priceUpdate->customData = new CustomData();
+    $request->priceUpdate->billingCycle->interval = Shared\Period2Interval::Day;
+    $request->priceUpdate->customData = new Shared\CustomData();
     $request->priceUpdate->description = 'Persistent 24/7 focus group';
-    $request->priceUpdate->quantity = new PriceQuantity();
+    $request->priceUpdate->quantity = new Shared\PriceQuantity();
     $request->priceUpdate->quantity->maximum = 100;
     $request->priceUpdate->quantity->minimum = 1;
-    $request->priceUpdate->status = Schemasstatus::Archived;
-    $request->priceUpdate->taxMode = TaxMode1::Internal;
-    $request->priceUpdate->trialPeriod = new Period2();
+    $request->priceUpdate->status = Shared\SchemaStatus::Archived;
+    $request->priceUpdate->taxMode = Shared\TaxMode1::Internal;
+    $request->priceUpdate->trialPeriod = new Shared\Period2();
     $request->priceUpdate->trialPeriod->frequency = 270324;
-    $request->priceUpdate->trialPeriod->interval = Period2Interval::Month;
-    $request->priceUpdate->unitPrice = new Money2();
+    $request->priceUpdate->trialPeriod->interval = Shared\Period2Interval::Month;
+    $request->priceUpdate->unitPrice = new Shared\Money2();
     $request->priceUpdate->unitPrice->amount = '684.20';
-    $request->priceUpdate->unitPrice->currencyCode = CurrencyCode2::Jpy;
+    $request->priceUpdate->unitPrice->currencyCode = Shared\CurrencyCode2::Jpy;
     $request->priceUpdate->unitPriceOverrides = [
-        new UnitPriceOverride(),
+        new Shared\UnitPriceOverride(),
     ];
     $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
 
     $response = $sdk->prices->update($request);
 
-    if ($response->updatePrice200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

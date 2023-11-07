@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class ListAddressesResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListAddressesResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListAddressesResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListAddressesAddressesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListAddressesAddressesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListAddressesAddressesResponseResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?ListAddressesAddressesResponseResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListAddressesAddressesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?ListAddressesAddressesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListAddressesAddressesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListAddressesAddressesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class ListAddressesResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListAddresses200ApplicationJSON $listAddresses200ApplicationJSONObject
-     */
-	
-    public ?ListAddresses200ApplicationJSON $listAddresses200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListAddresses401ApplicationJSON $listAddresses401ApplicationJSONObject
-     */
-	
-    public ?ListAddresses401ApplicationJSON $listAddresses401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListAddresses403ApplicationJSON $listAddresses403ApplicationJSONObject
-     */
-	
-    public ?ListAddresses403ApplicationJSON $listAddresses403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListAddresses404ApplicationJSON $listAddresses404ApplicationJSONObject
-     */
-	
-    public ?ListAddresses404ApplicationJSON $listAddresses404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListAddresses500ApplicationJSON $listAddresses500ApplicationJSONObject
-     */
-	
-    public ?ListAddresses500ApplicationJSON $listAddresses500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listAddresses200ApplicationJSONObject = null;
-		$this->listAddresses401ApplicationJSONObject = null;
-		$this->listAddresses403ApplicationJSONObject = null;
-		$this->listAddresses404ApplicationJSONObject = null;
-		$this->listAddresses500ApplicationJSONObject = null;
 	}
 }

@@ -1,5 +1,5 @@
 # Discounts
-(*discounts*)
+
 
 ## Overview
 
@@ -28,24 +28,21 @@ If successful, your response includes a copy of the new discount entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\DiscountCreateInput;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\DiscountCreateType;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new DiscountCreateInput();
+    $request = new Shared\DiscountCreate();
     $request->amount = '486.59';
     $request->code = 'string';
-    $request->currencyCode = CurrencyCode2::Jpy;
+    $request->currencyCode = Shared\CurrencyCode2::Jpy;
     $request->description = 'Proactive systematic Graphical User Interface';
     $request->enabledForCheckout = false;
     $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
@@ -55,12 +52,12 @@ try {
     $request->restrictTo = [
         'string',
     ];
-    $request->type = DiscountCreateType::Flat;
+    $request->type = Shared\Type::Flat;
     $request->usageLimit = 786546;
 
     $response = $sdk->discounts->create($request);
 
-    if ($response->createDiscount200ApplicationJSONObject !== null) {
+    if ($response->object !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -70,9 +67,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\paddle\Paddle\Models\Shared\DiscountCreateInput](../../models/shared/DiscountCreateInput.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `$request`                                                                           | [\paddle\Paddle\Models\Shared\DiscountCreate](../../models/shared/DiscountCreate.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -92,24 +89,24 @@ Returns a discount using its ID.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetDiscountRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetDiscountRequest();
+    $request = new Operations\GetDiscountRequest();
     $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';
 
     $response = $sdk->discounts->get($request);
 
-    if ($response->getDiscount200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -143,30 +140,29 @@ By default, Paddle returns discounts that are `active`. Use the `status` query p
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListDiscountsRequest;
-use \paddle\Paddle\Models\Shared\StatusDiscount;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListDiscountsRequest();
+    $request = new Operations\ListDiscountsRequest();
     $request->after = 'string';
     $request->code = 'BLACKFRIDAY';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 768578;
-    $request->status = StatusDiscount::Active;
+    $request->status = Shared\StatusDiscount::Active;
 
     $response = $sdk->discounts->list($request);
 
-    if ($response->listDiscounts200ApplicationJSONObject !== null) {
+    if ($response->object !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -200,44 +196,40 @@ If successful, your response includes a copy of the updated discount entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateDiscountRequest;
-use \paddle\Paddle\Models\Shared\DiscountInput;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\SchemasstatusDiscount;
-use \paddle\Paddle\Models\Shared\DiscountType;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateDiscountRequest();
-    $request->discountInput = new DiscountInput();
-    $request->discountInput->amount = '857.48';
-    $request->discountInput->code = 'string';
-    $request->discountInput->currencyCode = CurrencyCode2::Ars;
-    $request->discountInput->description = 'Persistent 24/7 focus group';
-    $request->discountInput->enabledForCheckout = false;
-    $request->discountInput->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->discountInput->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->discountInput->maximumRecurringIntervals = 708455;
-    $request->discountInput->recur = false;
-    $request->discountInput->restrictTo = [
+    $request = new Operations\UpdateDiscountRequest();
+    $request->discount = new Shared\DiscountInput();
+    $request->discount->amount = '857.48';
+    $request->discount->code = 'string';
+    $request->discount->currencyCode = Shared\CurrencyCode2::Ars;
+    $request->discount->description = 'Persistent 24/7 focus group';
+    $request->discount->enabledForCheckout = false;
+    $request->discount->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->discount->id = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
+    $request->discount->maximumRecurringIntervals = 708455;
+    $request->discount->recur = false;
+    $request->discount->restrictTo = [
         'string',
     ];
-    $request->discountInput->status = SchemasstatusDiscount::Used;
-    $request->discountInput->type = DiscountType::Flat;
-    $request->discountInput->usageLimit = 627690;
+    $request->discount->status = Shared\SchemaStatusDiscount::Used;
+    $request->discount->type = Shared\DiscountType::Flat;
+    $request->discount->usageLimit = 627690;
     $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';
 
     $response = $sdk->discounts->update($request);
 
-    if ($response->updateDiscount200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

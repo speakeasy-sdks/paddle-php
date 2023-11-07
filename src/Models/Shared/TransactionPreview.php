@@ -123,10 +123,10 @@ class TransactionPreview
     /**
      * List of items to preview transaction calculations for.
      * 
-     * @var array<\paddle\Paddle\Models\Shared\TransactionPreviewTransactionItemPreview> $items
+     * @var array<\paddle\Paddle\Models\Shared\TransactionItemPreview> $items
      */
 	#[\JMS\Serializer\Annotation\SerializedName('items')]
-    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\TransactionPreviewTransactionItemPreview>')]
+    #[\JMS\Serializer\Annotation\Type('array<paddle\Paddle\Models\Shared\TransactionItemPreview>')]
     public array $items;
     
 	public function __construct()

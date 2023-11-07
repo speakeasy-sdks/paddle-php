@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class PricePreviewResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\PricePreviewResponseBodyOutput $twoHundredApplicationJsonObject
+     */
+	
+    public ?PricePreviewResponseBodyOutput $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\PricePreviewResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?PricePreviewResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\PricePreviewTransactionsResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?PricePreviewTransactionsResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class PricePreviewResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\PricePreview200ApplicationJSONOutput $pricePreview200ApplicationJSONObject
-     */
-	
-    public ?PricePreview200ApplicationJSONOutput $pricePreview200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\PricePreview401ApplicationJSON $pricePreview401ApplicationJSONObject
-     */
-	
-    public ?PricePreview401ApplicationJSON $pricePreview401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\PricePreview500ApplicationJSON $pricePreview500ApplicationJSONObject
-     */
-	
-    public ?PricePreview500ApplicationJSON $pricePreview500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->pricePreview200ApplicationJSONObject = null;
-		$this->pricePreview401ApplicationJSONObject = null;
-		$this->pricePreview500ApplicationJSONObject = null;
 	}
 }

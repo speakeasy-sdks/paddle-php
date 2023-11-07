@@ -40,11 +40,11 @@ class Adjustments
      * 
      * If successful, your response includes a copy of the new adjustment entity.
      * 
-     * @param \paddle\Paddle\Models\Shared\AdjustmentCreateInput $request
+     * @param \paddle\Paddle\Models\Shared\AdjustmentCreate $request
      * @return \paddle\Paddle\Models\Operations\CreateAdjustmentResponse
      */
 	public function create(
-        ?\paddle\Paddle\Models\Shared\AdjustmentCreateInput $request,
+        ?\paddle\Paddle\Models\Shared\AdjustmentCreate $request,
     ): \paddle\Paddle\Models\Operations\CreateAdjustmentResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -62,15 +62,17 @@ class Adjustments
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\CreateAdjustmentResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 201) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createAdjustment201ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustment201ApplicationJSON', 'json');
+                $response->twoHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustmentResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 400) {
@@ -78,7 +80,7 @@ class Adjustments
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createAdjustment400ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustment400ApplicationJSON', 'json');
+                $response->fourHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -86,7 +88,7 @@ class Adjustments
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createAdjustment404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustment404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponseResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 409) {
@@ -94,7 +96,7 @@ class Adjustments
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createAdjustment409ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustment409ApplicationJSON', 'json');
+                $response->fourHundredAndNineApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponse409ResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -102,7 +104,7 @@ class Adjustments
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createAdjustment500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustment500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateAdjustmentAdjustmentsResponse500ResponseBody', 'json');
             }
         }
 
@@ -133,15 +135,17 @@ class Adjustments
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\ListAdjustmentsResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listAdjustments200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListAdjustments200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListAdjustmentsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 400) {
@@ -149,7 +153,7 @@ class Adjustments
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listAdjustments400ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListAdjustments400ApplicationJSON', 'json');
+                $response->fourHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListAdjustmentsAdjustmentsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -157,7 +161,7 @@ class Adjustments
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listAdjustments500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListAdjustments500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListAdjustmentsAdjustmentsResponseResponseBody', 'json');
             }
         }
 

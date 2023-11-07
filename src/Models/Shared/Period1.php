@@ -22,12 +22,12 @@ class Period1
     public int $frequency;
     
 	#[\JMS\Serializer\Annotation\SerializedName('interval')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\Period1Interval>')]
-    public Period1Interval $interval;
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\Interval>')]
+    public Interval $interval;
     
 	public function __construct()
 	{
 		$this->frequency = 0;
-		$this->interval = \paddle\Paddle\Models\Shared\Period1Interval::Day;
+		$this->interval = \paddle\Paddle\Models\Shared\Interval::Day;
 	}
 }

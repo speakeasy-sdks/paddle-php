@@ -28,11 +28,11 @@ class Discounts
      * 
      * If successful, your response includes a copy of the new discount entity.
      * 
-     * @param \paddle\Paddle\Models\Shared\DiscountCreateInput $request
+     * @param \paddle\Paddle\Models\Shared\DiscountCreate $request
      * @return \paddle\Paddle\Models\Operations\CreateDiscountResponse
      */
 	public function create(
-        ?\paddle\Paddle\Models\Shared\DiscountCreateInput $request,
+        ?\paddle\Paddle\Models\Shared\DiscountCreate $request,
     ): \paddle\Paddle\Models\Operations\CreateDiscountResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -50,15 +50,17 @@ class Discounts
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\CreateDiscountResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createDiscount200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateDiscount200ApplicationJSON', 'json');
+                $response->object = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateDiscountResponseBody', 'json');
             }
         }
 
@@ -88,15 +90,17 @@ class Discounts
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\GetDiscountResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getDiscount200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetDiscount200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetDiscountResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -104,7 +108,7 @@ class Discounts
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getDiscount404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetDiscount404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetDiscountDiscountsResponseBody', 'json');
             }
         }
 
@@ -137,15 +141,17 @@ class Discounts
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\ListDiscountsResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listDiscounts200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListDiscounts200ApplicationJSON', 'json');
+                $response->object = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListDiscountsResponseBody', 'json');
             }
         }
 
@@ -170,7 +176,7 @@ class Discounts
         $url = Utils\Utils::generateUrl($baseUrl, '/discounts/{discount_id}', \paddle\Paddle\Models\Operations\UpdateDiscountRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "discountInput", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "discount", "json");
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
@@ -181,15 +187,17 @@ class Discounts
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\UpdateDiscountResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateDiscount200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateDiscount200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateDiscountResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -197,7 +205,7 @@ class Discounts
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateDiscount404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateDiscount404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateDiscountDiscountsResponseBody', 'json');
             }
         }
 

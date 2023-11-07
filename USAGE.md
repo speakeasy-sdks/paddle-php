@@ -7,35 +7,44 @@
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use paddle\Paddle\Paddle;
-use paddle\Paddle\Models\Shared\Security;
-use paddle\Paddle\Models\Operations\CreateAddressRequest;
-use paddle\Paddle\Models\Shared\AddressCreateInput;
-use paddle\Paddle\Models\Shared\CountryCode2;
+use paddle\Paddle;
+use paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CreateAddressRequest();
-    $request->addressCreateInput = new AddressCreateInput();
-    $request->addressCreateInput->city = 'Astoria';
-    $request->addressCreateInput->countryCode = CountryCode2::Kn;
-    $request->addressCreateInput->description = 'Paddle.com';
-    $request->addressCreateInput->firstLine = '3811 Ditmars Blvd';
-    $request->addressCreateInput->id = 'add_01gm302t81w94gyjpjpqypkzkf';
-    $request->addressCreateInput->postalCode = '11105-1803';
-    $request->addressCreateInput->region = 'NY';
-    $request->addressCreateInput->secondLine = 'string';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request = new Shared\AdjustmentCreate();
+    $request->action = Shared\SchemaAction::Refund;
+    $request->currencyCode = Shared\CurrencyCode2::Jpy;
+    $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
+    $request->id = 'adj_01gya6twkp8y0tv1e19rsgst9m';
+    $request->items = [new Shared\AdjustmentCreateAdjustmentItem()];
+    $request->payoutTotals = new Shared\AdjustmentPayoutTotals();
+    $request->payoutTotals->chargebackFee = new Shared\ChargebackFee();
+    $request->payoutTotals->chargebackFee->amount = '1680';
+    $request->payoutTotals->chargebackFee->original = new Shared\Original();
+    $request->payoutTotals->chargebackFee->original->amount = '1500';
+    $request->payoutTotals->chargebackFee->original->currencyCode =
+        Shared\CurrencyCodeChargeback::Gbp;
+    $request->payoutTotals->currencyCode = Shared\CurrencyCodePayouts::Usd;
+    $request->payoutTotals->earnings = '15120';
+    $request->payoutTotals->fee = '300';
+    $request->payoutTotals->subtotal = '15000';
+    $request->payoutTotals->tax = '1500';
+    $request->payoutTotals->total = '16500';
+    $request->reason = 'string';
+    $request->status = Shared\SchemaStatusAdjustment::Approved;
+    $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
+    $request->transactionId = 'string';
 
-    $response = $sdk->addresses->create($request);
+    $response = $sdk->adjustments->create($request);
 
-    if ($response->createAddress201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

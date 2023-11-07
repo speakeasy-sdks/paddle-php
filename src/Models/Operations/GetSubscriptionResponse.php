@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetSubscriptionResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionSubscriptionsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionSubscriptionsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionSubscriptionsResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionSubscriptionsResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionSubscriptionsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionSubscriptionsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetSubscriptionResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscription200ApplicationJSON $getSubscription200ApplicationJSONObject
-     */
-	
-    public ?GetSubscription200ApplicationJSON $getSubscription200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscription401ApplicationJSON $getSubscription401ApplicationJSONObject
-     */
-	
-    public ?GetSubscription401ApplicationJSON $getSubscription401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscription404ApplicationJSON $getSubscription404ApplicationJSONObject
-     */
-	
-    public ?GetSubscription404ApplicationJSON $getSubscription404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscription500ApplicationJSON $getSubscription500ApplicationJSONObject
-     */
-	
-    public ?GetSubscription500ApplicationJSON $getSubscription500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getSubscription200ApplicationJSONObject = null;
-		$this->getSubscription401ApplicationJSONObject = null;
-		$this->getSubscription404ApplicationJSONObject = null;
-		$this->getSubscription500ApplicationJSONObject = null;
 	}
 }

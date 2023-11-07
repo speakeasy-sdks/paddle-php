@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class ResumeSubscriptionResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscriptionResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ResumeSubscriptionResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscriptionSubscriptionsResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?ResumeSubscriptionSubscriptionsResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscriptionSubscriptionsResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ResumeSubscriptionSubscriptionsResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscriptionSubscriptionsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ResumeSubscriptionSubscriptionsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -51,48 +83,16 @@ class ResumeSubscriptionResponse
 	
     public ?\paddle\Paddle\Models\Shared\Error $error = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscription200ApplicationJSON $resumeSubscription200ApplicationJSONObject
-     */
-	
-    public ?ResumeSubscription200ApplicationJSON $resumeSubscription200ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscription400ApplicationJSON $resumeSubscription400ApplicationJSONObject
-     */
-	
-    public ?ResumeSubscription400ApplicationJSON $resumeSubscription400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscription401ApplicationJSON $resumeSubscription401ApplicationJSONObject
-     */
-	
-    public ?ResumeSubscription401ApplicationJSON $resumeSubscription401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ResumeSubscription500ApplicationJSON $resumeSubscription500ApplicationJSONObject
-     */
-	
-    public ?ResumeSubscription500ApplicationJSON $resumeSubscription500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
 		$this->error = null;
-		$this->resumeSubscription200ApplicationJSONObject = null;
-		$this->resumeSubscription400ApplicationJSONObject = null;
-		$this->resumeSubscription401ApplicationJSONObject = null;
-		$this->resumeSubscription500ApplicationJSONObject = null;
 	}
 }

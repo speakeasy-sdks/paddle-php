@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class ListInvoicesResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListInvoicesResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListInvoicesResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListInvoicesInvoicesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListInvoicesInvoicesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListInvoicesInvoicesResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListInvoicesInvoicesResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class ListInvoicesResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListInvoices200ApplicationJSON $listInvoices200ApplicationJSONObject
-     */
-	
-    public ?ListInvoices200ApplicationJSON $listInvoices200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListInvoices401ApplicationJSON $listInvoices401ApplicationJSONObject
-     */
-	
-    public ?ListInvoices401ApplicationJSON $listInvoices401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListInvoices500ApplicationJSON $listInvoices500ApplicationJSONObject
-     */
-	
-    public ?ListInvoices500ApplicationJSON $listInvoices500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listInvoices200ApplicationJSONObject = null;
-		$this->listInvoices401ApplicationJSONObject = null;
-		$this->listInvoices500ApplicationJSONObject = null;
 	}
 }

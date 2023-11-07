@@ -53,7 +53,7 @@ class Transactions
         $url = Utils\Utils::generateUrl($baseUrl, '/transactions');
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "transactionCreateInput", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "transactionCreate", "json");
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
@@ -65,15 +65,17 @@ class Transactions
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\CreateTransactionResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 201) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createTransaction201ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateTransaction201ApplicationJSON', 'json');
+                $response->twoHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateTransactionResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -81,7 +83,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createTransaction401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateTransaction401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateTransactionTransactionsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -89,7 +91,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->createTransaction500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateTransaction500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\CreateTransactionTransactionsTransactionServiceResponseBody', 'json');
             }
         }
 
@@ -122,15 +124,17 @@ class Transactions
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\GetTransactionResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransaction200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransaction200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -138,7 +142,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransaction401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransaction401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionTransactionsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -146,7 +150,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransaction404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransaction404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionTransactionsTransactionServiceResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -154,7 +158,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransaction500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransaction500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionTransactionsTransactionServiceResponseResponseBody', 'json');
             }
         }
 
@@ -191,8 +195,10 @@ class Transactions
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\GetTransactionInvoiceResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -201,7 +207,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransactionInvoice200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoice200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoiceResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -209,7 +215,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransactionInvoice401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoice401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoiceTransactionsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -217,7 +223,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransactionInvoice404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoice404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoiceTransactionsResponseResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -225,7 +231,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->getTransactionInvoice500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoice500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\GetTransactionInvoiceTransactionsResponse500ResponseBody', 'json');
             }
         }
 
@@ -258,8 +264,10 @@ class Transactions
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\ListTransactionsResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -268,7 +276,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listTransactions200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListTransactions200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListTransactionsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -276,7 +284,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listTransactions401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListTransactions401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListTransactionsTransactionsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -284,7 +292,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->listTransactions500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListTransactions500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\ListTransactionsTransactionsTransactionServiceResponseBody', 'json');
             }
         }
 
@@ -334,15 +342,17 @@ class Transactions
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\PreviewTransactionResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->previewTransaction200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PreviewTransaction200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PreviewTransactionResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -350,7 +360,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->previewTransaction401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PreviewTransaction401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PreviewTransactionTransactionsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -358,7 +368,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->previewTransaction500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PreviewTransaction500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PreviewTransactionTransactionsTransactionServiceResponseBody', 'json');
             }
         }
 
@@ -380,11 +390,11 @@ class Transactions
      * 
      * Each line item includes `formatted_unit_totals` and `formatted_totals` objects that return totals formatted for the country or region you're working with, including the currency symbol.
      * 
-     * @param \paddle\Paddle\Models\Shared\TransactionPricingPreviewInput $request
+     * @param \paddle\Paddle\Models\Shared\TransactionPricingPreview $request
      * @return \paddle\Paddle\Models\Operations\PricePreviewResponse
      */
 	public function pricePreview(
-        ?\paddle\Paddle\Models\Shared\TransactionPricingPreviewInput $request,
+        ?\paddle\Paddle\Models\Shared\TransactionPricingPreview $request,
     ): \paddle\Paddle\Models\Operations\PricePreviewResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
@@ -402,15 +412,17 @@ class Transactions
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\PricePreviewResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->pricePreview200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PricePreview200ApplicationJSONOutput', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PricePreviewResponseBodyOutput', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -418,7 +430,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->pricePreview401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PricePreview401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PricePreviewResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -426,7 +438,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->pricePreview500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PricePreview500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\PricePreviewTransactionsResponseBody', 'json');
             }
         }
 
@@ -460,7 +472,7 @@ class Transactions
         $url = Utils\Utils::generateUrl($baseUrl, '/transactions/{transaction_id}', \paddle\Paddle\Models\Operations\UpdateTransactionRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "transactionUpdateInput", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "transactionUpdate", "json");
         if ($body !== null) {
             $options = array_merge_recursive($options, $body);
         }
@@ -471,15 +483,17 @@ class Transactions
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \paddle\Paddle\Models\Operations\UpdateTransactionResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateTransaction200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransaction200ApplicationJSON', 'json');
+                $response->twoHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransactionResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 401) {
@@ -487,7 +501,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateTransaction401ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransaction401ApplicationJSON', 'json');
+                $response->fourHundredAndOneApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransactionTransactionsResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 404) {
@@ -495,7 +509,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateTransaction404ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransaction404ApplicationJSON', 'json');
+                $response->fourHundredAndFourApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransactionTransactionsTransactionServiceResponseBody', 'json');
             }
         }
         else if ($httpResponse->getStatusCode() === 500) {
@@ -503,7 +517,7 @@ class Transactions
             
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->updateTransaction500ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransaction500ApplicationJSON', 'json');
+                $response->fiveHundredApplicationJsonObject = $serializer->deserialize((string)$httpResponse->getBody(), 'paddle\Paddle\Models\Operations\UpdateTransactionTransactionsTransactionServiceResponseResponseBody', 'json');
             }
         }
 

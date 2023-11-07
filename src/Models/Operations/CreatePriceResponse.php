@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class CreatePriceResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreatePriceResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreatePriceResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreatePricePricesResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreatePricePricesResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreatePricePricesResponseResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?CreatePricePricesResponseResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreatePricePricesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreatePricePricesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class CreatePriceResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreatePrice201ApplicationJSON $createPrice201ApplicationJSONObject
-     */
-	
-    public ?CreatePrice201ApplicationJSON $createPrice201ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreatePrice400ApplicationJSON $createPrice400ApplicationJSONObject
-     */
-	
-    public ?CreatePrice400ApplicationJSON $createPrice400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreatePrice403ApplicationJSON $createPrice403ApplicationJSONObject
-     */
-	
-    public ?CreatePrice403ApplicationJSON $createPrice403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreatePrice500ApplicationJSON $createPrice500ApplicationJSONObject
-     */
-	
-    public ?CreatePrice500ApplicationJSON $createPrice500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createPrice201ApplicationJSONObject = null;
-		$this->createPrice400ApplicationJSONObject = null;
-		$this->createPrice403ApplicationJSONObject = null;
-		$this->createPrice500ApplicationJSONObject = null;
 	}
 }

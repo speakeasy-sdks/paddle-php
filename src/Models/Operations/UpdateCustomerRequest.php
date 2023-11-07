@@ -12,7 +12,7 @@ use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class UpdateCustomerRequest
 {
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\CustomerInput $customerInput = null;
+    public ?\paddle\Paddle\Models\Shared\CustomerInput $customer = null;
     
     /**
      * Paddle ID of the customer entity to work with.
@@ -24,7 +24,7 @@ class UpdateCustomerRequest
     
 	public function __construct()
 	{
-		$this->customerInput = null;
+		$this->customer = null;
 		$this->customerId = "";
 	}
 }

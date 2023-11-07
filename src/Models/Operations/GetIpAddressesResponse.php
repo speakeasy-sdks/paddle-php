@@ -12,6 +12,22 @@ namespace paddle\Paddle\Models\Operations;
 class GetIpAddressesResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetIpAddressesResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetIpAddressesResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetIPAddressesIPAddressesResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetIPAddressesIPAddressesResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,29 +59,13 @@ class GetIpAddressesResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetIpAddresses200ApplicationJSON $getIpAddresses200ApplicationJSONObject
-     */
-	
-    public ?GetIpAddresses200ApplicationJSON $getIpAddresses200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetIpAddresses500ApplicationJSON $getIpAddresses500ApplicationJSONObject
-     */
-	
-    public ?GetIpAddresses500ApplicationJSON $getIpAddresses500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getIpAddresses200ApplicationJSONObject = null;
-		$this->getIpAddresses500ApplicationJSONObject = null;
 	}
 }

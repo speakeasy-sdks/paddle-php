@@ -12,6 +12,54 @@ namespace paddle\Paddle\Models\Operations;
 class CreateAddressResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAddressResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateAddressResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAddressAddressesResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreateAddressAddressesResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAddressAddressesResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateAddressAddressesResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAddressAddressesResponse403ResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?CreateAddressAddressesResponse403ResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAddressAddressesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?CreateAddressAddressesResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateAddressAddressesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateAddressAddressesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,65 +91,17 @@ class CreateAddressResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAddress201ApplicationJSON $createAddress201ApplicationJSONObject
-     */
-	
-    public ?CreateAddress201ApplicationJSON $createAddress201ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAddress400ApplicationJSON $createAddress400ApplicationJSONObject
-     */
-	
-    public ?CreateAddress400ApplicationJSON $createAddress400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAddress401ApplicationJSON $createAddress401ApplicationJSONObject
-     */
-	
-    public ?CreateAddress401ApplicationJSON $createAddress401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAddress403ApplicationJSON $createAddress403ApplicationJSONObject
-     */
-	
-    public ?CreateAddress403ApplicationJSON $createAddress403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAddress404ApplicationJSON $createAddress404ApplicationJSONObject
-     */
-	
-    public ?CreateAddress404ApplicationJSON $createAddress404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateAddress500ApplicationJSON $createAddress500ApplicationJSONObject
-     */
-	
-    public ?CreateAddress500ApplicationJSON $createAddress500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createAddress201ApplicationJSONObject = null;
-		$this->createAddress400ApplicationJSONObject = null;
-		$this->createAddress401ApplicationJSONObject = null;
-		$this->createAddress403ApplicationJSONObject = null;
-		$this->createAddress404ApplicationJSONObject = null;
-		$this->createAddress500ApplicationJSONObject = null;
 	}
 }

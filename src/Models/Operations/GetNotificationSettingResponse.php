@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class GetNotificationSettingResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSettingResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetNotificationSettingResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSettingNotificationsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetNotificationSettingNotificationsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSettingNotificationsResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetNotificationSettingNotificationsResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSettingNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetNotificationSettingNotificationsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class GetNotificationSettingResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSetting200ApplicationJSON $getNotificationSetting200ApplicationJSONObject
-     */
-	
-    public ?GetNotificationSetting200ApplicationJSON $getNotificationSetting200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSetting401ApplicationJSON $getNotificationSetting401ApplicationJSONObject
-     */
-	
-    public ?GetNotificationSetting401ApplicationJSON $getNotificationSetting401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSetting404ApplicationJSON $getNotificationSetting404ApplicationJSONObject
-     */
-	
-    public ?GetNotificationSetting404ApplicationJSON $getNotificationSetting404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetNotificationSetting500ApplicationJSON $getNotificationSetting500ApplicationJSONObject
-     */
-	
-    public ?GetNotificationSetting500ApplicationJSON $getNotificationSetting500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getNotificationSetting200ApplicationJSONObject = null;
-		$this->getNotificationSetting401ApplicationJSONObject = null;
-		$this->getNotificationSetting404ApplicationJSONObject = null;
-		$this->getNotificationSetting500ApplicationJSONObject = null;
 	}
 }

@@ -22,16 +22,16 @@ class InvoiceForPatchBillingPeriod
     /**
      * The billing period type is set to `billing` for subscriptions.
      * 
-     * @var \paddle\Paddle\Models\Shared\InvoiceForPatchBillingPeriodType $type
+     * @var \paddle\Paddle\Models\Shared\InvoiceForPatchType $type
      */
 	#[\JMS\Serializer\Annotation\SerializedName('type')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\InvoiceForPatchBillingPeriodType>')]
-    public InvoiceForPatchBillingPeriodType $type;
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\InvoiceForPatchType>')]
+    public InvoiceForPatchType $type;
     
 	public function __construct()
 	{
 		$this->endsAt = new \DateTime();
 		$this->startsAt = new \DateTime();
-		$this->type = \paddle\Paddle\Models\Shared\InvoiceForPatchBillingPeriodType::Billing;
+		$this->type = \paddle\Paddle\Models\Shared\InvoiceForPatchType::Billing;
 	}
 }

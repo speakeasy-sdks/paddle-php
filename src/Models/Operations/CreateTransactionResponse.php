@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class CreateTransactionResponse
 {
     /**
+     * Created
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateTransactionResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateTransactionResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateTransactionTransactionsResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateTransactionTransactionsResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateTransactionTransactionsTransactionServiceResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateTransactionTransactionsTransactionServiceResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class CreateTransactionResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * Created
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateTransaction201ApplicationJSON $createTransaction201ApplicationJSONObject
-     */
-	
-    public ?CreateTransaction201ApplicationJSON $createTransaction201ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateTransaction401ApplicationJSON $createTransaction401ApplicationJSONObject
-     */
-	
-    public ?CreateTransaction401ApplicationJSON $createTransaction401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateTransaction500ApplicationJSON $createTransaction500ApplicationJSONObject
-     */
-	
-    public ?CreateTransaction500ApplicationJSON $createTransaction500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createTransaction201ApplicationJSONObject = null;
-		$this->createTransaction401ApplicationJSONObject = null;
-		$this->createTransaction500ApplicationJSONObject = null;
 	}
 }

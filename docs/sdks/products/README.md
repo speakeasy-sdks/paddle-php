@@ -1,5 +1,5 @@
 # Products
-(*products*)
+
 
 ## Overview
 
@@ -30,30 +30,27 @@ If successful, your response includes a copy of the new product entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\ProductCreate;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\TaxCategory1;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ProductCreate();
-    $request->customData = new CustomData();
+    $request = new Shared\ProductCreate();
+    $request->customData = new Shared\CustomData();
     $request->description = 'Multi-tiered human-resource model';
     $request->imageUrl = 'https://impartial-dump.com';
     $request->name = 'string';
-    $request->taxCategory = TaxCategory1::TrainingServices;
+    $request->taxCategory = Shared\TaxCategory1::TrainingServices;
 
     $response = $sdk->products->create($request);
 
-    if ($response->createProduct201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -87,26 +84,25 @@ Use the `include` parameter to include related price entities in the response.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetProductRequest;
-use \paddle\Paddle\Models\Shared\IncludeProduct;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetProductRequest();
-    $request->include = IncludeProduct::Prices;
+    $request = new Operations\GetProductRequest();
+    $request->include = Shared\IncludeProduct::Prices;
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
 
     $response = $sdk->products->get($request);
 
-    if ($response->getProduct200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -142,33 +138,30 @@ Use the `include` parameter to include related price entities in the response.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListProductsRequest;
-use \paddle\Paddle\Models\Shared\IncludeProduct;
-use \paddle\Paddle\Models\Shared\Status;
-use \paddle\Paddle\Models\Shared\TaxCategory;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListProductsRequest();
+    $request = new Operations\ListProductsRequest();
     $request->after = 'string';
     $request->id = '<ID>';
-    $request->include = IncludeProduct::Prices;
+    $request->include = Shared\IncludeProduct::Prices;
     $request->orderBy = 'string';
     $request->perPage = 768578;
-    $request->status = Status::Active;
-    $request->taxCategory = TaxCategory::Saas;
+    $request->status = Shared\Status::Active;
+    $request->taxCategory = Shared\TaxCategory::Saas;
 
     $response = $sdk->products->list($request);
 
-    if ($response->listProducts200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -204,35 +197,31 @@ If successful, your response includes a copy of the updated product entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateProductRequest;
-use \paddle\Paddle\Models\Shared\ProductPatch;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\Schemasstatus;
-use \paddle\Paddle\Models\Shared\TaxCategory1;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateProductRequest();
-    $request->productPatch = new ProductPatch();
-    $request->productPatch->customData = new CustomData();
+    $request = new Operations\UpdateProductRequest();
+    $request->productPatch = new Shared\ProductPatch();
+    $request->productPatch->customData = new Shared\CustomData();
     $request->productPatch->description = 'Synchronised 3rd generation matrix';
     $request->productPatch->imageUrl = 'http://grand-pupa.org';
     $request->productPatch->name = 'string';
-    $request->productPatch->status = Schemasstatus::Active;
-    $request->productPatch->taxCategory = TaxCategory1::SoftwareProgrammingServices;
+    $request->productPatch->status = Shared\SchemaStatus::Active;
+    $request->productPatch->taxCategory = Shared\TaxCategory1::SoftwareProgrammingServices;
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
 
     $response = $sdk->products->update($request);
 
-    if ($response->updateProduct200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

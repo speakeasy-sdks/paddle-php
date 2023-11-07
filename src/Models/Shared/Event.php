@@ -20,12 +20,12 @@ class Event
     /**
      * New or changed entity.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\EventData $data
+     * @var ?\paddle\Paddle\Models\Shared\Data $data
      */
 	#[\JMS\Serializer\Annotation\SerializedName('data')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\EventData')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Data')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?EventData $data = null;
+    public ?Data $data = null;
     
     /**
      * Unique Paddle ID for this event, prefixed with `evt_`.

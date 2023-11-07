@@ -25,9 +25,9 @@ class InvoiceInput
     public BillingDetails1 $billingDetails;
     
 	#[\JMS\Serializer\Annotation\SerializedName('billing_period')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\InvoiceBillingPeriod')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\BillingPeriod')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?InvoiceBillingPeriod $billingPeriod = null;
+    public ?BillingPeriod $billingPeriod = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('business_id')]
     #[\JMS\Serializer\Annotation\Type('string')]

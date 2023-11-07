@@ -12,7 +12,7 @@ use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class UpdateAddressRequest
 {
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\AddressInput $addressInput = null;
+    public ?\paddle\Paddle\Models\Shared\AddressInput $address = null;
     
     /**
      * Paddle ID of the address entity to work with.
@@ -32,7 +32,7 @@ class UpdateAddressRequest
     
 	public function __construct()
 	{
-		$this->addressInput = null;
+		$this->address = null;
 		$this->addressId = "";
 		$this->customerId = "";
 	}

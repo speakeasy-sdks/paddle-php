@@ -12,7 +12,7 @@ use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class CreateAddressRequest
 {
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\AddressCreateInput $addressCreateInput = null;
+    public ?\paddle\Paddle\Models\Shared\AddressCreate $addressCreate = null;
     
     /**
      * Paddle ID of the customer entity to work with.
@@ -24,7 +24,7 @@ class CreateAddressRequest
     
 	public function __construct()
 	{
-		$this->addressCreateInput = null;
+		$this->addressCreate = null;
 		$this->customerId = "";
 	}
 }

@@ -12,6 +12,22 @@ namespace paddle\Paddle\Models\Operations;
 class UpdateDiscountResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateDiscountResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?UpdateDiscountResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateDiscountDiscountsResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?UpdateDiscountDiscountsResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,29 +59,13 @@ class UpdateDiscountResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateDiscount200ApplicationJSON $updateDiscount200ApplicationJSONObject
-     */
-	
-    public ?UpdateDiscount200ApplicationJSON $updateDiscount200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateDiscount404ApplicationJSON $updateDiscount404ApplicationJSONObject
-     */
-	
-    public ?UpdateDiscount404ApplicationJSON $updateDiscount404ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->updateDiscount200ApplicationJSONObject = null;
-		$this->updateDiscount404ApplicationJSONObject = null;
 	}
 }

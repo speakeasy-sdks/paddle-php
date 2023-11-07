@@ -1,5 +1,5 @@
 # Businesses
-(*businesses*)
+
 
 ## Overview
 
@@ -28,34 +28,32 @@ If successful, your response includes a copy of the new business entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\CreateBusinessRequest;
-use \paddle\Paddle\Models\Shared\BusinessCreateInput;
-use \paddle\Paddle\Models\Shared\BusinessCreateContacts;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CreateBusinessRequest();
-    $request->businessCreateInput = new BusinessCreateInput();
-    $request->businessCreateInput->companyNumber = '123456789';
-    $request->businessCreateInput->contacts = [
-        new BusinessCreateContacts(),
+    $request = new Operations\CreateBusinessRequest();
+    $request->businessCreate = new Shared\BusinessCreate();
+    $request->businessCreate->companyNumber = '123456789';
+    $request->businessCreate->contacts = [
+        new Shared\Contacts(),
     ];
-    $request->businessCreateInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessCreateInput->name = 'string';
-    $request->businessCreateInput->taxIdentifier = 'AB0123456789';
+    $request->businessCreate->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
+    $request->businessCreate->name = 'string';
+    $request->businessCreate->taxIdentifier = 'AB0123456789';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->businesses->create($request);
 
-    if ($response->createBusiness201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -87,25 +85,25 @@ Returns a business for a customer using its ID and related customer ID.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetBusinessRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetBusinessRequest();
+    $request = new Operations\GetBusinessRequest();
     $request->businessId = 'biz_01gvcz4m28csa5kem2gqq5ymxn';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->businesses->get($request);
 
-    if ($response->getBusiness200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -139,31 +137,30 @@ By default, Paddle returns businesses that are `active`. Use the `status` query 
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListBusinessesRequest;
-use \paddle\Paddle\Models\Shared\Status;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListBusinessesRequest();
+    $request = new Operations\ListBusinessesRequest();
     $request->after = 'string';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->search = 'upgrade';
-    $request->status = Status::Active;
+    $request->status = Shared\Status::Active;
 
     $response = $sdk->businesses->list($request);
 
-    if ($response->listBusinesses200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -197,37 +194,34 @@ If successful, your response includes a copy of the updated business entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateBusinessRequest;
-use \paddle\Paddle\Models\Shared\BusinessInput;
-use \paddle\Paddle\Models\Shared\BusinessContacts;
-use \paddle\Paddle\Models\Shared\Schemasstatus;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateBusinessRequest();
-    $request->businessInput = new BusinessInput();
-    $request->businessInput->companyNumber = '123456789';
-    $request->businessInput->contacts = [
-        new BusinessContacts(),
+    $request = new Operations\UpdateBusinessRequest();
+    $request->business = new Shared\BusinessInput();
+    $request->business->companyNumber = '123456789';
+    $request->business->contacts = [
+        new Shared\BusinessContacts(),
     ];
-    $request->businessInput->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->businessInput->name = 'string';
-    $request->businessInput->status = Schemasstatus::Archived;
-    $request->businessInput->taxIdentifier = 'AB0123456789';
+    $request->business->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
+    $request->business->name = 'string';
+    $request->business->status = Shared\SchemaStatus::Archived;
+    $request->business->taxIdentifier = 'AB0123456789';
     $request->businessId = 'biz_01gvcz4m28csa5kem2gqq5ymxn';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->businesses->update($request);
 
-    if ($response->updateBusiness200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

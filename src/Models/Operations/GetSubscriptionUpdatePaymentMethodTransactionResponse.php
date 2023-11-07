@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class GetSubscriptionUpdatePaymentMethodTransactionResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionResponseBodyOutput $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionUpdatePaymentMethodTransactionResponseBodyOutput $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionUpdatePaymentMethodTransactionResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionSubscriptionsResponseBody $fourHundredAndThreeApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionUpdatePaymentMethodTransactionSubscriptionsResponseBody $fourHundredAndThreeApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionSubscriptionsResponseResponseBody $fourHundredAndNineApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionUpdatePaymentMethodTransactionSubscriptionsResponseResponseBody $fourHundredAndNineApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionSubscriptionsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?GetSubscriptionUpdatePaymentMethodTransactionSubscriptionsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class GetSubscriptionUpdatePaymentMethodTransactionResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransaction200ApplicationJSONOutput $getSubscriptionUpdatePaymentMethodTransaction200ApplicationJSONObject
-     */
-	
-    public ?GetSubscriptionUpdatePaymentMethodTransaction200ApplicationJSONOutput $getSubscriptionUpdatePaymentMethodTransaction200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransaction401ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction401ApplicationJSONObject
-     */
-	
-    public ?GetSubscriptionUpdatePaymentMethodTransaction401ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransaction403ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction403ApplicationJSONObject
-     */
-	
-    public ?GetSubscriptionUpdatePaymentMethodTransaction403ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction403ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransaction409ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction409ApplicationJSONObject
-     */
-	
-    public ?GetSubscriptionUpdatePaymentMethodTransaction409ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction409ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransaction500ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction500ApplicationJSONObject
-     */
-	
-    public ?GetSubscriptionUpdatePaymentMethodTransaction500ApplicationJSON $getSubscriptionUpdatePaymentMethodTransaction500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndThreeApplicationJsonObject = null;
+		$this->fourHundredAndNineApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getSubscriptionUpdatePaymentMethodTransaction200ApplicationJSONObject = null;
-		$this->getSubscriptionUpdatePaymentMethodTransaction401ApplicationJSONObject = null;
-		$this->getSubscriptionUpdatePaymentMethodTransaction403ApplicationJSONObject = null;
-		$this->getSubscriptionUpdatePaymentMethodTransaction409ApplicationJSONObject = null;
-		$this->getSubscriptionUpdatePaymentMethodTransaction500ApplicationJSONObject = null;
 	}
 }

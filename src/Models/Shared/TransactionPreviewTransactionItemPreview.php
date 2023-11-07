@@ -24,12 +24,12 @@ class TransactionPreviewTransactionItemPreview
     /**
      * Represents a price entity.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\Price $price
+     * @var ?\paddle\Paddle\Models\Shared\PriceInput $price
      */
 	#[\JMS\Serializer\Annotation\SerializedName('price')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Price')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\PriceInput')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?Price $price = null;
+    public ?PriceInput $price = null;
     
     /**
      * Unique Paddle ID for this price, prefixed with `pri_`.
@@ -40,16 +40,6 @@ class TransactionPreviewTransactionItemPreview
     #[\JMS\Serializer\Annotation\Type('string')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
     public ?string $priceId = null;
-    
-    /**
-     * How proration was calculated for this item. Populated when a transaction is created from a subscription change, where `proration_billing_mode` was `prorated_immediately` or `prorated_next_billing_period`. Set automatically by Paddle.
-     * 
-     * @var ?\paddle\Paddle\Models\Shared\TransactionItemProration $proration
-     */
-	#[\JMS\Serializer\Annotation\SerializedName('proration')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\TransactionItemProration')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?TransactionItemProration $proration = null;
     
     /**
      * Quantity of this item on the transaction.
@@ -65,7 +55,6 @@ class TransactionPreviewTransactionItemPreview
 		$this->includeInTotals = null;
 		$this->price = null;
 		$this->priceId = null;
-		$this->proration = null;
 		$this->quantity = 0;
 	}
 }

@@ -12,7 +12,7 @@ use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class UpdateTransactionRequest
 {
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\TransactionUpdateInput $transactionUpdateInput = null;
+    public ?\paddle\Paddle\Models\Shared\TransactionUpdate $transactionUpdate = null;
     
     /**
      * Paddle ID of the transaction entity to work with.
@@ -24,7 +24,7 @@ class UpdateTransactionRequest
     
 	public function __construct()
 	{
-		$this->transactionUpdateInput = null;
+		$this->transactionUpdate = null;
 		$this->transactionId = "";
 	}
 }

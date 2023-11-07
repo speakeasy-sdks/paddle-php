@@ -20,12 +20,12 @@ class AdjustmentPayoutTotals
     /**
      * Chargeback fees incurred for this adjustment. Only returned when the adjustment `action` is `chargeback` or `chargeback_warning`.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\AdjustmentPayoutTotalsChargebackFee $chargebackFee
+     * @var ?\paddle\Paddle\Models\Shared\ChargebackFee $chargebackFee
      */
 	#[\JMS\Serializer\Annotation\SerializedName('chargeback_fee')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\AdjustmentPayoutTotalsChargebackFee')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\ChargebackFee')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?AdjustmentPayoutTotalsChargebackFee $chargebackFee = null;
+    public ?ChargebackFee $chargebackFee = null;
     
     /**
      * Supported three-letter ISO 4217 currency code for payouts from Paddle.

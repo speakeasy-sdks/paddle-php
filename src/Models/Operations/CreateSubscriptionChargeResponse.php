@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class CreateSubscriptionChargeResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateSubscriptionChargeResponseBody $twoHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CreateSubscriptionChargeResponseBody $twoHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateSubscriptionChargeSubscriptionsResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?CreateSubscriptionChargeSubscriptionsResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CreateSubscriptionChargeSubscriptionsResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CreateSubscriptionChargeSubscriptionsResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class CreateSubscriptionChargeResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateSubscriptionCharge201ApplicationJSON $createSubscriptionCharge201ApplicationJSONObject
-     */
-	
-    public ?CreateSubscriptionCharge201ApplicationJSON $createSubscriptionCharge201ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateSubscriptionCharge400ApplicationJSON $createSubscriptionCharge400ApplicationJSONObject
-     */
-	
-    public ?CreateSubscriptionCharge400ApplicationJSON $createSubscriptionCharge400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CreateSubscriptionCharge500ApplicationJSON $createSubscriptionCharge500ApplicationJSONObject
-     */
-	
-    public ?CreateSubscriptionCharge500ApplicationJSON $createSubscriptionCharge500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->createSubscriptionCharge201ApplicationJSONObject = null;
-		$this->createSubscriptionCharge400ApplicationJSONObject = null;
-		$this->createSubscriptionCharge500ApplicationJSONObject = null;
 	}
 }

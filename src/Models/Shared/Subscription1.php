@@ -210,12 +210,12 @@ class Subscription1
     /**
      * Status of this subscription. Set automatically by Paddle. Use the pause subscription or cancel subscription operations to change.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\SchemasstatusSubscription $status
+     * @var ?\paddle\Paddle\Models\Shared\SchemaStatusSubscription $status
      */
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemasstatusSubscription>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemaStatusSubscription>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?SchemasstatusSubscription $status = null;
+    public ?SchemaStatusSubscription $status = null;
     
     /**
      * RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.

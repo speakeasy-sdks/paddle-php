@@ -70,12 +70,12 @@ class Business
     /**
      * Whether this entity can be used in Paddle.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\Schemasstatus $status
+     * @var ?\paddle\Paddle\Models\Shared\SchemaStatus $status
      */
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\Schemasstatus>')]
+    #[\JMS\Serializer\Annotation\Type('enum<paddle\Paddle\Models\Shared\SchemaStatus>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?Schemasstatus $status = null;
+    public ?SchemaStatus $status = null;
     
     /**
      * Tax or VAT Number for this business.

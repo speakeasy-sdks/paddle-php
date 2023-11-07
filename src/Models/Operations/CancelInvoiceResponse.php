@@ -12,6 +12,38 @@ namespace paddle\Paddle\Models\Operations;
 class CancelInvoiceResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CancelInvoiceResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?CancelInvoiceResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CancelInvoiceInvoicesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?CancelInvoiceInvoicesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CancelInvoiceInvoicesResponseResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?CancelInvoiceInvoicesResponseResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\CancelInvoiceInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?CancelInvoiceInvoicesResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,47 +75,15 @@ class CancelInvoiceResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CancelInvoice200ApplicationJSON $cancelInvoice200ApplicationJSONObject
-     */
-	
-    public ?CancelInvoice200ApplicationJSON $cancelInvoice200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CancelInvoice401ApplicationJSON $cancelInvoice401ApplicationJSONObject
-     */
-	
-    public ?CancelInvoice401ApplicationJSON $cancelInvoice401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CancelInvoice404ApplicationJSON $cancelInvoice404ApplicationJSONObject
-     */
-	
-    public ?CancelInvoice404ApplicationJSON $cancelInvoice404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\CancelInvoice500ApplicationJSON $cancelInvoice500ApplicationJSONObject
-     */
-	
-    public ?CancelInvoice500ApplicationJSON $cancelInvoice500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->cancelInvoice200ApplicationJSONObject = null;
-		$this->cancelInvoice401ApplicationJSONObject = null;
-		$this->cancelInvoice404ApplicationJSONObject = null;
-		$this->cancelInvoice500ApplicationJSONObject = null;
 	}
 }

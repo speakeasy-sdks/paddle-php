@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class PostNotificationSettingsNotificationSettingIdReplayResponse
 {
     /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?PostNotificationSettingsNotificationSettingIdReplayResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayNotificationsResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?PostNotificationSettingsNotificationSettingIdReplayNotificationsResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayNotificationsResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?PostNotificationSettingsNotificationSettingIdReplayNotificationsResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class PostNotificationSettingsNotificationSettingIdReplayResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplay401ApplicationJSON $postNotificationSettingsNotificationSettingIdReplay401ApplicationJSONObject
-     */
-	
-    public ?PostNotificationSettingsNotificationSettingIdReplay401ApplicationJSON $postNotificationSettingsNotificationSettingIdReplay401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplay404ApplicationJSON $postNotificationSettingsNotificationSettingIdReplay404ApplicationJSONObject
-     */
-	
-    public ?PostNotificationSettingsNotificationSettingIdReplay404ApplicationJSON $postNotificationSettingsNotificationSettingIdReplay404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplay500ApplicationJSON $postNotificationSettingsNotificationSettingIdReplay500ApplicationJSONObject
-     */
-	
-    public ?PostNotificationSettingsNotificationSettingIdReplay500ApplicationJSON $postNotificationSettingsNotificationSettingIdReplay500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->postNotificationSettingsNotificationSettingIdReplay401ApplicationJSONObject = null;
-		$this->postNotificationSettingsNotificationSettingIdReplay404ApplicationJSONObject = null;
-		$this->postNotificationSettingsNotificationSettingIdReplay500ApplicationJSONObject = null;
 	}
 }

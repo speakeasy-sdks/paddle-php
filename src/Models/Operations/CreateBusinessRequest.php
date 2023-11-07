@@ -12,7 +12,7 @@ use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class CreateBusinessRequest
 {
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\BusinessCreateInput $businessCreateInput = null;
+    public ?\paddle\Paddle\Models\Shared\BusinessCreate $businessCreate = null;
     
     /**
      * Paddle ID of the customer entity to work with.
@@ -24,7 +24,7 @@ class CreateBusinessRequest
     
 	public function __construct()
 	{
-		$this->businessCreateInput = null;
+		$this->businessCreate = null;
 		$this->customerId = "";
 	}
 }

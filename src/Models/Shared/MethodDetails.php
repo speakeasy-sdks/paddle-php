@@ -20,12 +20,12 @@ class MethodDetails
     /**
      * Information about the credit or debit card used to pay. Only returned when `type` is `card`.
      * 
-     * @var ?\paddle\Paddle\Models\Shared\MethodDetailsCard $card
+     * @var ?\paddle\Paddle\Models\Shared\Card $card
      */
 	#[\JMS\Serializer\Annotation\SerializedName('card')]
-    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\MethodDetailsCard')]
+    #[\JMS\Serializer\Annotation\Type('paddle\Paddle\Models\Shared\Card')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?MethodDetailsCard $card = null;
+    public ?Card $card = null;
     
     /**
      * Type of payment method used for this payment attempt.

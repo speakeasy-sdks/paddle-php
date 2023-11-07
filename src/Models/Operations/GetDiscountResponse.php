@@ -12,6 +12,22 @@ namespace paddle\Paddle\Models\Operations;
 class GetDiscountResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetDiscountResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?GetDiscountResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\GetDiscountDiscountsResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?GetDiscountDiscountsResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,29 +59,13 @@ class GetDiscountResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetDiscount200ApplicationJSON $getDiscount200ApplicationJSONObject
-     */
-	
-    public ?GetDiscount200ApplicationJSON $getDiscount200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\GetDiscount404ApplicationJSON $getDiscount404ApplicationJSONObject
-     */
-	
-    public ?GetDiscount404ApplicationJSON $getDiscount404ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->getDiscount200ApplicationJSONObject = null;
-		$this->getDiscount404ApplicationJSONObject = null;
 	}
 }

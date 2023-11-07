@@ -1,5 +1,5 @@
 # Notifications
-(*notifications*)
+
 
 ## Overview
 
@@ -34,20 +34,18 @@ If successful, your response includes a copy of the new notification setting ent
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\NotificationSettingCreateInput;
-use \paddle\Paddle\Models\Shared\NotificationSettingCreateType;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new NotificationSettingCreateInput();
+    $request = new Shared\NotificationSettingCreate();
     $request->active = false;
     $request->apiVersion = 659672;
     $request->description = 'Persistent next generation circuit';
@@ -56,11 +54,11 @@ try {
     $request->subscribedEvents = [
         'string',
     ];
-    $request->type = NotificationSettingCreateType::Url;
+    $request->type = Shared\NotificationSettingCreateType::Url;
 
     $response = $sdk->notifications->createSetting($request);
 
-    if ($response->createNotificationSetting201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -70,9 +68,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                           | [\paddle\Paddle\Models\Shared\NotificationSettingCreateInput](../../models/shared/NotificationSettingCreateInput.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Shared\NotificationSettingCreate](../../models/shared/NotificationSettingCreate.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
@@ -96,19 +94,19 @@ There's no way to recover a deleted notification setting. Deactivate a notificat
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\DeleteNotificationSettingRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new DeleteNotificationSettingRequest();
+    $request = new Operations\DeleteNotificationSettingRequest();
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
 
     $response = $sdk->notifications->deleteSetting($request);
@@ -145,24 +143,24 @@ Returns a notification using its ID.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetNotificationRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetNotificationRequest();
+    $request = new Operations\GetNotificationRequest();
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
 
     $response = $sdk->notifications->get($request);
 
-    if ($response->getNotification200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -194,24 +192,24 @@ Returns a notification setting (notification destination) using its ID.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetNotificationSettingRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetNotificationSettingRequest();
+    $request = new Operations\GetNotificationSettingRequest();
     $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
 
     $response = $sdk->notifications->getSetting($request);
 
-    if ($response->getNotificationSetting200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -243,20 +241,19 @@ Returns a paginated list of notifications. Use the query parameters to page thro
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListNotificationsRequest;
-use \paddle\Paddle\Models\Shared\StatusNotification;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListNotificationsRequest();
+    $request = new Operations\ListNotificationsRequest();
     $request->after = 'string';
     $request->filter = 'sub_01gw4rrmfrqcwkhjm04hr3ah4n';
     $request->from = '2023-04-18T17:03:26';
@@ -264,12 +261,12 @@ try {
     $request->orderBy = 'string';
     $request->perPage = 99895;
     $request->search = 'upgrade';
-    $request->status = StatusNotification::NeedsRetry;
+    $request->status = Shared\StatusNotification::NeedsRetry;
     $request->to = '2023-04-18T17:03:26';
 
     $response = $sdk->notifications->list($request);
 
-    if ($response->listNotifications200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -301,26 +298,26 @@ Returns a paginated list of notification logs for a notification. A log includes
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListNotificationLogsRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListNotificationLogsRequest();
+    $request = new Operations\ListNotificationLogsRequest();
     $request->after = 'string';
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
     $request->perPage = 822522;
 
     $response = $sdk->notifications->listLogs($request);
 
-    if ($response->listNotificationLogs200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -354,20 +351,20 @@ The response is not paginated.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
     $response = $sdk->notifications->listSettings();
 
-    if ($response->listNotificationSettings200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -397,24 +394,24 @@ The new notification replay is sent to the `destination` against the `notificati
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ReplayNotificationRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ReplayNotificationRequest();
+    $request = new Operations\ReplayNotificationRequest();
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
 
     $response = $sdk->notifications->replay($request);
 
-    if ($response->replayNotification202ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndTwoApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -446,21 +443,20 @@ Replay notifications by notification setting
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayRequest;
-use \paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayRequestBody;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new PostNotificationSettingsNotificationSettingIdReplayRequest();
-    $request->requestBody = new PostNotificationSettingsNotificationSettingIdReplayRequestBody();
+    $request = new Operations\PostNotificationSettingsNotificationSettingIdReplayRequest();
+    $request->requestBody = new Operations\PostNotificationSettingsNotificationSettingIdReplayRequestBody();
     $request->requestBody->filter = 'txn_01h3cgmh9qn7yezn4rgze4nrg2';
     $request->requestBody->from = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
     $request->requestBody->to = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
@@ -506,21 +502,20 @@ If successful, your response includes a copy of the updated notification setting
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateNotificationSettingRequest;
-use \paddle\Paddle\Models\Shared\NotificationSettingUpdate;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateNotificationSettingRequest();
-    $request->notificationSettingUpdate = new NotificationSettingUpdate();
+    $request = new Operations\UpdateNotificationSettingRequest();
+    $request->notificationSettingUpdate = new Shared\NotificationSettingUpdate();
     $request->notificationSettingUpdate->active = false;
     $request->notificationSettingUpdate->apiVersion = 303975;
     $request->notificationSettingUpdate->description = 'Implemented clear-thinking firmware';
@@ -533,7 +528,7 @@ try {
 
     $response = $sdk->notifications->updateSettings($request);
 
-    if ($response->updateNotificationSetting200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

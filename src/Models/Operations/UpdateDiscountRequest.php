@@ -12,7 +12,7 @@ use \paddle\Paddle\Utils\SpeakeasyMetadata;
 class UpdateDiscountRequest
 {
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\DiscountInput $discountInput = null;
+    public ?\paddle\Paddle\Models\Shared\DiscountInput $discount = null;
     
     /**
      * Paddle ID of the discount entity to work with.
@@ -24,7 +24,7 @@ class UpdateDiscountRequest
     
 	public function __construct()
 	{
-		$this->discountInput = null;
+		$this->discount = null;
 		$this->discountId = "";
 	}
 }

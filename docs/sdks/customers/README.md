@@ -1,5 +1,5 @@
 # Customers
-(*customers*)
+
 
 ## Overview
 
@@ -29,19 +29,18 @@ If successful, your response includes a copy of the new customer entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\CustomerCreateInput;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CustomerCreateInput();
+    $request = new Shared\CustomerCreate();
     $request->email = 'weloveyourproduct@paddle.com';
     $request->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->locale = 'fr_CH';
@@ -49,7 +48,7 @@ try {
 
     $response = $sdk->customers->create($request);
 
-    if ($response->createCustomer201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -59,9 +58,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\paddle\Paddle\Models\Shared\CustomerCreateInput](../../models/shared/CustomerCreateInput.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `$request`                                                                           | [\paddle\Paddle\Models\Shared\CustomerCreate](../../models/shared/CustomerCreate.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -81,24 +80,24 @@ Returns a customer using its ID.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetCustomerRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetCustomerRequest();
+    $request = new Operations\GetCustomerRequest();
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->customers->get($request);
 
-    if ($response->getCustomer200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -132,30 +131,29 @@ By default, Paddle returns customers that are `active`. Use the `status` query p
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListCustomersRequest;
-use \paddle\Paddle\Models\Shared\Status;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListCustomersRequest();
+    $request = new Operations\ListCustomersRequest();
     $request->after = 'string';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->search = 'upgrade';
-    $request->status = Status::Active;
+    $request->status = Shared\Status::Active;
 
     $response = $sdk->customers->list($request);
 
-    if ($response->listCustomers200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -197,25 +195,25 @@ The response is not paginated.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListCreditBalancesRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListCreditBalancesRequest();
+    $request = new Operations\ListCreditBalancesRequest();
     $request->currencyCode = 'EUR';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->customers->listCreditBalances($request);
 
-    if ($response->listCreditBalances200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -249,32 +247,30 @@ If successful, your response includes a copy of the updated customer entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateCustomerRequest;
-use \paddle\Paddle\Models\Shared\CustomerInput;
-use \paddle\Paddle\Models\Shared\Schemasstatus;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateCustomerRequest();
-    $request->customerInput = new CustomerInput();
-    $request->customerInput->email = 'weloveyourproduct@paddle.com';
-    $request->customerInput->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->customerInput->locale = 'sk';
-    $request->customerInput->name = 'string';
-    $request->customerInput->status = Schemasstatus::Active;
+    $request = new Operations\UpdateCustomerRequest();
+    $request->customer = new Shared\CustomerInput();
+    $request->customer->email = 'weloveyourproduct@paddle.com';
+    $request->customer->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
+    $request->customer->locale = 'sk';
+    $request->customer->name = 'string';
+    $request->customer->status = Shared\SchemaStatus::Active;
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
 
     $response = $sdk->customers->update($request);
 
-    if ($response->updateCustomer200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

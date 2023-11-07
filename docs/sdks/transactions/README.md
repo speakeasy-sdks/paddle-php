@@ -1,5 +1,5 @@
 # Transactions
-(*transactions*)
+
 
 ## Overview
 
@@ -45,65 +45,49 @@ Use the `include` parameter to include related entities in the response.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\CreateTransactionRequest;
-use \paddle\Paddle\Models\Shared\IncludeTransaction;
-use \paddle\Paddle\Models\Shared\TransactionCreateInput;
-use \paddle\Paddle\Models\Shared\BillingDetails2;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\TimePeriod;
-use \paddle\Paddle\Models\Shared\CollectionMode2;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\TransactionItemInput;
-use \paddle\Paddle\Models\Shared\PriceInput;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
-use \paddle\Paddle\Models\Shared\CountryCode2;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new CreateTransactionRequest();
-    $request->include = IncludeTransaction::AdjustmentsTotals;
-    $request->transactionCreateInput = new TransactionCreateInput();
-    $request->transactionCreateInput->addressId = 'string';
-    $request->transactionCreateInput->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->transactionCreateInput->billingDetails = new BillingDetails2();
-    $request->transactionCreateInput->billingDetails->additionalInformation = 'string';
-    $request->transactionCreateInput->billingDetails->enableCheckout = false;
-    $request->transactionCreateInput->billingDetails->paymentTerms = new Period2();
-    $request->transactionCreateInput->billingDetails->paymentTerms->frequency = 489382;
-    $request->transactionCreateInput->billingDetails->paymentTerms->interval = Period2Interval::Month;
-    $request->transactionCreateInput->billingDetails->purchaseOrderNumber = 'string';
-    $request->transactionCreateInput->billingPeriod = new TimePeriod();
-    $request->transactionCreateInput->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->transactionCreateInput->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->transactionCreateInput->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->transactionCreateInput->collectionMode = CollectionMode2::Manual;
-    $request->transactionCreateInput->currencyCode = CurrencyCode2::Ils;
-    $request->transactionCreateInput->customData = new CustomData();
-    $request->transactionCreateInput->customerId = 'string';
-    $request->transactionCreateInput->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->transactionCreateInput->id = 'txn_01h04vsbhqc62t8hmd4z3b578c';
-    $request->transactionCreateInput->items = [
-        new TransactionItemInput(),
+    $request = new Operations\CreateTransactionRequest();
+    $request->include = Shared\IncludeTransaction::AdjustmentsTotals;
+    $request->transactionCreate = new Shared\TransactionCreate();
+    $request->transactionCreate->addressId = 'string';
+    $request->transactionCreate->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->transactionCreate->billingDetails = new Shared\BillingDetails2();
+    $request->transactionCreate->billingDetails->additionalInformation = 'string';
+    $request->transactionCreate->billingDetails->enableCheckout = false;
+    $request->transactionCreate->billingDetails->paymentTerms = new Shared\Period2();
+    $request->transactionCreate->billingDetails->paymentTerms->frequency = 489382;
+    $request->transactionCreate->billingDetails->paymentTerms->interval = Shared\Period2Interval::Month;
+    $request->transactionCreate->billingDetails->purchaseOrderNumber = 'string';
+    $request->transactionCreate->billingPeriod = new Shared\TimePeriod();
+    $request->transactionCreate->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->transactionCreate->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->transactionCreate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
+    $request->transactionCreate->collectionMode = Shared\CollectionMode2::Manual;
+    $request->transactionCreate->currencyCode = Shared\CurrencyCode2::Ils;
+    $request->transactionCreate->customData = new Shared\CustomData();
+    $request->transactionCreate->customerId = 'string';
+    $request->transactionCreate->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
+    $request->transactionCreate->id = 'txn_01h04vsbhqc62t8hmd4z3b578c';
+    $request->transactionCreate->items = [
+        new Shared\TransactionItemInput(),
     ];
-    $request->transactionCreateInput->status = 'string';
-    $request->transactionCreateInput->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
+    $request->transactionCreate->status = 'string';
+    $request->transactionCreate->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
 
     $response = $sdk->transactions->create($request);
 
-    if ($response->createTransaction201ApplicationJSONObject !== null) {
+    if ($response->twoHundredAndOneApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -137,26 +121,25 @@ Use the `include` parameter to include related entities in the response.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetTransactionRequest;
-use \paddle\Paddle\Models\Shared\IncludeTransaction;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetTransactionRequest();
-    $request->include = IncludeTransaction::Customer;
+    $request = new Operations\GetTransactionRequest();
+    $request->include = Shared\IncludeTransaction::Customer;
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 
     $response = $sdk->transactions->get($request);
 
-    if ($response->getTransaction200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -195,24 +178,24 @@ The link returned is not a permanent link. It expires at the date and time retur
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\GetTransactionInvoiceRequest;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GetTransactionInvoiceRequest();
+    $request = new Operations\GetTransactionInvoiceRequest();
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 
     $response = $sdk->transactions->getInvoice($request);
 
-    if ($response->getTransactionInvoice200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -246,39 +229,36 @@ Use the `include` parameter to include related entities in the response.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\ListTransactionsRequest;
-use \paddle\Paddle\Models\Shared\CollectionMode;
-use \paddle\Paddle\Models\Shared\IncludeTransaction;
-use \paddle\Paddle\Models\Shared\StatusTransaction;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ListTransactionsRequest();
+    $request = new Operations\ListTransactionsRequest();
     $request->after = 'string';
     $request->billedAt = '2023-04-18T17:03:26';
-    $request->collectionMode = CollectionMode::Manual;
+    $request->collectionMode = Shared\CollectionMode::Manual;
     $request->createdAt = '2023-04-18T17:03:26';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->id = '<ID>';
-    $request->include = IncludeTransaction::Address;
+    $request->include = Shared\IncludeTransaction::Address;
     $request->invoiceNumber = 'ABC-12345';
     $request->orderBy = 'string';
     $request->perPage = 547272;
-    $request->status = StatusTransaction::Ready;
+    $request->status = Shared\StatusTransaction::Ready;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
     $request->updatedAt = '2023-04-18T17:03:26';
 
     $response = $sdk->transactions->list($request);
 
-    if ($response->listTransactions200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -326,53 +306,39 @@ Transaction previews do not create transactions, so no `id` is returned.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\TransactionPreviewInput;
-use \paddle\Paddle\Models\Shared\AddressPreview;
-use \paddle\Paddle\Models\Shared\CountryCode2;
-use \paddle\Paddle\Models\Shared\TransactionPreviewAdjustmentTotals;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\TransactionPreviewTransactionItemPreviewInput;
-use \paddle\Paddle\Models\Shared\PriceInput;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new TransactionPreviewInput();
-    $request->address = new AddressPreview();
-    $request->address->countryCode = CountryCode2::Hm;
+    $request = new Shared\TransactionPreviewInput();
+    $request->address = new Shared\AddressPreview();
+    $request->address->countryCode = Shared\CountryCode2::Hm;
     $request->address->postalCode = '11105-1803';
     $request->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
-    $request->adjustmentsTotals = new TransactionPreviewAdjustmentTotals();
+    $request->adjustmentsTotals = new Shared\TransactionPreviewAdjustmentTotals();
     $request->adjustmentsTotals->otherBalances = [
         'string',
     ];
     $request->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->currencyCode = CurrencyCode2::Ars;
+    $request->currencyCode = Shared\CurrencyCode2::Ars;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->customerIpAddress = 'string';
     $request->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->ignoreTrials = false;
     $request->items = [
-        new TransactionPreviewTransactionItemPreviewInput(),
+        new Shared\TransactionPreviewTransactionItemPreview(),
     ];
 
     $response = $sdk->transactions->previewTransaction($request);
 
-    if ($response->previewTransaction200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -414,39 +380,34 @@ Each line item includes `formatted_unit_totals` and `formatted_totals` objects t
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Shared\TransactionPricingPreviewInput;
-use \paddle\Paddle\Models\Shared\AddressPreview;
-use \paddle\Paddle\Models\Shared\CountryCode2;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\TransactionPricingPreviewItem;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new TransactionPricingPreviewInput();
-    $request->address = new AddressPreview();
-    $request->address->countryCode = CountryCode2::Vu;
+    $request = new Shared\TransactionPricingPreview();
+    $request->address = new Shared\AddressPreview();
+    $request->address->countryCode = Shared\CountryCode2::Vu;
     $request->address->postalCode = '11105-1803';
     $request->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->currencyCode = CurrencyCode2::Eur;
+    $request->currencyCode = Shared\CurrencyCode2::Eur;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->customerIpAddress = 'string';
     $request->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->items = [
-        new TransactionPricingPreviewItem(),
+        new Shared\TransactionPricingPreviewItem(),
     ];
 
     $response = $sdk->transactions->pricePreview($request);
 
-    if ($response->pricePreview200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -456,9 +417,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                           | [\paddle\Paddle\Models\Shared\TransactionPricingPreviewInput](../../models/shared/TransactionPricingPreviewInput.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Shared\TransactionPricingPreview](../../models/shared/TransactionPricingPreview.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
@@ -489,64 +450,49 @@ If successful, your response includes a copy of the updated transaction entity.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \paddle\Paddle\Paddle;
-use \paddle\Paddle\Models\Shared\Security;
-use \paddle\Paddle\Models\Operations\UpdateTransactionRequest;
-use \paddle\Paddle\Models\Shared\TransactionUpdateInput;
-use \paddle\Paddle\Models\Shared\BillingDetails2;
-use \paddle\Paddle\Models\Shared\Period2;
-use \paddle\Paddle\Models\Shared\Period2Interval;
-use \paddle\Paddle\Models\Shared\TimePeriod;
-use \paddle\Paddle\Models\Shared\CollectionMode2;
-use \paddle\Paddle\Models\Shared\CurrencyCode2;
-use \paddle\Paddle\Models\Shared\CustomData;
-use \paddle\Paddle\Models\Shared\TransactionItemInput;
-use \paddle\Paddle\Models\Shared\PriceInput;
-use \paddle\Paddle\Models\Shared\PriceQuantity;
-use \paddle\Paddle\Models\Shared\TaxMode1;
-use \paddle\Paddle\Models\Shared\Money2;
-use \paddle\Paddle\Models\Shared\UnitPriceOverride;
-use \paddle\Paddle\Models\Shared\CountryCode2;
+use \paddle\Paddle;
+use \paddle\Paddle\Models\Shared;
+use \paddle\Paddle\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle::builder()
+$sdk = Paddle\Paddle::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new UpdateTransactionRequest();
-    $request->transactionUpdateInput = new TransactionUpdateInput();
-    $request->transactionUpdateInput->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
-    $request->transactionUpdateInput->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->transactionUpdateInput->billingDetails = new BillingDetails2();
-    $request->transactionUpdateInput->billingDetails->additionalInformation = 'string';
-    $request->transactionUpdateInput->billingDetails->enableCheckout = false;
-    $request->transactionUpdateInput->billingDetails->paymentTerms = new Period2();
-    $request->transactionUpdateInput->billingDetails->paymentTerms->frequency = 857478;
-    $request->transactionUpdateInput->billingDetails->paymentTerms->interval = Period2Interval::Day;
-    $request->transactionUpdateInput->billingDetails->purchaseOrderNumber = 'string';
-    $request->transactionUpdateInput->billingPeriod = new TimePeriod();
-    $request->transactionUpdateInput->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->transactionUpdateInput->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
-    $request->transactionUpdateInput->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
-    $request->transactionUpdateInput->collectionMode = CollectionMode2::Manual;
-    $request->transactionUpdateInput->currencyCode = CurrencyCode2::Ars;
-    $request->transactionUpdateInput->customData = new CustomData();
-    $request->transactionUpdateInput->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
-    $request->transactionUpdateInput->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
-    $request->transactionUpdateInput->id = 'txn_01h04vsbhqc62t8hmd4z3b578c';
-    $request->transactionUpdateInput->items = [
-        new TransactionItemInput(),
+    $request = new Operations\UpdateTransactionRequest();
+    $request->transactionUpdate = new Shared\TransactionUpdate();
+    $request->transactionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
+    $request->transactionUpdate->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->transactionUpdate->billingDetails = new Shared\BillingDetails2();
+    $request->transactionUpdate->billingDetails->additionalInformation = 'string';
+    $request->transactionUpdate->billingDetails->enableCheckout = false;
+    $request->transactionUpdate->billingDetails->paymentTerms = new Shared\Period2();
+    $request->transactionUpdate->billingDetails->paymentTerms->frequency = 857478;
+    $request->transactionUpdate->billingDetails->paymentTerms->interval = Shared\Period2Interval::Day;
+    $request->transactionUpdate->billingDetails->purchaseOrderNumber = 'string';
+    $request->transactionUpdate->billingPeriod = new Shared\TimePeriod();
+    $request->transactionUpdate->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->transactionUpdate->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
+    $request->transactionUpdate->businessId = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
+    $request->transactionUpdate->collectionMode = Shared\CollectionMode2::Manual;
+    $request->transactionUpdate->currencyCode = Shared\CurrencyCode2::Ars;
+    $request->transactionUpdate->customData = new Shared\CustomData();
+    $request->transactionUpdate->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
+    $request->transactionUpdate->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
+    $request->transactionUpdate->id = 'txn_01h04vsbhqc62t8hmd4z3b578c';
+    $request->transactionUpdate->items = [
+        new Shared\TransactionItemInput(),
     ];
-    $request->transactionUpdateInput->status = 'string';
-    $request->transactionUpdateInput->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
+    $request->transactionUpdate->status = 'string';
+    $request->transactionUpdate->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
     $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
 
     $response = $sdk->transactions->update($request);
 
-    if ($response->updateTransaction200ApplicationJSONObject !== null) {
+    if ($response->twoHundredApplicationJsonObject !== null) {
         // handle response
     }
 } catch (Exception $e) {

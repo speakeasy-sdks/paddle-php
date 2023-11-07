@@ -20,11 +20,11 @@ class CreateTransactionRequest
     public ?\paddle\Paddle\Models\Shared\IncludeTransaction $include = null;
     
 	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public ?\paddle\Paddle\Models\Shared\TransactionCreateInput $transactionCreateInput = null;
+    public ?\paddle\Paddle\Models\Shared\TransactionCreate $transactionCreate = null;
     
 	public function __construct()
 	{
 		$this->include = null;
-		$this->transactionCreateInput = null;
+		$this->transactionCreate = null;
 	}
 }

@@ -12,6 +12,46 @@ namespace paddle\Paddle\Models\Operations;
 class UpdateProductResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateProductResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?UpdateProductResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * Error response for validation
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateProductProductsResponseBody $fourHundredApplicationJsonObject
+     */
+	
+    public ?UpdateProductProductsResponseBody $fourHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateProductProductsResponseResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?UpdateProductProductsResponseResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateProductProductsResponse404ResponseBody $fourHundredAndFourApplicationJsonObject
+     */
+	
+    public ?UpdateProductProductsResponse404ResponseBody $fourHundredAndFourApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\UpdateProductProductsResponse500ResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?UpdateProductProductsResponse500ResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,56 +83,16 @@ class UpdateProductResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateProduct200ApplicationJSON $updateProduct200ApplicationJSONObject
-     */
-	
-    public ?UpdateProduct200ApplicationJSON $updateProduct200ApplicationJSONObject = null;
-    
-    /**
-     * Error response for validation
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateProduct400ApplicationJSON $updateProduct400ApplicationJSONObject
-     */
-	
-    public ?UpdateProduct400ApplicationJSON $updateProduct400ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateProduct401ApplicationJSON $updateProduct401ApplicationJSONObject
-     */
-	
-    public ?UpdateProduct401ApplicationJSON $updateProduct401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateProduct404ApplicationJSON $updateProduct404ApplicationJSONObject
-     */
-	
-    public ?UpdateProduct404ApplicationJSON $updateProduct404ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\UpdateProduct500ApplicationJSON $updateProduct500ApplicationJSONObject
-     */
-	
-    public ?UpdateProduct500ApplicationJSON $updateProduct500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fourHundredAndFourApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->updateProduct200ApplicationJSONObject = null;
-		$this->updateProduct400ApplicationJSONObject = null;
-		$this->updateProduct401ApplicationJSONObject = null;
-		$this->updateProduct404ApplicationJSONObject = null;
-		$this->updateProduct500ApplicationJSONObject = null;
 	}
 }

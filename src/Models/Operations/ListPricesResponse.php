@@ -12,6 +12,30 @@ namespace paddle\Paddle\Models\Operations;
 class ListPricesResponse
 {
     /**
+     * OK
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListPricesResponseBody $twoHundredApplicationJsonObject
+     */
+	
+    public ?ListPricesResponseBody $twoHundredApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListPricesPricesResponseBody $fourHundredAndOneApplicationJsonObject
+     */
+	
+    public ?ListPricesPricesResponseBody $fourHundredAndOneApplicationJsonObject = null;
+    
+    /**
+     * General error response
+     * 
+     * @var ?\paddle\Paddle\Models\Operations\ListPricesPricesResponseResponseBody $fiveHundredApplicationJsonObject
+     */
+	
+    public ?ListPricesPricesResponseResponseBody $fiveHundredApplicationJsonObject = null;
+    
+    /**
      * HTTP response content type for this operation
      * 
      * @var string $contentType
@@ -43,38 +67,14 @@ class ListPricesResponse
 	
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
-    /**
-     * OK
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListPrices200ApplicationJSON $listPrices200ApplicationJSONObject
-     */
-	
-    public ?ListPrices200ApplicationJSON $listPrices200ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListPrices401ApplicationJSON $listPrices401ApplicationJSONObject
-     */
-	
-    public ?ListPrices401ApplicationJSON $listPrices401ApplicationJSONObject = null;
-    
-    /**
-     * General error response
-     * 
-     * @var ?\paddle\Paddle\Models\Operations\ListPrices500ApplicationJSON $listPrices500ApplicationJSONObject
-     */
-	
-    public ?ListPrices500ApplicationJSON $listPrices500ApplicationJSONObject = null;
-    
 	public function __construct()
 	{
+		$this->twoHundredApplicationJsonObject = null;
+		$this->fourHundredAndOneApplicationJsonObject = null;
+		$this->fiveHundredApplicationJsonObject = null;
 		$this->contentType = "";
 		$this->headers = null;
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->listPrices200ApplicationJSONObject = null;
-		$this->listPrices401ApplicationJSONObject = null;
-		$this->listPrices500ApplicationJSONObject = null;
 	}
 }
