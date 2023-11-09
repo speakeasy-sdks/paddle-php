@@ -78,12 +78,12 @@ try {
 
 | Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `$request`                                                                     | [\paddle\Paddle\Models\Shared\PriceCreate](../../models/shared/PriceCreate.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `$request`                                                                     | [\paddle\Paddle\Models\Shared\PriceCreate](../../Models/Shared/PriceCreate.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreatePriceResponse](../../models/operations/CreatePriceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreatePriceResponse](../../Models/Operations/CreatePriceResponse.md)**
 
 
 ## get
@@ -130,12 +130,12 @@ try {
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `$request`                                                                                     | [\paddle\Paddle\Models\Operations\GetPriceRequest](../../models/operations/GetPriceRequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `$request`                                                                                     | [\paddle\Paddle\Models\Operations\GetPriceRequest](../../Models/Operations/GetPriceRequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetPriceResponse](../../models/operations/GetPriceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetPriceResponse](../../Models/Operations/GetPriceResponse.md)**
 
 
 ## list
@@ -190,12 +190,12 @@ try {
 
 | Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\ListPricesRequest](../../models/operations/ListPricesRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\ListPricesRequest](../../Models/Operations/ListPricesRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListPricesResponse](../../models/operations/ListPricesResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListPricesResponse](../../Models/Operations/ListPricesResponse.md)**
 
 
 ## update
@@ -261,10 +261,10 @@ try {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [\paddle\Paddle\Models\Operations\UpdatePriceRequest](../../models/operations/UpdatePriceRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `$request`                                                                                           | [\paddle\Paddle\Models\Operations\UpdatePriceRequest](../../Models/Operations/UpdatePriceRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdatePriceResponse](../../models/operations/UpdatePriceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdatePriceResponse](../../Models/Operations/UpdatePriceResponse.md)**
 

@@ -60,12 +60,12 @@ try {
 
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `$request`                                                                           | [\paddle\Paddle\Models\Shared\CustomerCreate](../../models/shared/CustomerCreate.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `$request`                                                                           | [\paddle\Paddle\Models\Shared\CustomerCreate](../../Models/Shared/CustomerCreate.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateCustomerResponse](../../models/operations/CreateCustomerResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateCustomerResponse](../../Models/Operations/CreateCustomerResponse.md)**
 
 
 ## get
@@ -109,12 +109,12 @@ try {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [\paddle\Paddle\Models\Operations\GetCustomerRequest](../../models/operations/GetCustomerRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `$request`                                                                                           | [\paddle\Paddle\Models\Operations\GetCustomerRequest](../../Models/Operations/GetCustomerRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetCustomerResponse](../../models/operations/GetCustomerResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetCustomerResponse](../../Models/Operations/GetCustomerResponse.md)**
 
 
 ## list
@@ -165,12 +165,12 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\ListCustomersRequest](../../models/operations/ListCustomersRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\ListCustomersRequest](../../Models/Operations/ListCustomersRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListCustomersResponse](../../models/operations/ListCustomersResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListCustomersResponse](../../Models/Operations/ListCustomersResponse.md)**
 
 
 ## listCreditBalances
@@ -225,12 +225,12 @@ try {
 
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\ListCreditBalancesRequest](../../models/operations/ListCreditBalancesRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\ListCreditBalancesRequest](../../Models/Operations/ListCreditBalancesRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListCreditBalancesResponse](../../models/operations/ListCreditBalancesResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListCreditBalancesResponse](../../Models/Operations/ListCreditBalancesResponse.md)**
 
 
 ## update
@@ -282,10 +282,10 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\UpdateCustomerRequest](../../models/operations/UpdateCustomerRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\UpdateCustomerRequest](../../Models/Operations/UpdateCustomerRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateCustomerResponse](../../models/operations/UpdateCustomerResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateCustomerResponse](../../Models/Operations/UpdateCustomerResponse.md)**
 

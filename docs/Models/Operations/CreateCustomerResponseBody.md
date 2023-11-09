@@ -1,0 +1,11 @@
+# CreateCustomerResponseBody
+
+Created
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `data`                                                                   | [\paddle\Paddle\Models\Shared\Customer](../../Models/Shared/Customer.md) | :heavy_check_mark:                                                       | Represents a customer entity.                                            |
+| `meta`                                                                   | [\paddle\Paddle\Models\Shared\Meta](../../Models/Shared/Meta.md)         | :heavy_check_mark:                                                       | Information about this response.                                         |

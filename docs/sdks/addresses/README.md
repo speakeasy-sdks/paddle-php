@@ -68,12 +68,12 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\CreateAddressRequest](../../models/operations/CreateAddressRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\CreateAddressRequest](../../Models/Operations/CreateAddressRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateAddressResponse](../../models/operations/CreateAddressResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateAddressResponse](../../Models/Operations/CreateAddressResponse.md)**
 
 
 ## get
@@ -118,12 +118,12 @@ try {
 
 | Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\GetAddressRequest](../../models/operations/GetAddressRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\GetAddressRequest](../../Models/Operations/GetAddressRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetAddressResponse](../../models/operations/GetAddressResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetAddressResponse](../../Models/Operations/GetAddressResponse.md)**
 
 
 ## list
@@ -175,12 +175,12 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\ListAddressesRequest](../../models/operations/ListAddressesRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\ListAddressesRequest](../../Models/Operations/ListAddressesRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListAddressesResponse](../../models/operations/ListAddressesResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListAddressesResponse](../../Models/Operations/ListAddressesResponse.md)**
 
 
 ## update
@@ -237,10 +237,10 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\UpdateAddressRequest](../../models/operations/UpdateAddressRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\UpdateAddressRequest](../../Models/Operations/UpdateAddressRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateAddressResponse](../../models/operations/UpdateAddressResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateAddressResponse](../../Models/Operations/UpdateAddressResponse.md)**
 

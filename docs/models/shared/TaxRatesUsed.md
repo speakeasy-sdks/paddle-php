@@ -1,9 +1,0 @@
-# TaxRatesUsed
-
-
-## Fields
-
-| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          | Example                                                                              |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `taxRate`                                                                            | *?string*                                                                            | :heavy_minus_sign:                                                                   | Rate used to calculate tax for this transaction preview.                             | 0.2                                                                                  |
-| `totals`                                                                             | [?\paddle\Paddle\Models\Shared\Totals1](../../models/shared/Totals1.md)              | :heavy_minus_sign:                                                                   | Breakdown of a charge in the lowest denomination of a currency (e.g. cents for USD). |                                                                                      |

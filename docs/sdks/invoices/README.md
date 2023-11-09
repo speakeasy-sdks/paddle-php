@@ -62,12 +62,12 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\CancelInvoiceRequest](../../models/operations/CancelInvoiceRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\CancelInvoiceRequest](../../Models/Operations/CancelInvoiceRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CancelInvoiceResponse](../../models/operations/CancelInvoiceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CancelInvoiceResponse](../../Models/Operations/CancelInvoiceResponse.md)**
 
 
 ## create
@@ -136,12 +136,12 @@ try {
 
 | Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `$request`                                                                       | [\paddle\Paddle\Models\Shared\InvoiceInput](../../models/shared/InvoiceInput.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `$request`                                                                       | [\paddle\Paddle\Models\Shared\InvoiceInput](../../Models/Shared/InvoiceInput.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateInvoiceResponse](../../models/operations/CreateInvoiceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateInvoiceResponse](../../Models/Operations/CreateInvoiceResponse.md)**
 
 
 ## get
@@ -185,12 +185,12 @@ try {
 
 | Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\GetInvoiceRequest](../../models/operations/GetInvoiceRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\GetInvoiceRequest](../../Models/Operations/GetInvoiceRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetInvoiceResponse](../../models/operations/GetInvoiceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetInvoiceResponse](../../Models/Operations/GetInvoiceResponse.md)**
 
 
 ## getPdf
@@ -236,12 +236,12 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\GetInvoicePdfRequest](../../models/operations/GetInvoicePdfRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\GetInvoicePdfRequest](../../Models/Operations/GetInvoicePdfRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetInvoicePdfResponse](../../models/operations/GetInvoicePdfResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetInvoicePdfResponse](../../Models/Operations/GetInvoicePdfResponse.md)**
 
 
 ## issueInvoice
@@ -297,12 +297,12 @@ try {
 
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\paddle\Paddle\Models\Operations\IssueInvoiceRequest](../../models/operations/IssueInvoiceRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `$request`                                                                                             | [\paddle\Paddle\Models\Operations\IssueInvoiceRequest](../../Models/Operations/IssueInvoiceRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\IssueInvoiceResponse](../../models/operations/IssueInvoiceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\IssueInvoiceResponse](../../Models/Operations/IssueInvoiceResponse.md)**
 
 
 ## list
@@ -350,12 +350,12 @@ try {
 
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\paddle\Paddle\Models\Operations\ListInvoicesRequest](../../models/operations/ListInvoicesRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `$request`                                                                                             | [\paddle\Paddle\Models\Operations\ListInvoicesRequest](../../Models/Operations/ListInvoicesRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListInvoicesResponse](../../models/operations/ListInvoicesResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListInvoicesResponse](../../Models/Operations/ListInvoicesResponse.md)**
 
 
 ## update
@@ -423,10 +423,10 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\UpdateInvoiceRequest](../../models/operations/UpdateInvoiceRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\UpdateInvoiceRequest](../../Models/Operations/UpdateInvoiceRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateInvoiceResponse](../../models/operations/UpdateInvoiceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateInvoiceResponse](../../Models/Operations/UpdateInvoiceResponse.md)**
 

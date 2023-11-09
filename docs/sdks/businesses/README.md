@@ -65,12 +65,12 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\CreateBusinessRequest](../../models/operations/CreateBusinessRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\CreateBusinessRequest](../../Models/Operations/CreateBusinessRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateBusinessResponse](../../models/operations/CreateBusinessResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateBusinessResponse](../../Models/Operations/CreateBusinessResponse.md)**
 
 
 ## get
@@ -115,12 +115,12 @@ try {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [\paddle\Paddle\Models\Operations\GetBusinessRequest](../../models/operations/GetBusinessRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `$request`                                                                                           | [\paddle\Paddle\Models\Operations\GetBusinessRequest](../../Models/Operations/GetBusinessRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetBusinessResponse](../../models/operations/GetBusinessResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetBusinessResponse](../../Models/Operations/GetBusinessResponse.md)**
 
 
 ## list
@@ -172,12 +172,12 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\ListBusinessesRequest](../../models/operations/ListBusinessesRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\ListBusinessesRequest](../../Models/Operations/ListBusinessesRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListBusinessesResponse](../../models/operations/ListBusinessesResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListBusinessesResponse](../../Models/Operations/ListBusinessesResponse.md)**
 
 
 ## update
@@ -233,10 +233,10 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\UpdateBusinessRequest](../../models/operations/UpdateBusinessRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\UpdateBusinessRequest](../../Models/Operations/UpdateBusinessRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateBusinessResponse](../../models/operations/UpdateBusinessResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateBusinessResponse](../../Models/Operations/UpdateBusinessResponse.md)**
 

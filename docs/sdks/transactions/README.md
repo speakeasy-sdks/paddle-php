@@ -99,12 +99,12 @@ try {
 
 | Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\CreateTransactionRequest](../../models/operations/CreateTransactionRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\CreateTransactionRequest](../../Models/Operations/CreateTransactionRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateTransactionResponse](../../models/operations/CreateTransactionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateTransactionResponse](../../Models/Operations/CreateTransactionResponse.md)**
 
 
 ## get
@@ -151,12 +151,12 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\GetTransactionRequest](../../models/operations/GetTransactionRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Operations\GetTransactionRequest](../../Models/Operations/GetTransactionRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetTransactionResponse](../../models/operations/GetTransactionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetTransactionResponse](../../Models/Operations/GetTransactionResponse.md)**
 
 
 ## getInvoice
@@ -207,12 +207,12 @@ try {
 
 | Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                               | [\paddle\Paddle\Models\Operations\GetTransactionInvoiceRequest](../../models/operations/GetTransactionInvoiceRequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| `$request`                                                                                                               | [\paddle\Paddle\Models\Operations\GetTransactionInvoiceRequest](../../Models/Operations/GetTransactionInvoiceRequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetTransactionInvoiceResponse](../../models/operations/GetTransactionInvoiceResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetTransactionInvoiceResponse](../../Models/Operations/GetTransactionInvoiceResponse.md)**
 
 
 ## list
@@ -270,12 +270,12 @@ try {
 
 | Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                     | [\paddle\Paddle\Models\Operations\ListTransactionsRequest](../../models/operations/ListTransactionsRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `$request`                                                                                                     | [\paddle\Paddle\Models\Operations\ListTransactionsRequest](../../Models/Operations/ListTransactionsRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListTransactionsResponse](../../models/operations/ListTransactionsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListTransactionsResponse](../../Models/Operations/ListTransactionsResponse.md)**
 
 
 ## previewTransaction
@@ -350,12 +350,12 @@ try {
 
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\paddle\Paddle\Models\Shared\TransactionPreviewInput](../../models/shared/TransactionPreviewInput.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `$request`                                                                                             | [\paddle\Paddle\Models\Shared\TransactionPreviewInput](../../Models/Shared/TransactionPreviewInput.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\PreviewTransactionResponse](../../models/operations/PreviewTransactionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\PreviewTransactionResponse](../../Models/Operations/PreviewTransactionResponse.md)**
 
 
 ## pricePreview
@@ -419,12 +419,12 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\paddle\Paddle\Models\Shared\TransactionPricingPreview](../../models/shared/TransactionPricingPreview.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Shared\TransactionPricingPreview](../../Models/Shared/TransactionPricingPreview.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\PricePreviewResponse](../../models/operations/PricePreviewResponse.md)**
+**[?\paddle\Paddle\Models\Operations\PricePreviewResponse](../../Models/Operations/PricePreviewResponse.md)**
 
 
 ## update
@@ -504,10 +504,10 @@ try {
 
 | Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\UpdateTransactionRequest](../../models/operations/UpdateTransactionRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\UpdateTransactionRequest](../../Models/Operations/UpdateTransactionRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateTransactionResponse](../../models/operations/UpdateTransactionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateTransactionResponse](../../Models/Operations/UpdateTransactionResponse.md)**
 

@@ -47,5 +47,5 @@ try {
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetIpAddressesResponse](../../models/operations/GetIpAddressesResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetIpAddressesResponse](../../Models/Operations/GetIpAddressesResponse.md)**
 

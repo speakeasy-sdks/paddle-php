@@ -69,12 +69,12 @@ try {
 
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\CancelSubscriptionRequest](../../models/operations/CancelSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\CancelSubscriptionRequest](../../Models/Operations/CancelSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CancelSubscriptionResponse](../../models/operations/CancelSubscriptionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CancelSubscriptionResponse](../../Models/Operations/CancelSubscriptionResponse.md)**
 
 
 ## create
@@ -130,12 +130,12 @@ try {
 
 | Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                     | [\paddle\Paddle\Models\Operations\CreateSubscriptionChargeRequest](../../models/operations/CreateSubscriptionChargeRequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
+| `$request`                                                                                                                     | [\paddle\Paddle\Models\Operations\CreateSubscriptionChargeRequest](../../Models/Operations/CreateSubscriptionChargeRequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateSubscriptionChargeResponse](../../models/operations/CreateSubscriptionChargeResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateSubscriptionChargeResponse](../../Models/Operations/CreateSubscriptionChargeResponse.md)**
 
 
 ## createPreview
@@ -184,12 +184,12 @@ try {
 
 | Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                                   | [\paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewRequest](../../models/operations/CreateSubscriptionChargePreviewRequest.md) | :heavy_check_mark:                                                                                                                           | The request object to use for the request.                                                                                                   |
+| `$request`                                                                                                                                   | [\paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewRequest](../../Models/Operations/CreateSubscriptionChargePreviewRequest.md) | :heavy_check_mark:                                                                                                                           | The request object to use for the request.                                                                                                   |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewResponse](../../models/operations/CreateSubscriptionChargePreviewResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateSubscriptionChargePreviewResponse](../../Models/Operations/CreateSubscriptionChargePreviewResponse.md)**
 
 
 ## get
@@ -236,12 +236,12 @@ try {
 
 | Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                   | [\paddle\Paddle\Models\Operations\GetSubscriptionRequest](../../models/operations/GetSubscriptionRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `$request`                                                                                                   | [\paddle\Paddle\Models\Operations\GetSubscriptionRequest](../../Models/Operations/GetSubscriptionRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetSubscriptionResponse](../../models/operations/GetSubscriptionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetSubscriptionResponse](../../Models/Operations/GetSubscriptionResponse.md)**
 
 
 ## getUpdatedPaymentMethodTransaction
@@ -292,12 +292,12 @@ try {
 
 | Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                                                               | [\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest](../../models/operations/GetSubscriptionUpdatePaymentMethodTransactionRequest.md) | :heavy_check_mark:                                                                                                                                                       | The request object to use for the request.                                                                                                                               |
+| `$request`                                                                                                                                                               | [\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest](../../Models/Operations/GetSubscriptionUpdatePaymentMethodTransactionRequest.md) | :heavy_check_mark:                                                                                                                                                       | The request object to use for the request.                                                                                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionResponse](../../models/operations/GetSubscriptionUpdatePaymentMethodTransactionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetSubscriptionUpdatePaymentMethodTransactionResponse](../../Models/Operations/GetSubscriptionUpdatePaymentMethodTransactionResponse.md)**
 
 
 ## list
@@ -346,12 +346,12 @@ try {
 
 | Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\ListSubscriptionsRequest](../../models/operations/ListSubscriptionsRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\ListSubscriptionsRequest](../../Models/Operations/ListSubscriptionsRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListSubscriptionsResponse](../../models/operations/ListSubscriptionsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListSubscriptionsResponse](../../Models/Operations/ListSubscriptionsResponse.md)**
 
 
 ## pause
@@ -404,12 +404,12 @@ try {
 
 | Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\PauseSubscriptionRequest](../../models/operations/PauseSubscriptionRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\PauseSubscriptionRequest](../../Models/Operations/PauseSubscriptionRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\PauseSubscriptionResponse](../../models/operations/PauseSubscriptionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\PauseSubscriptionResponse](../../Models/Operations/PauseSubscriptionResponse.md)**
 
 
 ## previewSubscription
@@ -478,12 +478,12 @@ try {
 
 | Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                           | [\paddle\Paddle\Models\Operations\PreviewSubscriptionRequest](../../models/operations/PreviewSubscriptionRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `$request`                                                                                                           | [\paddle\Paddle\Models\Operations\PreviewSubscriptionRequest](../../Models/Operations/PreviewSubscriptionRequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\PreviewSubscriptionResponse](../../models/operations/PreviewSubscriptionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\PreviewSubscriptionResponse](../../Models/Operations/PreviewSubscriptionResponse.md)**
 
 
 ## resumeSubscription
@@ -532,12 +532,12 @@ try {
 
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\ResumeSubscriptionRequest](../../models/operations/ResumeSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\ResumeSubscriptionRequest](../../Models/Operations/ResumeSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ResumeSubscriptionResponse](../../models/operations/ResumeSubscriptionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ResumeSubscriptionResponse](../../Models/Operations/ResumeSubscriptionResponse.md)**
 
 
 ## update
@@ -612,10 +612,10 @@ try {
 
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\UpdateSubscriptionRequest](../../models/operations/UpdateSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\UpdateSubscriptionRequest](../../Models/Operations/UpdateSubscriptionRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateSubscriptionResponse](../../models/operations/UpdateSubscriptionResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateSubscriptionResponse](../../Models/Operations/UpdateSubscriptionResponse.md)**
 

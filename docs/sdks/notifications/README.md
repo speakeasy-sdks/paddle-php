@@ -70,12 +70,12 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\paddle\Paddle\Models\Shared\NotificationSettingCreate](../../models/shared/NotificationSettingCreate.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\paddle\Paddle\Models\Shared\NotificationSettingCreate](../../Models/Shared/NotificationSettingCreate.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateNotificationSettingResponse](../../models/operations/CreateNotificationSettingResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateNotificationSettingResponse](../../Models/Operations/CreateNotificationSettingResponse.md)**
 
 
 ## deleteSetting
@@ -123,12 +123,12 @@ try {
 
 | Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                       | [\paddle\Paddle\Models\Operations\DeleteNotificationSettingRequest](../../models/operations/DeleteNotificationSettingRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| `$request`                                                                                                                       | [\paddle\Paddle\Models\Operations\DeleteNotificationSettingRequest](../../Models/Operations/DeleteNotificationSettingRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\DeleteNotificationSettingResponse](../../models/operations/DeleteNotificationSettingResponse.md)**
+**[?\paddle\Paddle\Models\Operations\DeleteNotificationSettingResponse](../../Models/Operations/DeleteNotificationSettingResponse.md)**
 
 
 ## get
@@ -172,12 +172,12 @@ try {
 
 | Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                   | [\paddle\Paddle\Models\Operations\GetNotificationRequest](../../models/operations/GetNotificationRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `$request`                                                                                                   | [\paddle\Paddle\Models\Operations\GetNotificationRequest](../../Models/Operations/GetNotificationRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetNotificationResponse](../../models/operations/GetNotificationResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetNotificationResponse](../../Models/Operations/GetNotificationResponse.md)**
 
 
 ## getSetting
@@ -221,12 +221,12 @@ try {
 
 | Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
 | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                 | [\paddle\Paddle\Models\Operations\GetNotificationSettingRequest](../../models/operations/GetNotificationSettingRequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `$request`                                                                                                                 | [\paddle\Paddle\Models\Operations\GetNotificationSettingRequest](../../Models/Operations/GetNotificationSettingRequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetNotificationSettingResponse](../../models/operations/GetNotificationSettingResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetNotificationSettingResponse](../../Models/Operations/GetNotificationSettingResponse.md)**
 
 
 ## list
@@ -278,12 +278,12 @@ try {
 
 | Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\ListNotificationsRequest](../../models/operations/ListNotificationsRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `$request`                                                                                                       | [\paddle\Paddle\Models\Operations\ListNotificationsRequest](../../Models/Operations/ListNotificationsRequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListNotificationsResponse](../../models/operations/ListNotificationsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListNotificationsResponse](../../Models/Operations/ListNotificationsResponse.md)**
 
 
 ## listLogs
@@ -329,12 +329,12 @@ try {
 
 | Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
 | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                             | [\paddle\Paddle\Models\Operations\ListNotificationLogsRequest](../../models/operations/ListNotificationLogsRequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `$request`                                                                                                             | [\paddle\Paddle\Models\Operations\ListNotificationLogsRequest](../../Models/Operations/ListNotificationLogsRequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListNotificationLogsResponse](../../models/operations/ListNotificationLogsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListNotificationLogsResponse](../../Models/Operations/ListNotificationLogsResponse.md)**
 
 
 ## listSettings
@@ -375,7 +375,7 @@ try {
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListNotificationSettingsResponse](../../models/operations/ListNotificationSettingsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListNotificationSettingsResponse](../../Models/Operations/ListNotificationSettingsResponse.md)**
 
 
 ## replay
@@ -423,12 +423,12 @@ try {
 
 | Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\ReplayNotificationRequest](../../models/operations/ReplayNotificationRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `$request`                                                                                                         | [\paddle\Paddle\Models\Operations\ReplayNotificationRequest](../../Models/Operations/ReplayNotificationRequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ReplayNotificationResponse](../../models/operations/ReplayNotificationResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ReplayNotificationResponse](../../Models/Operations/ReplayNotificationResponse.md)**
 
 
 ## replayBySetting
@@ -476,12 +476,12 @@ try {
 
 | Parameter                                                                                                                                                                            | Type                                                                                                                                                                                 | Required                                                                                                                                                                             | Description                                                                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                                                                           | [\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayRequest](../../models/operations/PostNotificationSettingsNotificationSettingIdReplayRequest.md) | :heavy_check_mark:                                                                                                                                                                   | The request object to use for the request.                                                                                                                                           |
+| `$request`                                                                                                                                                                           | [\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayRequest](../../Models/Operations/PostNotificationSettingsNotificationSettingIdReplayRequest.md) | :heavy_check_mark:                                                                                                                                                                   | The request object to use for the request.                                                                                                                                           |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayResponse](../../models/operations/PostNotificationSettingsNotificationSettingIdReplayResponse.md)**
+**[?\paddle\Paddle\Models\Operations\PostNotificationSettingsNotificationSettingIdReplayResponse](../../Models/Operations/PostNotificationSettingsNotificationSettingIdReplayResponse.md)**
 
 
 ## updateSettings
@@ -540,10 +540,10 @@ try {
 
 | Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                       | [\paddle\Paddle\Models\Operations\UpdateNotificationSettingRequest](../../models/operations/UpdateNotificationSettingRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| `$request`                                                                                                                       | [\paddle\Paddle\Models\Operations\UpdateNotificationSettingRequest](../../Models/Operations/UpdateNotificationSettingRequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateNotificationSettingResponse](../../models/operations/UpdateNotificationSettingResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateNotificationSettingResponse](../../Models/Operations/UpdateNotificationSettingResponse.md)**
 

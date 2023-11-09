@@ -1,9 +1,0 @@
-# GetPriceRequest
-
-
-## Fields
-
-| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       | Example                                                                           |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `include`                                                                         | [?\paddle\Paddle\Models\Shared\IncludePrice](../../models/shared/IncludePrice.md) | :heavy_minus_sign:                                                                | Include related entities in the response.                                         |                                                                                   |
-| `priceId`                                                                         | *string*                                                                          | :heavy_check_mark:                                                                | Paddle ID of the price entity to work with.                                       | pri_01gvne87kv8vbqa9jkfbmgtsed                                                    |

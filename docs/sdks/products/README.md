@@ -62,12 +62,12 @@ try {
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `$request`                                                                         | [\paddle\Paddle\Models\Shared\ProductCreate](../../models/shared/ProductCreate.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `$request`                                                                         | [\paddle\Paddle\Models\Shared\ProductCreate](../../Models/Shared/ProductCreate.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateProductResponse](../../models/operations/CreateProductResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateProductResponse](../../Models/Operations/CreateProductResponse.md)**
 
 
 ## get
@@ -114,12 +114,12 @@ try {
 
 | Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\GetProductRequest](../../models/operations/GetProductRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\GetProductRequest](../../Models/Operations/GetProductRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\GetProductResponse](../../models/operations/GetProductResponse.md)**
+**[?\paddle\Paddle\Models\Operations\GetProductResponse](../../Models/Operations/GetProductResponse.md)**
 
 
 ## list
@@ -173,12 +173,12 @@ try {
 
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\paddle\Paddle\Models\Operations\ListProductsRequest](../../models/operations/ListProductsRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `$request`                                                                                             | [\paddle\Paddle\Models\Operations\ListProductsRequest](../../Models/Operations/ListProductsRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListProductsResponse](../../models/operations/ListProductsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListProductsResponse](../../Models/Operations/ListProductsResponse.md)**
 
 
 ## update
@@ -233,10 +233,10 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\UpdateProductRequest](../../models/operations/UpdateProductRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\paddle\Paddle\Models\Operations\UpdateProductRequest](../../Models/Operations/UpdateProductRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\UpdateProductResponse](../../models/operations/UpdateProductResponse.md)**
+**[?\paddle\Paddle\Models\Operations\UpdateProductResponse](../../Models/Operations/UpdateProductResponse.md)**
 

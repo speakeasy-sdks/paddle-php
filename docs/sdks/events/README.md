@@ -55,12 +55,12 @@ try {
 
 | Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\ListEventsRequest](../../models/operations/ListEventsRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `$request`                                                                                         | [\paddle\Paddle\Models\Operations\ListEventsRequest](../../Models/Operations/ListEventsRequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListEventsResponse](../../models/operations/ListEventsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListEventsResponse](../../Models/Operations/ListEventsResponse.md)**
 
 
 ## listTypes
@@ -101,5 +101,5 @@ try {
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListEventTypesResponse](../../models/operations/ListEventTypesResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListEventTypesResponse](../../Models/Operations/ListEventTypesResponse.md)**
 

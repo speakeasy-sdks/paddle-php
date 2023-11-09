@@ -86,12 +86,12 @@ try {
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `$request`                                                                               | [\paddle\Paddle\Models\Shared\AdjustmentCreate](../../models/shared/AdjustmentCreate.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `$request`                                                                               | [\paddle\Paddle\Models\Shared\AdjustmentCreate](../../Models/Shared/AdjustmentCreate.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\CreateAdjustmentResponse](../../models/operations/CreateAdjustmentResponse.md)**
+**[?\paddle\Paddle\Models\Operations\CreateAdjustmentResponse](../../Models/Operations/CreateAdjustmentResponse.md)**
 
 
 ## list
@@ -143,10 +143,10 @@ try {
 
 | Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                   | [\paddle\Paddle\Models\Operations\ListAdjustmentsRequest](../../models/operations/ListAdjustmentsRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `$request`                                                                                                   | [\paddle\Paddle\Models\Operations\ListAdjustmentsRequest](../../Models/Operations/ListAdjustmentsRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
 
-**[?\paddle\Paddle\Models\Operations\ListAdjustmentsResponse](../../models/operations/ListAdjustmentsResponse.md)**
+**[?\paddle\Paddle\Models\Operations\ListAdjustmentsResponse](../../Models/Operations/ListAdjustmentsResponse.md)**
 
