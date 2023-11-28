@@ -604,7 +604,6 @@ src/Models/Shared/SubscriptionUpdate.php
 src/Models/Shared/SubscriptionUpdateProrationBillingMode.php
 src/Models/Shared/SubscriptionUpdateItem.php
 src/Models/Shared/Security.php
-USAGE.md
 docs/Models/Operations/CreateAdjustmentAdjustmentsResponse500ResponseBody.md
 docs/Models/Operations/CreateAdjustmentAdjustmentsResponse409ResponseBody.md
 docs/Models/Operations/CreateAdjustmentAdjustmentsResponseResponseBody.md
@@ -1191,4 +1190,5 @@ docs/sdks/transactions/README.md
 docs/sdks/transactionservice/README.md
 docs/sdks/products/README.md
 docs/sdks/subscriptions/README.md
+USAGE.md
 .gitattributes

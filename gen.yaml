@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 1fade75ac5b0bdfcf91084f35f8639c8
   docVersion: "1.0"
-  speakeasyVersion: 1.120.3
-  generationVersion: 2.192.1
+  speakeasyVersion: 1.123.0
+  generationVersion: 2.202.2
 generation:
   comments: {}
   sdkClassName: Paddle
@@ -15,11 +15,11 @@ features:
     core: 3.1.2
     examples: 2.81.3
     globalSecurity: 2.81.1
-    globalServerURLs: 2.82.0
+    globalServerURLs: 2.82.1
     inputOutputModels: 2.82.0
     nameOverrides: 2.81.1
 php:
-  version: 0.8.1
+  version: 0.8.2
   imports:
     option: openapi
     paths:

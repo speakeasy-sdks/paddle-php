@@ -8,7 +8,7 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
 </div>
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### Composer
@@ -34,10 +34,11 @@ Then run the following command:
 ```bash
 composer update
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```php
@@ -91,11 +92,10 @@ try {
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [Adjustments](docs/sdks/adjustments/README.md)
 
@@ -208,13 +208,9 @@ try {
 * [previewSubscription](docs/sdks/subscriptions/README.md#previewsubscription) - Preview an update to a subscription
 * [resumeSubscription](docs/sdks/subscriptions/README.md#resumesubscription) - Resume a paused subscription
 * [update](docs/sdks/subscriptions/README.md#update) - Update a subscription
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
-
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
