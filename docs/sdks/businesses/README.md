@@ -35,12 +35,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateBusinessRequest();
+        $request = new Operations\CreateBusinessRequest();
     $request->businessCreate = new Shared\BusinessCreate();
     $request->businessCreate->companyNumber = '123456789';
     $request->businessCreate->contacts = [
@@ -49,7 +47,7 @@ try {
     $request->businessCreate->id = 'biz_01grrebrzaee2qj2fqqhmcyzaj';
     $request->businessCreate->name = 'string';
     $request->businessCreate->taxIdentifier = 'AB0123456789';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->businesses->create($request);
 
@@ -92,14 +90,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetBusinessRequest();
+        $request = new Operations\GetBusinessRequest();
     $request->businessId = 'biz_01gvcz4m28csa5kem2gqq5ymxn';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->businesses->get($request);
 
@@ -144,19 +140,17 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListBusinessesRequest();
+        $request = new Operations\ListBusinessesRequest();
     $request->after = 'string';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->search = 'upgrade';
-    $request->status = Shared\Status::Active;
+    $request->status = Shared\Status::Active;;
 
     $response = $sdk->businesses->list($request);
 
@@ -201,12 +195,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateBusinessRequest();
+        $request = new Operations\UpdateBusinessRequest();
     $request->business = new Shared\BusinessInput();
     $request->business->companyNumber = '123456789';
     $request->business->contacts = [
@@ -217,7 +209,7 @@ try {
     $request->business->status = Shared\SchemaStatus::Archived;
     $request->business->taxIdentifier = 'AB0123456789';
     $request->businessId = 'biz_01gvcz4m28csa5kem2gqq5ymxn';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->businesses->update($request);
 

@@ -29,9 +29,7 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
     $response = $sdk->ipAddresses->get();

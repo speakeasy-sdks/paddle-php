@@ -35,16 +35,14 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\CustomerCreate();
+        $request = new Shared\CustomerCreate();
     $request->email = 'weloveyourproduct@paddle.com';
     $request->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->locale = 'fr_CH';
-    $request->name = 'string';
+    $request->name = 'string';;
 
     $response = $sdk->customers->create($request);
 
@@ -87,13 +85,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetCustomerRequest();
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+        $request = new Operations\GetCustomerRequest();
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->customers->get($request);
 
@@ -138,18 +134,16 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListCustomersRequest();
+        $request = new Operations\ListCustomersRequest();
     $request->after = 'string';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->search = 'upgrade';
-    $request->status = Shared\Status::Active;
+    $request->status = Shared\Status::Active;;
 
     $response = $sdk->customers->list($request);
 
@@ -202,14 +196,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListCreditBalancesRequest();
+        $request = new Operations\ListCreditBalancesRequest();
     $request->currencyCode = 'EUR';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->customers->listCreditBalances($request);
 
@@ -254,19 +246,17 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateCustomerRequest();
+        $request = new Operations\UpdateCustomerRequest();
     $request->customer = new Shared\CustomerInput();
     $request->customer->email = 'weloveyourproduct@paddle.com';
     $request->customer->id = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
     $request->customer->locale = 'sk';
     $request->customer->name = 'string';
     $request->customer->status = Shared\SchemaStatus::Active;
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->customers->update($request);
 

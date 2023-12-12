@@ -37,12 +37,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateAddressRequest();
+        $request = new Operations\CreateAddressRequest();
     $request->addressCreate = new Shared\AddressCreate();
     $request->addressCreate->city = 'Astoria';
     $request->addressCreate->countryCode = Shared\CountryCode2::Kn;
@@ -52,7 +50,7 @@ try {
     $request->addressCreate->postalCode = '11105-1803';
     $request->addressCreate->region = 'NY';
     $request->addressCreate->secondLine = 'string';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->addresses->create($request);
 
@@ -95,14 +93,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetAddressRequest();
+        $request = new Operations\GetAddressRequest();
     $request->addressId = 'add_01gvcz6r0t0g5cphhwd8n952gb';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->addresses->get($request);
 
@@ -147,19 +143,17 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListAddressesRequest();
+        $request = new Operations\ListAddressesRequest();
     $request->after = 'string';
     $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->search = 'upgrade';
-    $request->status = Shared\Status::Active;
+    $request->status = Shared\Status::Active;;
 
     $response = $sdk->addresses->list($request);
 
@@ -204,12 +198,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateAddressRequest();
+        $request = new Operations\UpdateAddressRequest();
     $request->address = new Shared\AddressInput();
     $request->address->city = 'Astoria';
     $request->address->countryCode = Shared\CountryCode2::Td;
@@ -221,7 +213,7 @@ try {
     $request->address->secondLine = 'string';
     $request->address->status = Shared\SchemaStatus::Active;
     $request->addressId = 'add_01gvcz6r0t0g5cphhwd8n952gb';
-    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';
+    $request->customerId = 'ctm_01gw1xk43eqy2rrf0cs93zvm6t';;
 
     $response = $sdk->addresses->update($request);
 

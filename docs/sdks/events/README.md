@@ -31,15 +31,13 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListEventsRequest();
+        $request = new Operations\ListEventsRequest();
     $request->after = 'string';
     $request->orderBy = 'string';
-    $request->perPage = 768578;
+    $request->perPage = 768578;;
 
     $response = $sdk->events->list($request);
 
@@ -83,9 +81,7 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
     $response = $sdk->events->listTypes();

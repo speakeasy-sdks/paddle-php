@@ -34,12 +34,10 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\DiscountCreate();
+        $request = new Shared\DiscountCreate();
     $request->amount = '486.59';
     $request->code = 'string';
     $request->currencyCode = Shared\CurrencyCode2::Jpy;
@@ -53,7 +51,7 @@ try {
         'string',
     ];
     $request->type = Shared\Type::Flat;
-    $request->usageLimit = 786546;
+    $request->usageLimit = 786546;;
 
     $response = $sdk->discounts->create($request);
 
@@ -96,13 +94,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetDiscountRequest();
-    $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';
+        $request = new Operations\GetDiscountRequest();
+    $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';;
 
     $response = $sdk->discounts->get($request);
 
@@ -147,18 +143,16 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListDiscountsRequest();
+        $request = new Operations\ListDiscountsRequest();
     $request->after = 'string';
     $request->code = 'BLACKFRIDAY';
     $request->id = '<ID>';
     $request->orderBy = 'string';
     $request->perPage = 768578;
-    $request->status = Shared\StatusDiscount::Active;
+    $request->status = Shared\StatusDiscount::Active;;
 
     $response = $sdk->discounts->list($request);
 
@@ -203,12 +197,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateDiscountRequest();
+        $request = new Operations\UpdateDiscountRequest();
     $request->discount = new Shared\DiscountInput();
     $request->discount->amount = '857.48';
     $request->discount->code = 'string';
@@ -225,7 +217,7 @@ try {
     $request->discount->status = Shared\SchemaStatusDiscount::Used;
     $request->discount->type = Shared\DiscountType::Flat;
     $request->discount->usageLimit = 627690;
-    $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';
+    $request->discountId = 'dsc_01gt218xfk7yztpvgmcazkes83';;
 
     $response = $sdk->discounts->update($request);
 

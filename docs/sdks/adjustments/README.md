@@ -42,12 +42,10 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\AdjustmentCreate();
+        $request = new Shared\AdjustmentCreate();
     $request->action = Shared\SchemaAction::Refund;
     $request->currencyCode = Shared\CurrencyCode2::Jpy;
     $request->customerId = 'ctm_01grnn4zta5a1mf02jjze7y2ys';
@@ -70,7 +68,7 @@ try {
     $request->reason = 'string';
     $request->status = Shared\SchemaStatusAdjustment::Approved;
     $request->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
-    $request->transactionId = 'string';
+    $request->transactionId = 'string';;
 
     $response = $sdk->adjustments->create($request);
 
@@ -113,12 +111,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListAdjustmentsRequest();
+        $request = new Operations\ListAdjustmentsRequest();
     $request->action = Shared\Action::CreditReverse;
     $request->after = 'string';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
@@ -127,7 +123,7 @@ try {
     $request->perPage = 99895;
     $request->status = Shared\StatusAdjustment::Rejected;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
-    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
+    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';;
 
     $response = $sdk->adjustments->list($request);
 

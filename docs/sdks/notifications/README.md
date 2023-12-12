@@ -40,12 +40,10 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\NotificationSettingCreate();
+        $request = new Shared\NotificationSettingCreate();
     $request->active = false;
     $request->apiVersion = 659672;
     $request->description = 'Persistent next generation circuit';
@@ -54,7 +52,7 @@ try {
     $request->subscribedEvents = [
         'string',
     ];
-    $request->type = Shared\NotificationSettingCreateType::Url;
+    $request->type = Shared\NotificationSettingCreateType::Url;;
 
     $response = $sdk->notifications->createSetting($request);
 
@@ -101,13 +99,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\DeleteNotificationSettingRequest();
-    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
+        $request = new Operations\DeleteNotificationSettingRequest();
+    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';;
 
     $response = $sdk->notifications->deleteSetting($request);
 
@@ -150,13 +146,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetNotificationRequest();
-    $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
+        $request = new Operations\GetNotificationRequest();
+    $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';;
 
     $response = $sdk->notifications->get($request);
 
@@ -199,13 +193,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetNotificationSettingRequest();
-    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
+        $request = new Operations\GetNotificationSettingRequest();
+    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';;
 
     $response = $sdk->notifications->getSetting($request);
 
@@ -248,12 +240,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListNotificationsRequest();
+        $request = new Operations\ListNotificationsRequest();
     $request->after = 'string';
     $request->filter = 'sub_01gw4rrmfrqcwkhjm04hr3ah4n';
     $request->from = '2023-04-18T17:03:26';
@@ -262,7 +252,7 @@ try {
     $request->perPage = 99895;
     $request->search = 'upgrade';
     $request->status = Shared\StatusNotification::NeedsRetry;
-    $request->to = '2023-04-18T17:03:26';
+    $request->to = '2023-04-18T17:03:26';;
 
     $response = $sdk->notifications->list($request);
 
@@ -305,15 +295,13 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListNotificationLogsRequest();
+        $request = new Operations\ListNotificationLogsRequest();
     $request->after = 'string';
     $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
-    $request->perPage = 822522;
+    $request->perPage = 822522;;
 
     $response = $sdk->notifications->listLogs($request);
 
@@ -357,9 +345,7 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
     $response = $sdk->notifications->listSettings();
@@ -401,13 +387,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ReplayNotificationRequest();
-    $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';
+        $request = new Operations\ReplayNotificationRequest();
+    $request->notificationId = 'ntf_01gt261ms8ew72a0vnm5p5ne2q';;
 
     $response = $sdk->notifications->replay($request);
 
@@ -450,17 +434,15 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\PostNotificationSettingsNotificationSettingIdReplayRequest();
+        $request = new Operations\PostNotificationSettingsNotificationSettingIdReplayRequest();
     $request->requestBody = new Operations\PostNotificationSettingsNotificationSettingIdReplayRequestBody();
     $request->requestBody->filter = 'txn_01h3cgmh9qn7yezn4rgze4nrg2';
     $request->requestBody->from = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
     $request->requestBody->to = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
-    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
+    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';;
 
     $response = $sdk->notifications->replayBySetting($request);
 
@@ -509,12 +491,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateNotificationSettingRequest();
+        $request = new Operations\UpdateNotificationSettingRequest();
     $request->notificationSettingUpdate = new Shared\NotificationSettingUpdate();
     $request->notificationSettingUpdate->active = false;
     $request->notificationSettingUpdate->apiVersion = 303975;
@@ -524,7 +504,7 @@ try {
     $request->notificationSettingUpdate->subscribedEvents = [
         'string',
     ];
-    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';
+    $request->notificationSettingId = 'ntfset_01gt21c5pdx9q1e4mh1xrsjjn6';;
 
     $response = $sdk->notifications->updateSettings($request);
 

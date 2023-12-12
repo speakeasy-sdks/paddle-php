@@ -36,17 +36,15 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\ProductCreate();
+        $request = new Shared\ProductCreate();
     $request->customData = new Shared\CustomData();
     $request->description = 'Multi-tiered human-resource model';
     $request->imageUrl = 'https://impartial-dump.com';
     $request->name = 'string';
-    $request->taxCategory = Shared\TaxCategory1::TrainingServices;
+    $request->taxCategory = Shared\TaxCategory1::TrainingServices;;
 
     $response = $sdk->products->create($request);
 
@@ -91,14 +89,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetProductRequest();
+        $request = new Operations\GetProductRequest();
     $request->include = Shared\IncludeProduct::Prices;
-    $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
+    $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';;
 
     $response = $sdk->products->get($request);
 
@@ -145,19 +141,17 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListProductsRequest();
+        $request = new Operations\ListProductsRequest();
     $request->after = 'string';
     $request->id = '<ID>';
     $request->include = Shared\IncludeProduct::Prices;
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->status = Shared\Status::Active;
-    $request->taxCategory = Shared\TaxCategory::Saas;
+    $request->taxCategory = Shared\TaxCategory::Saas;;
 
     $response = $sdk->products->list($request);
 
@@ -204,12 +198,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateProductRequest();
+        $request = new Operations\UpdateProductRequest();
     $request->productPatch = new Shared\ProductPatch();
     $request->productPatch->customData = new Shared\CustomData();
     $request->productPatch->description = 'Synchronised 3rd generation matrix';
@@ -217,7 +209,7 @@ try {
     $request->productPatch->name = 'string';
     $request->productPatch->status = Shared\SchemaStatus::Active;
     $request->productPatch->taxCategory = Shared\TaxCategory1::SoftwareProgrammingServices;
-    $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
+    $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';;
 
     $response = $sdk->products->update($request);
 

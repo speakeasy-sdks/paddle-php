@@ -40,13 +40,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CancelInvoiceRequest();
-    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
+        $request = new Operations\CancelInvoiceRequest();
+    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';;
 
     $response = $sdk->invoices->cancel($request);
 
@@ -92,12 +90,10 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\InvoiceInput();
+        $request = new Shared\InvoiceInput();
     $request->addressId = 'add_01ghbkbv8s6kjram8fbfz49p45';
     $request->billingDetails = new Shared\BillingDetails1();
     $request->billingDetails->additionalInformation = 'string';
@@ -120,7 +116,7 @@ try {
     ];
     $request->items = [
         new Shared\InvoiceItem(),
-    ];
+    ];;
 
     $response = $sdk->invoices->create($request);
 
@@ -163,13 +159,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetInvoiceRequest();
-    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
+        $request = new Operations\GetInvoiceRequest();
+    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';;
 
     $response = $sdk->invoices->get($request);
 
@@ -214,13 +208,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetInvoicePdfRequest();
-    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
+        $request = new Operations\GetInvoicePdfRequest();
+    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';;
 
     $response = $sdk->invoices->getPdf($request);
 
@@ -275,13 +267,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\IssueInvoiceRequest();
-    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
+        $request = new Operations\IssueInvoiceRequest();
+    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';;
 
     $response = $sdk->invoices->issueInvoice($request);
 
@@ -324,17 +314,15 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListInvoicesRequest();
+        $request = new Operations\ListInvoicesRequest();
     $request->after = 'string';
     $request->id = '<ID>';
     $request->perPage = 768578;
     $request->search = 'upgrade';
-    $request->status = Shared\StatusInvoice::Paid;
+    $request->status = Shared\StatusInvoice::Paid;;
 
     $response = $sdk->invoices->list($request);
 
@@ -381,12 +369,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateInvoiceRequest();
+        $request = new Operations\UpdateInvoiceRequest();
     $request->invoiceForPatch = new Shared\InvoiceForPatch();
     $request->invoiceForPatch->addressId = 'add_01ghbm9egqcxtz4ap4dfg8dtaf';
     $request->invoiceForPatch->billingDetails = new Shared\BillingDetails1();
@@ -407,7 +393,7 @@ try {
     $request->invoiceForPatch->items = [
         new Shared\InvoiceItem(),
     ];
-    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';
+    $request->invoiceId = 'inv_01gt24rqm9618yds0pkaynrgx0';;
 
     $response = $sdk->invoices->update($request);
 

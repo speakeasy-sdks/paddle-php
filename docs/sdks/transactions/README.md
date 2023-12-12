@@ -52,12 +52,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateTransactionRequest();
+        $request = new Operations\CreateTransactionRequest();
     $request->include = Shared\IncludeTransaction::AdjustmentsTotals;
     $request->transactionCreate = new Shared\TransactionCreate();
     $request->transactionCreate->addressId = 'string';
@@ -83,7 +81,7 @@ try {
         new Shared\TransactionItemInput(),
     ];
     $request->transactionCreate->status = 'string';
-    $request->transactionCreate->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
+    $request->transactionCreate->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';;
 
     $response = $sdk->transactions->create($request);
 
@@ -128,14 +126,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetTransactionRequest();
+        $request = new Operations\GetTransactionRequest();
     $request->include = Shared\IncludeTransaction::Customer;
-    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
+    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';;
 
     $response = $sdk->transactions->get($request);
 
@@ -185,13 +181,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetTransactionInvoiceRequest();
-    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
+        $request = new Operations\GetTransactionInvoiceRequest();
+    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';;
 
     $response = $sdk->transactions->getInvoice($request);
 
@@ -236,12 +230,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListTransactionsRequest();
+        $request = new Operations\ListTransactionsRequest();
     $request->after = 'string';
     $request->billedAt = '2023-04-18T17:03:26';
     $request->collectionMode = Shared\CollectionMode::Manual;
@@ -254,7 +246,7 @@ try {
     $request->perPage = 547272;
     $request->status = Shared\StatusTransaction::Ready;
     $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
-    $request->updatedAt = '2023-04-18T17:03:26';
+    $request->updatedAt = '2023-04-18T17:03:26';;
 
     $response = $sdk->transactions->list($request);
 
@@ -312,12 +304,10 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\TransactionPreviewInput();
+        $request = new Shared\TransactionPreviewInput();
     $request->address = new Shared\AddressPreview();
     $request->address->countryCode = Shared\CountryCode2::Hm;
     $request->address->postalCode = '11105-1803';
@@ -334,7 +324,7 @@ try {
     $request->ignoreTrials = false;
     $request->items = [
         new Shared\TransactionPreviewTransactionItemPreview(),
-    ];
+    ];;
 
     $response = $sdk->transactions->previewTransaction($request);
 
@@ -386,12 +376,10 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\TransactionPricingPreview();
+        $request = new Shared\TransactionPricingPreview();
     $request->address = new Shared\AddressPreview();
     $request->address->countryCode = Shared\CountryCode2::Vu;
     $request->address->postalCode = '11105-1803';
@@ -403,7 +391,7 @@ try {
     $request->discountId = 'dsc_01gv5kpg05xp104ek2fmgjwttf';
     $request->items = [
         new Shared\TransactionPricingPreviewItem(),
-    ];
+    ];;
 
     $response = $sdk->transactions->pricePreview($request);
 
@@ -457,12 +445,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateTransactionRequest();
+        $request = new Operations\UpdateTransactionRequest();
     $request->transactionUpdate = new Shared\TransactionUpdate();
     $request->transactionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->transactionUpdate->billedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
@@ -488,7 +474,7 @@ try {
     ];
     $request->transactionUpdate->status = 'string';
     $request->transactionUpdate->subscriptionId = 'sub_01h04vsc0qhwtsbsxh3422wjs4';
-    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';
+    $request->transactionId = 'txn_01gw225vv6tjbb5gnt062a3k5v';;
 
     $response = $sdk->transactions->update($request);
 

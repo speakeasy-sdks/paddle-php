@@ -38,12 +38,10 @@ use \paddle\Paddle\Models\Shared;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\PriceCreate();
+        $request = new Shared\PriceCreate();
     $request->billingCycle = new Shared\Period2();
     $request->billingCycle->frequency = 486589;
     $request->billingCycle->interval = Shared\Period2Interval::Week;
@@ -62,7 +60,7 @@ try {
     $request->unitPrice->currencyCode = Shared\CurrencyCode2::Zar;
     $request->unitPriceOverrides = [
         new Shared\UnitPriceOverride(),
-    ];
+    ];;
 
     $response = $sdk->prices->create($request);
 
@@ -107,14 +105,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetPriceRequest();
+        $request = new Operations\GetPriceRequest();
     $request->include = Shared\IncludePrice::Product;
-    $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
+    $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';;
 
     $response = $sdk->prices->get($request);
 
@@ -161,12 +157,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListPricesRequest();
+        $request = new Operations\ListPricesRequest();
     $request->after = 'string';
     $request->id = '<ID>';
     $request->include = Shared\IncludePrice::Product;
@@ -174,7 +168,7 @@ try {
     $request->perPage = 768578;
     $request->productId = 'pro_01gsz4vmqbjk3x4vvtafffd540';
     $request->recurring = false;
-    $request->status = Shared\Status::Active;
+    $request->status = Shared\Status::Active;;
 
     $response = $sdk->prices->list($request);
 
@@ -219,12 +213,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdatePriceRequest();
+        $request = new Operations\UpdatePriceRequest();
     $request->priceUpdate = new Shared\PriceUpdate();
     $request->priceUpdate->billingCycle = new Shared\Period2();
     $request->priceUpdate->billingCycle->frequency = 857478;
@@ -245,7 +237,7 @@ try {
     $request->priceUpdate->unitPriceOverrides = [
         new Shared\UnitPriceOverride(),
     ];
-    $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
+    $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';;
 
     $response = $sdk->prices->update($request);
 

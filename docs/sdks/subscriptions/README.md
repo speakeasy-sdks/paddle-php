@@ -45,15 +45,13 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CancelSubscriptionRequest();
+        $request = new Operations\CancelSubscriptionRequest();
     $request->requestBody = new Operations\CancelSubscriptionRequestBody();
     $request->requestBody->effectiveFrom = Shared\EffectiveFromNullable::NextBillingPeriod;
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->cancel($request);
 
@@ -103,18 +101,16 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateSubscriptionChargeRequest();
+        $request = new Operations\CreateSubscriptionChargeRequest();
     $request->subscriptionCharge = new Shared\SubscriptionCharge();
     $request->subscriptionCharge->effectiveFrom = Shared\EffectiveFrom::NextBillingPeriod;
     $request->subscriptionCharge->items = [
         new Shared\Items(),
     ];
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->create($request);
 
@@ -157,18 +153,16 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\CreateSubscriptionChargePreviewRequest();
+        $request = new Operations\CreateSubscriptionChargePreviewRequest();
     $request->subscriptionCharge = new Shared\SubscriptionCharge();
     $request->subscriptionCharge->effectiveFrom = Shared\EffectiveFrom::NextBillingPeriod;
     $request->subscriptionCharge->items = [
         new Shared\Items(),
     ];
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->createPreview($request);
 
@@ -213,14 +207,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetSubscriptionRequest();
+        $request = new Operations\GetSubscriptionRequest();
     $request->include = Shared\IncludeSubscription::RecurringTransactionDetails;
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->get($request);
 
@@ -270,13 +262,11 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest();
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+        $request = new Operations\GetSubscriptionUpdatePaymentMethodTransactionRequest();
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->getUpdatedPaymentMethodTransaction($request);
 
@@ -319,18 +309,16 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ListSubscriptionsRequest();
+        $request = new Operations\ListSubscriptionsRequest();
     $request->after = 'string';
     $request->customerId = 'ctm_01gt25aq4b2zcfw12szwtjrbdt';
     $request->orderBy = 'string';
     $request->perPage = 768578;
     $request->priceId = 'pri_01gvne87kv8vbqa9jkfbmgtsed';
-    $request->status = Shared\StatusSubscription::Active;
+    $request->status = Shared\StatusSubscription::Active;;
 
     $response = $sdk->subscriptions->list($request);
 
@@ -379,16 +367,14 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\PauseSubscriptionRequest();
+        $request = new Operations\PauseSubscriptionRequest();
     $request->requestBody = new Operations\PauseSubscriptionRequestBody();
     $request->requestBody->effectiveFrom = Shared\EffectiveFromNullable::NextBillingPeriod;
     $request->requestBody->resumeAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2019-10-12T07:20:50.52Z');
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->pause($request);
 
@@ -433,12 +419,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\PreviewSubscriptionRequest();
+        $request = new Operations\PreviewSubscriptionRequest();
     $request->subscriptionUpdate = new Shared\SubscriptionUpdate();
     $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->subscriptionUpdate->billingDetails = new Shared\BillingDetails2();
@@ -462,7 +446,7 @@ try {
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->subscriptionUpdate->prorationBillingMode = Shared\SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
     $request->subscriptionUpdate->scheduledChange = 'string';
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->previewSubscription($request);
 
@@ -509,14 +493,12 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\ResumeSubscriptionRequest();
+        $request = new Operations\ResumeSubscriptionRequest();
     $request->requestBody = 'string';
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->resumeSubscription($request);
 
@@ -567,12 +549,10 @@ use \paddle\Paddle\Models\Operations;
 $security = new Shared\Security();
 $security->bearerAuth = 'YOUR_API_KEY';
 
-$sdk = Paddle\Paddle::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = Paddle\Paddle::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\UpdateSubscriptionRequest();
+        $request = new Operations\UpdateSubscriptionRequest();
     $request->subscriptionUpdate = new Shared\SubscriptionUpdate();
     $request->subscriptionUpdate->addressId = 'add_01gm302t81w94gyjpjpqypkzkf';
     $request->subscriptionUpdate->billingDetails = new Shared\BillingDetails2();
@@ -596,7 +576,7 @@ try {
     $request->subscriptionUpdate->nextBilledAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2024-10-12T07:20:50.52Z');
     $request->subscriptionUpdate->prorationBillingMode = Shared\SubscriptionUpdateProrationBillingMode::FullNextBillingPeriod;
     $request->subscriptionUpdate->scheduledChange = 'string';
-    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';
+    $request->subscriptionId = 'sub_01gvne45dvdhg5gdxrz6hh511r';;
 
     $response = $sdk->subscriptions->update($request);
 
