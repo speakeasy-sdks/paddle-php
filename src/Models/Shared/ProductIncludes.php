@@ -10,7 +10,7 @@ namespace paddle\Paddle\Models\Shared;
 
 
 /**
- * ProductIncludes - Represents a product entity.
+ * ProductIncludes - Represents a product entity with included entities.
  * 
  * @package paddle\Paddle\Models\Shared
  * @access public

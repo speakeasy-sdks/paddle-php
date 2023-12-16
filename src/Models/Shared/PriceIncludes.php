@@ -10,7 +10,7 @@ namespace paddle\Paddle\Models\Shared;
 
 
 /**
- * PriceIncludes - Represents a price entity.
+ * PriceIncludes - Represents a price entity with included entities.
  * 
  * @package paddle\Paddle\Models\Shared
  * @access public

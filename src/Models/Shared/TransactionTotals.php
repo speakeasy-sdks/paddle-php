@@ -10,7 +10,7 @@ namespace paddle\Paddle\Models\Shared;
 
 
 /**
- * TransactionTotals - Breakdown of a charge in the lowest denomination of a currency (e.g. cents for USD).
+ * TransactionTotals - Breakdown of the total for a transaction.
  * 
  * @package paddle\Paddle\Models\Shared
  * @access public

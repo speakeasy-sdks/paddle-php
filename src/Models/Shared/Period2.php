@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace paddle\Paddle\Models\Shared;
 
 
-/**
- * Period2 - How often this price should be charged. `null` if price is non-recurring (one-time).
- * 
- * @package paddle\Paddle\Models\Shared
- * @access public
- */
 class Period2
 {
     /**

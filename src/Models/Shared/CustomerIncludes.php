@@ -10,7 +10,7 @@ namespace paddle\Paddle\Models\Shared;
 
 
 /**
- * CustomerIncludes - Represents a customer entity.
+ * CustomerIncludes - Represents a customer entity with included entities.
  * 
  * @package paddle\Paddle\Models\Shared
  * @access public

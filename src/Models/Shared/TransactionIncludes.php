@@ -10,7 +10,7 @@ namespace paddle\Paddle\Models\Shared;
 
 
 /**
- * TransactionIncludes - Represents a transaction entity.
+ * TransactionIncludes - Represents a transaction entity with included entitites.
  * 
  * @package paddle\Paddle\Models\Shared
  * @access public

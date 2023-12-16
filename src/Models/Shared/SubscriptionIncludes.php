@@ -10,7 +10,7 @@ namespace paddle\Paddle\Models\Shared;
 
 
 /**
- * SubscriptionIncludes - Represents a subscription preview.
+ * SubscriptionIncludes - Represents a subscription entity with included entities.
  * 
  * @package paddle\Paddle\Models\Shared
  * @access public
