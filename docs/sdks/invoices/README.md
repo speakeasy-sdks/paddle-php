@@ -103,8 +103,8 @@ try {
     $request->billingDetails->paymentTerms->interval = Shared\Interval::Week;
     $request->billingDetails->purchaseOrderNumber = 'string';
     $request->billingPeriod = new Shared\BillingPeriod();
-    $request->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2022-12-01');
-    $request->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2023-07-30');
+    $request->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2023-12-01');
+    $request->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2024-07-30');
     $request->billingPeriod->type = Shared\InvoiceType::Contract;
     $request->businessId = 'biz_01ghbkcbs88yxj4fxecevjz9g7';
     $request->currencyCode = Shared\CurrencyCodeInvoice::Eur;
@@ -383,8 +383,8 @@ try {
     $request->invoiceForPatch->billingDetails->paymentTerms->interval = Shared\Interval::Day;
     $request->invoiceForPatch->billingDetails->purchaseOrderNumber = 'string';
     $request->invoiceForPatch->billingPeriod = new Shared\InvoiceForPatchBillingPeriod();
-    $request->invoiceForPatch->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2022-10-16');
-    $request->invoiceForPatch->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2021-01-18');
+    $request->invoiceForPatch->billingPeriod->endsAt = DateTime::createFromFormat('Y-m-d', '2023-10-17');
+    $request->invoiceForPatch->billingPeriod->startsAt = DateTime::createFromFormat('Y-m-d', '2022-01-18');
     $request->invoiceForPatch->billingPeriod->type = Shared\InvoiceForPatchType::Contract;
     $request->invoiceForPatch->businessId = 'biz_01ghbmaszjgjd47g5f3d9vw7hg';
     $request->invoiceForPatch->currencyCode = Shared\CurrencyCodeInvoice::Usd;

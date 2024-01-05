@@ -14,26 +14,24 @@ class PriceQuantity
     /**
      * Maximum quantity of the product related to this price that can be bought. Required if `minimum` set. Must be greater than the `minimum` value.
      * 
-     * @var ?int $maximum
+     * @var int $maximum
      */
 	#[\JMS\Serializer\Annotation\SerializedName('maximum')]
     #[\JMS\Serializer\Annotation\Type('int')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?int $maximum = null;
+    public int $maximum;
     
     /**
      * Minimum quantity of the product related to this price that can be bought. Required if `maximum` set.
      * 
-     * @var ?int $minimum
+     * @var int $minimum
      */
 	#[\JMS\Serializer\Annotation\SerializedName('minimum')]
     #[\JMS\Serializer\Annotation\Type('int')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?int $minimum = null;
+    public int $minimum;
     
 	public function __construct()
 	{
-		$this->maximum = null;
-		$this->minimum = null;
+		$this->maximum = 0;
+		$this->minimum = 0;
 	}
 }

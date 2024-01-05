@@ -26,16 +26,15 @@ class InvoiceItem
     /**
      * Quantity of the product in the item, greater than 0
      * 
-     * @var ?int $quantity
+     * @var int $quantity
      */
 	#[\JMS\Serializer\Annotation\SerializedName('quantity')]
     #[\JMS\Serializer\Annotation\Type('int')]
-    #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?int $quantity = null;
+    public int $quantity;
     
 	public function __construct()
 	{
 		$this->price = null;
-		$this->quantity = null;
+		$this->quantity = 0;
 	}
 }
