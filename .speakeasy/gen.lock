@@ -4,9 +4,9 @@ management:
   docChecksum: 1fade75ac5b0bdfcf91084f35f8639c8
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.10.0
-  configChecksum: a18bcda7b6bd6ad763eba18f4a6fc4f8
+  generationVersion: 2.237.2
+  releaseVersion: 0.10.1
+  configChecksum: fbf10bda770f7dcd10a162a7b517d3a1
   repoURL: https://github.com/speakeasy-sdks/paddle-php.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/paddle-php
@@ -14,7 +14,7 @@ features:
   php:
     core: 3.3.0
     examples: 2.81.3
-    globalSecurity: 2.81.2
+    globalSecurity: 2.81.3
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
     nameOverrides: 2.81.1
